@@ -1,0 +1,25 @@
+{
+  "shipit": {
+    "prerelease": true,
+    "message": "Update CHANGELOG.md [skip ci]",
+    "noChangelog": true,
+    "onlyGraduateWithReleaseLabel": true
+  },
+  "prereleaseBranches": ["rc"],
+  "plugins": [
+    [
+      "npm",
+      {
+        "setRcToken": false
+      }
+    ],
+    "conventional-commits",
+    [
+      "released",
+      {
+        "message": "🚀 This %TYPE is included in version: %VERSION 🚀",
+        "includeBotPrs": true
+      }
+    ]
+  ]
+}

@@ -1,6 +1,5 @@
 {
   "name": "plasmax",
-  "private": true,
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -26,26 +25,5 @@
     "prettier": "2.0.5",
     "required-path": "1.0.1",
     "semver": "7.3.7"
-  },
-  "auto": {
-    "prereleaseBranches": [
-      "rc"
-    ],
-    "plugins": [
-      [
-        "npm",
-        {
-          "setRcToken": false
-        }
-      ],
-      "conventional-commits",
-      [
-        "released",
-        {
-          "message": "\uD83D\uDE80 This %TYPE is included in version: %VERSION \uD83D\uDE80",
-          "includeBotPrs": true
-        }
-      ]
-    ]
   }
 }
