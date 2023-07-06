@@ -42,7 +42,7 @@ jobs:
 
       - name: Create Release
         run: |
-          echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
+          echo ${GITHUB_REF#refs/heads/}
           echo "${{github.head_ref}}"
           echo "${{github.base_ref}}"
           npm run release
