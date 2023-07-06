@@ -1,10 +1,10 @@
 {
   "shipit": {
-    "prerelease": false,
+    "prerelease": true,
     "message": "Update CHANGELOG.md [skip ci]",
     "onlyGraduateWithReleaseLabel": true
   },
-  "prereleaseBranches": ["beta"],
+  "prereleaseBranches": ["rc"],
   "plugins": [
     [
       "npm",
