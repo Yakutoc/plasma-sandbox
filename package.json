@@ -25,26 +25,5 @@
     "prettier": "2.0.5",
     "required-path": "1.0.1",
     "semver": "7.3.7"
-  },
-  "auto": {
-    "prereleaseBranches": [
-      "rc"
-    ],
-    "plugins": [
-      [
-        "npm",
-        {
-          "setRcToken": false
-        }
-      ],
-      "conventional-commits",
-      [
-        "released",
-        {
-          "message": "🚀 This %TYPE is included in version: %VERSION 🚀",
-          "includeBotPrs": true
-        }
-      ]
-    ]
   }
 }
