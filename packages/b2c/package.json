@@ -1,0 +1,9 @@
+{
+  "name": "plasmax-b2c",
+  "version": "0.1",
+  "author": "Salute Frontend Team <salute.developers@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "echo skip husky"
+  }
+}
