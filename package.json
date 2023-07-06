@@ -33,14 +33,6 @@
     ],
     "plugins": [
       [
-        "upload-assets",
-        {
-          "assets": [
-            "./utils/plasma-tokens-native/build/**/*"
-          ]
-        }
-      ],
-      [
         "npm",
         {
           "setRcToken": false
