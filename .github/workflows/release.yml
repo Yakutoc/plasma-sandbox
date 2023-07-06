@@ -34,6 +34,7 @@ jobs:
 
       - name: Install
         run: |
+          echo ${{ github.ref_name }}
           npm ci --no-audit
           npx lerna bootstrap
 
@@ -41,11 +42,7 @@ jobs:
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Create Release
-        run: |
-          echo ${GITHUB_REF#refs/heads/}
-          echo "${{github.head_ref}}"
-          echo "${{github.base_ref}}"
-          npm run release
+        run: npm run release
 
       - name: Update package-lock's
         if: github.event_name != 'pull_request'
