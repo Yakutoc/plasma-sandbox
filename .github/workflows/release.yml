@@ -42,8 +42,9 @@ jobs:
 
       - name: Create Release
         run: |
-          echo "BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
-          echo "{{github.head_ref}}"
+          echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
+          echo "${{github.head_ref}}"
+          echo "${{github.base_ref}}"
           npm run release
 
       - name: Update package-lock's
@@ -60,8 +61,6 @@ jobs:
         shell: bash
         run: |
           echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
-          echo "${{github.head_ref}}"
-          echo "${{github.base_ref}}"
         id: extract_branch
 
       - name: Commit & Push package-lock's
