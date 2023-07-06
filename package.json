@@ -1,6 +1,5 @@
 {
   "name": "plasmax",
-  "private": true,
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "license": "MIT",
   "scripts": {

@@ -32,9 +32,14 @@ jobs:
           node-version-file: '.nvmrc'
           cache: 'npm'
 
+      - name: "Setup npm"
+        run: |
+          npm set @yakutoc:registry=https://npm.pkg.github.com/yakutoc
+          npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
+
       - name: Install
         run: |
-          echo ${{ github.ref_name }}
+          echo "github.ref_name => ${{ github.ref_name }}"
           npm ci --no-audit
           npx lerna bootstrap
 
