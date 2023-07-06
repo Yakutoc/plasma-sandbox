@@ -1,0 +1,59 @@
+{
+  "name": "plasma",
+  "private": true,
+  "author": "Salute Frontend Team <salute.developers@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "release": "git diff && auto shipit -v",
+    "prepare": "test ! -n \"$CI\" && husky install || echo skip husky"
+  },
+  "devDependencies": {
+    "@auto-it/conventional-commits": "10.36.6",
+    "@auto-it/npm": "10.36.6",
+    "@auto-it/released": "10.46.0",
+    "@auto-it/upload-assets": "10.37.4",
+    "@commitlint/cli": "17.4.4",
+    "@commitlint/config-conventional": "17.4.4",
+    "auto": "10.36.6",
+    "chalk": "4.1.2",
+    "commander": "10.0.0",
+    "fs-extra": "10.0.0",
+    "http-server": "0.12.3",
+    "husky": "^8.0.0",
+    "lerna": "6.5.1",
+    "lint-staged": "13.1.2",
+    "node-fetch": "2.6.1",
+    "prettier": "2.0.5",
+    "required-path": "1.0.1",
+    "semver": "7.3.7"
+  },
+  "auto": {
+    "prereleaseBranches": [
+      "dev"
+    ],
+    "plugins": [
+      [
+        "upload-assets",
+        {
+          "assets": [
+            "./utils/plasma-tokens-native/build/**/*"
+          ]
+        }
+      ],
+      [
+        "npm",
+        {
+          "setRcToken": false
+        }
+      ],
+      "conventional-commits",
+      [
+        "released",
+        {
+          "message": "\uD83D\uDE80 This %TYPE is included in version: %VERSION \uD83D\uDE80",
+          "includeBotPrs": true
+        }
+      ]
+    ]
+  }
+}
