@@ -1,5 +1,5 @@
 {
-  "name": "plasma",
+  "name": "plasmaxn",
   "private": true,
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "license": "MIT",
@@ -29,7 +29,7 @@
   },
   "auto": {
     "prereleaseBranches": [
-      "dev"
+      "rc"
     ],
     "plugins": [
       [
