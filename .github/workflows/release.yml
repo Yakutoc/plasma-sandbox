@@ -4,10 +4,10 @@ on:
   pull_request:
     branches:
       - rc
-      - master
+      - main
   push:
     branches:
-      - master
+      - main
 
 jobs:
   publish:
