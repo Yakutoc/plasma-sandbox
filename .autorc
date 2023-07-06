@@ -3,7 +3,7 @@
     "prerelease": true,
     "message": "Update CHANGELOG.md [skip ci]",
   },
-  "prereleaseBranches": ["rc"],
+  "prereleaseBranches": ["next"],
   "plugins": [
     [
       "npm",
