@@ -1,6 +1,6 @@
 {
   "shipit": {
-    "prerelease": true,
+    "prerelease": false,
     "message": "Update CHANGELOG.md [skip ci]",
     "onlyGraduateWithReleaseLabel": true
   },
