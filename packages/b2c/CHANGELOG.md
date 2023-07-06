@@ -1,3 +1,16 @@
+# v0.4.0 (Thu Jul 06 2023)
+
+#### 🚀 Enhancement
+
+- Feat rcc [#5](https://github.com/Yakutoc/plasma-sandbox/pull/5) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(b2c): docs ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.3.1 (Thu Jul 06 2023)
 
 #### 🐛 Bug Fix

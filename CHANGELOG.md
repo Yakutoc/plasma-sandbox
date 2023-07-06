@@ -1,5 +1,18 @@
 # (Thu Jul 06 2023)
 
+#### 🚀 Enhancement
+
+- `plasmax-b2c@0.4.0`, `plasmax-web@0.2.0`
+  - Feat rcc [#5](https://github.com/Yakutoc/plasma-sandbox/pull/5) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Thu Jul 06 2023)
+
 #### 🐛 Bug Fix
 
 - `plasmax-b2c@0.3.1`, `plasmax-web@0.1.1`
