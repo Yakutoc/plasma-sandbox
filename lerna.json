@@ -1,22 +1,32 @@
 {
-    "packages": ["packages/*"],
-    "version": "independent",
-    "ignoreChanges": ["*.md", "package-lock.json"],
-    "loglevel": "verbose",
-    "exact": true,
-    "command": {
-        "bootstrap": {
-            "npmClientArgs": [
-                "--no-audit",
-                "--no-optional",
-                "--loglevel error",
-                "--no-progress",
-                "--unsafe-perm",
-                "--prefer-offline"
-            ]
-        },
-        "publish": {
-            "verifyAccess": false
-        }
+  "packages": [
+    "packages/*"
+  ],
+  "version": "independent",
+  "ignoreChanges": [
+    "*.md",
+    "package-lock.json"
+  ],
+  "loglevel": "verbose",
+  "exact": true,
+  "command": {
+    "bootstrap": {
+      "npmClientArgs": [
+        "--no-audit",
+        "--no-optional",
+        "--loglevel error",
+        "--no-progress",
+        "--unsafe-perm",
+        "--prefer-offline"
+      ]
+    },
+    "publish": {
+      "verifyAccess": false
+    },
+    "init": {
+      "exact": true
     }
+  },
+  "$schema": "node_modules/lerna/schemas/lerna-schema.json",
+  "useWorkspaces": false
 }

@@ -41,7 +41,7 @@
       [
         "released",
         {
-          "message": "\uD83D\uDE80 This %TYPE is included in version: %VERSION \uD83D\uDE80",
+          "message": "🚀 This %TYPE is included in version: %VERSION 🚀",
           "includeBotPrs": true
         }
       ]
