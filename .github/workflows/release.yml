@@ -3,7 +3,7 @@ name: Release
 on:
   pull_request:
     branches:
-      - rc
+      - dev
       - main
   push:
     branches:
