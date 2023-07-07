@@ -1,3 +1,3 @@
-import { helloWorld } from "plasmax-web/src";
+import { helloWorld } from "plasmax-web";
 
 helloWorld();
