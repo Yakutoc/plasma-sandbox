@@ -5,5 +5,9 @@
   "license": "MIT",
   "scripts": {
     "prepare": "echo skip husky"
-  }
+  },
+  "dependencies": {
+    "plasmax-web": "0.2.0"
+  },
+  "main": "index.js"
 }
