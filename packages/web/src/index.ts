@@ -10,3 +10,8 @@ export const newApiMethod2 = () => {
 	console.log('New API method 2');
 }
 
+export const newApiMethod3 = () => {
+	console.log('New API method 3');
+}
+
+
