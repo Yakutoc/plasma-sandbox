@@ -39,7 +39,6 @@ jobs:
 
       - name: Lerna bootstrap
         run: |
-          npx lerna run prepare
           npx lerna bootstrap --since=$(git merge-base --fork-point origin/next)
 
       - name: Release Info
