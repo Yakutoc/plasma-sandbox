@@ -3,7 +3,6 @@
         "target": "ES5",
         "module": "CommonJS",
         "lib": ["dom", "dom.iterable", "esnext"],
-        "jsx": "react",
         "declaration": true,
         "sourceMap": true,
         "importHelpers": false,
@@ -33,5 +32,14 @@
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
         "rootDir": "./src",
+        "baseUrl": ".",
+        "allowJs": false
     },
+    "include": [
+        "./src"
+    ],
+    "exclude": [
+        "node_modules",
+        "esm"
+    ]
 }
