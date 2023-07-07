@@ -5,5 +5,6 @@
   "license": "MIT",
   "scripts": {
     "prepare": "echo skip husky"
-  }
+  },
+  "main": "index.js"
 }
