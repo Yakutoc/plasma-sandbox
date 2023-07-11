@@ -1,3 +1,5 @@
-import { helloWorld } from "plasmax-web";
+import { helloWorld, newApiMethod3 } from "plasmax-web";
 
 helloWorld();
+
+newApiMethod3();
