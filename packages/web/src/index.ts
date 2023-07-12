@@ -3,5 +3,5 @@ export const callMeApi = () => {
 }
 
 export const callMe2 = () => {
-	console.log('Hello world')
+	console.log('Hello world asfafafafa')
 }
