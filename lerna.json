@@ -21,7 +21,7 @@
     },
     "publish": {
       "verifyAccess": false,
-      "conventional-prerelease": true
+      "conventionalPrerelease": true
     },
     "init": {
       "exact": true
