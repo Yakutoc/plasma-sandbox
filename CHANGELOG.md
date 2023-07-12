@@ -2,6 +2,25 @@
 
 #### 🚀 Enhancement
 
+- `plasmax-web@0.5.0`
+  - feat(web): add new api method (4) [#28](https://github.com/Yakutoc/plasma-sandbox/pull/28) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-b2c@0.9.0`
+  - feat: refactoring [#27](https://github.com/Yakutoc/plasma-sandbox/pull/27) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- ci: fix [#27](https://github.com/Yakutoc/plasma-sandbox/pull/27) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Wed Jul 12 2023)
+
+#### 🚀 Enhancement
+
 - `plasmax-b2c@0.8.0`
   - feat: refactoring [#27](https://github.com/Yakutoc/plasma-sandbox/pull/27) ([@Yakutoc](https://github.com/Yakutoc))
 

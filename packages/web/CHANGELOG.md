@@ -1,3 +1,15 @@
+# v0.5.0 (Wed Jul 12 2023)
+
+#### 🚀 Enhancement
+
+- feat(web): add new api method (4) [#28](https://github.com/Yakutoc/plasma-sandbox/pull/28) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.4.0 (Tue Jul 11 2023)
 
 #### 🚀 Enhancement
