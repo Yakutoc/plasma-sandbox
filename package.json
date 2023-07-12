@@ -3,7 +3,7 @@
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "release": "git diff && auto shipit",
+    "release": "git diff && auto shipit --only-publish-with-release-label",
     "prepare": "test ! -n \"$CI\" && husky install || echo skip husky"
   },
   "devDependencies": {
