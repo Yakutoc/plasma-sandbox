@@ -20,7 +20,8 @@
       ]
     },
     "publish": {
-      "verifyAccess": false
+      "verifyAccess": false,
+      "conventional-prerelease": true
     },
     "init": {
       "exact": true
