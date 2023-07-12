@@ -1,3 +1,30 @@
+# v0.6.0 (Wed Jul 12 2023)
+
+### Release Notes
+
+#### feat(web): ref ([#29](https://github.com/Yakutoc/plasma-sandbox/pull/29))
+
+А это релиз
+
+---
+
+#### 🚀 Enhancement
+
+- feat(web): ref [#29](https://github.com/Yakutoc/plasma-sandbox/pull/29) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(web): add new api method (4) [#28](https://github.com/Yakutoc/plasma-sandbox/pull/28) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Bump independent versions \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update CHANGELOG.md \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.5.0 (Wed Jul 12 2023)
 
 #### 🚀 Enhancement
