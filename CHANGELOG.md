@@ -10,6 +10,36 @@
 
 #### 🚀 Enhancement
 
+- `plasmax-b2c@0.11.0`
+  - feat(b2c): todo [#30](https://github.com/Yakutoc/plasma-sandbox/pull/30) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(b2c): ref [#29](https://github.com/Yakutoc/plasma-sandbox/pull/29) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: refactoring [#27](https://github.com/Yakutoc/plasma-sandbox/pull/27) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-web@0.7.0`
+  - feat(web): ref [#29](https://github.com/Yakutoc/plasma-sandbox/pull/29) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(web): add new api method (4) [#28](https://github.com/Yakutoc/plasma-sandbox/pull/28) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- ci: fix [#27](https://github.com/Yakutoc/plasma-sandbox/pull/27) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Wed Jul 12 2023)
+
+### Release Notes
+
+#### feat(web): ref ([#29](https://github.com/Yakutoc/plasma-sandbox/pull/29))
+
+А это релиз
+
+---
+
+#### 🚀 Enhancement
+
 - `plasmax-b2c@0.10.0`
   - feat(b2c): ref [#29](https://github.com/Yakutoc/plasma-sandbox/pull/29) ([@Yakutoc](https://github.com/Yakutoc))
   - feat: refactoring [#27](https://github.com/Yakutoc/plasma-sandbox/pull/27) ([@Yakutoc](https://github.com/Yakutoc))
