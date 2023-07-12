@@ -1,3 +1,15 @@
+# v0.12.0 (Wed Jul 12 2023)
+
+#### 🚀 Enhancement
+
+- feat: что-то новое [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.11.0 (Wed Jul 12 2023)
 
 #### 🚀 Enhancement

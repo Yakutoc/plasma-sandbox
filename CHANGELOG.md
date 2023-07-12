@@ -1,5 +1,23 @@
 # (Wed Jul 12 2023)
 
+#### 🚀 Enhancement
+
+- ci: release [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-b2c@0.12.0`
+  - feat: что-то новое [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- ci: release [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Wed Jul 12 2023)
+
 ### Release Notes
 
 #### feat(web): ref ([#29](https://github.com/Yakutoc/plasma-sandbox/pull/29))
