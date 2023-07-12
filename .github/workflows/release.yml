@@ -3,9 +3,11 @@ name: Release
 on:
   pull_request:
     branches:
+      - next
       - main
   push:
     branches:
+      - next
       - main
 
 jobs:
@@ -44,15 +46,6 @@ jobs:
 
       - name: Create Release
         run: npm run release
-
-      - name: Update package-lock's
-        if: github.event_name != 'pull_request'
-        run: |
-          npm i --package-lock-only
-          lerna clean -y
-          lerna exec --no-private -- npm i --package-lock-only --ignore-scripts
-          # root deps don't update correctly on first regeneration
-          npm i --package-lock-only
 
       - name: Extract branch name
         if: github.event_name != 'pull_request'
