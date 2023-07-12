@@ -1,3 +1,16 @@
+# v0.7.0 (Wed Jul 12 2023)
+
+#### 🚀 Enhancement
+
+- feat: 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(web): 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.6.0 (Wed Jul 12 2023)
 
 ### Release Notes

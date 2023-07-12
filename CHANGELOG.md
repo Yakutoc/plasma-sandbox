@@ -3,6 +3,31 @@
 #### 🚀 Enhancement
 
 - ci: release [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-web@0.7.0`
+  - feat: 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(web): 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-b2c@0.13.0`
+  - feat: 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: что-то новое [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- ci: 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: fix [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: release [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: release [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Wed Jul 12 2023)
+
+#### 🚀 Enhancement
+
+- ci: release [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
 - `plasmax-b2c@0.12.0`
   - feat: что-то новое [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
 

@@ -1,3 +1,22 @@
+# v0.13.0 (Wed Jul 12 2023)
+
+#### 🚀 Enhancement
+
+- feat: 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: что-то новое [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Bump independent versions \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update CHANGELOG.md \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.12.0 (Wed Jul 12 2023)
 
 #### 🚀 Enhancement
