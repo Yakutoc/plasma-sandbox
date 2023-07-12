@@ -1,3 +1,20 @@
+# v0.7.0 (Wed Jul 12 2023)
+
+#### 🚀 Enhancement
+
+- feat(b2c): use newApiMethod3 [#26](https://github.com/Yakutoc/plasma-sandbox/pull/26) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.6.0 (Tue Jul 11 2023)
 
 #### 🚀 Enhancement

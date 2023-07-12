@@ -1,3 +1,17 @@
+# (Wed Jul 12 2023)
+
+#### 🚀 Enhancement
+
+- ci: fix [#26](https://github.com/Yakutoc/plasma-sandbox/pull/26) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-b2c@0.7.0`
+  - feat(b2c): use newApiMethod3 [#26](https://github.com/Yakutoc/plasma-sandbox/pull/26) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Tue Jul 11 2023)
 
 #### 🚀 Enhancement
