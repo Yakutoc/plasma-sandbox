@@ -21,7 +21,8 @@
     },
     "version": {
       "conventionalPrerelease": true,
-      "conventionalBumpPrerelease": true
+      "conventionalBumpPrerelease": true,
+      "preid": "next"
     },
     "publish": {
       "verifyAccess": false

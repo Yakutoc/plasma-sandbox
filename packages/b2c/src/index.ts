@@ -1,3 +1,5 @@
-import { callMeApi } from "plasmax-web";
+import { otherMethod, otherMethod2 } from "plasmax-web";
 
-callMeApi();
+otherMethod();
+
+otherMethod2();
