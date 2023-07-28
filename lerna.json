@@ -19,9 +19,12 @@
         "--prefer-offline"
       ]
     },
+    "version": {
+      "conventionalPrerelease": true,
+      "conventionalBumpPrerelease": true
+    },
     "publish": {
-      "verifyAccess": false,
-      "prerelease": true
+      "verifyAccess": false
     },
     "init": {
       "exact": true
