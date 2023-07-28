@@ -2,6 +2,7 @@
   "prereleaseBranches": ["next"],
   "shipit": {
     "prerelease": true,
+    "onlyGraduateWithReleaseLabel": true
   },
   "plugins": [
     [
