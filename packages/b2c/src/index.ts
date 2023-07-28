@@ -5,3 +5,5 @@ otherMethod();
 otherMethod2();
 
 otherMethod2();
+
+otherMethod2();
