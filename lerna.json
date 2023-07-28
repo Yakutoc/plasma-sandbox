@@ -19,11 +19,6 @@
         "--prefer-offline"
       ]
     },
-    "version": {
-      "conventionalPrerelease": true,
-      "conventionalBumpPrerelease": true,
-      "preid": "next"
-    },
     "publish": {
       "verifyAccess": false
     },

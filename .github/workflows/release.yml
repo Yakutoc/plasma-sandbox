@@ -2,12 +2,8 @@ name: Release
 
 on:
   pull_request:
-    branches:
-      - next
-      - main
   push:
     branches:
-      - next
       - main
 
 jobs:
