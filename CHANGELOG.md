@@ -2,6 +2,44 @@
 
 #### 🚀 Enhancement
 
+- feat: cha [#46](https://github.com/Yakutoc/plasma-sandbox/pull/46) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: use ""--preid" flag [#40](https://github.com/Yakutoc/plasma-sandbox/pull/40) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: d [#39](https://github.com/Yakutoc/plasma-sandbox/pull/39) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: release [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-b2c@0.16.0`
+  - feat: use method [#46](https://github.com/Yakutoc/plasma-sandbox/pull/46) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(b2c): used twice otherMethod2 [#44](https://github.com/Yakutoc/plasma-sandbox/pull/44) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(web): used otherMethod2 [#42](https://github.com/Yakutoc/plasma-sandbox/pull/42) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: что-то новое [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-web@0.9.0`
+  - feat(web): add otherMethod2 [#41](https://github.com/Yakutoc/plasma-sandbox/pull/41) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: next 2 [#39](https://github.com/Yakutoc/plasma-sandbox/pull/39) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(web): 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- ci: 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: fix [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: release [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: release [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### ⚠️ Pushed to `main`
+
+- chore: use "onlyGraduateWithReleaseLabel" flag ([@Yakutoc](https://github.com/Yakutoc))
+- chore: use conventionalPrerelease + conventionalBumpPrerelease ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Fri Jul 28 2023)
+
+#### 🚀 Enhancement
+
 - chore: use ""--preid" flag [#40](https://github.com/Yakutoc/plasma-sandbox/pull/40) ([@Yakutoc](https://github.com/Yakutoc))
 - ci: d [#39](https://github.com/Yakutoc/plasma-sandbox/pull/39) ([@Yakutoc](https://github.com/Yakutoc))
 - ci: release [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
