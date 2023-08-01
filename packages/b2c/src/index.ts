@@ -1,3 +1,3 @@
-import { otherMethod } from "plasmax-web";
+import { otherMethod2 } from "plasmax-web";
 
-otherMethod();
+otherMethod2();
