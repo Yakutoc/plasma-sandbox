@@ -41,3 +41,27 @@ jobs:
 
       - name: Create Release
         run: npm run release
+
+      - name: Update package-lock's
+        if: github.event.pull_request.merged == true
+        run: |
+          npm i --package-lock-only
+          lerna clean -y
+          lerna exec --no-private -- npm i --package-lock-only --ignore-scripts
+          # root deps don't update correctly on first regeneration
+          npm i --package-lock-only
+
+      - name: Extract branch name
+        if: github.event.pull_request.merged == true
+        run: echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
+        id: extract_branch
+
+      - name: Commit & Push package-lock's
+        if: github.event.pull_request.merged == true
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          message: 'chore: update package-locks [skip ci]'
+          branch: ${{ steps.extract_branch.outputs.BRANCH }}
+          author_name: Salute Frontend Team
+          author_email: salute.developers@gmail.com
