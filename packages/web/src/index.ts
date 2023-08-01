@@ -9,3 +9,7 @@ export const otherMethod2 = () => {
 export const otherMethod3 = () => {
 	console.log('Hello world');
 }
+
+export const otherMethod4 = () => {
+	console.log('Hello world');
+}
