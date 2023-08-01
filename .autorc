@@ -1,6 +1,6 @@
 {
+  "shipit": { "baseBranch": "rc" }
   "prereleaseBranches": ["rc"],
-  "shipit": { baseBranch: 'rc' }
   "plugins": [
     [
       "npm",
