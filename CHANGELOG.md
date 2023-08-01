@@ -2,6 +2,19 @@
 
 #### 🚀 Enhancement
 
+- `plasmax-b2c@0.20.0`
+  - feat: add [#52](https://github.com/Yakutoc/plasma-sandbox/pull/52) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Tue Aug 01 2023)
+
+#### 🚀 Enhancement
+
 - chore: -- [#47](https://github.com/Yakutoc/plasma-sandbox/pull/47) ([@Yakutoc](https://github.com/Yakutoc))
 - feat: cha [#46](https://github.com/Yakutoc/plasma-sandbox/pull/46) ([@Yakutoc](https://github.com/Yakutoc))
 - chore: use ""--preid" flag [#40](https://github.com/Yakutoc/plasma-sandbox/pull/40) ([@Yakutoc](https://github.com/Yakutoc))

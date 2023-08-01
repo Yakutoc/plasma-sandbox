@@ -1,3 +1,20 @@
+# v0.20.0 (Tue Aug 01 2023)
+
+#### 🚀 Enhancement
+
+- feat: add [#52](https://github.com/Yakutoc/plasma-sandbox/pull/52) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.19.0 (Tue Aug 01 2023)
 
 #### 🚀 Enhancement
