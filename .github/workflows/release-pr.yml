@@ -1,0 +1,40 @@
+name: Release PR
+
+on:
+  pull_request:
+
+jobs:
+  publish:
+    name: Publish PR
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      NPM_REGISTRY_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Unset header
+        # https://github.com/intuit/auto/issues/1030
+        run: git config --local --unset http.https://github.com/.extraheader
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install
+        run: |
+          npm ci --no-audit
+
+      - name: Lerna bootstrap
+        run: npx lerna bootstrap
+
+      - name: Release Info
+        run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
+
+      - name: Create Release
+        run: npm run release
