@@ -1,7 +1,6 @@
 {
   "shipit": {
-    "prerelease": true,
-    "onlyGraduateWithReleaseLabel": true
+    "prerelease": true
   },
   "plugins": [
     [
