@@ -13,3 +13,7 @@ export const otherMethod3 = () => {
 export const otherMethod4 = () => {
 	console.log('Hello world');
 }
+
+export const otherMethod5 = () => {
+	console.log('Hello world');
+}
