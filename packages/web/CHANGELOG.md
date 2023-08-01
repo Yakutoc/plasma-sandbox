@@ -1,3 +1,27 @@
+# v0.10.0 (Tue Aug 01 2023)
+
+#### 🚀 Enhancement
+
+- feat: add [#51](https://github.com/Yakutoc/plasma-sandbox/pull/51) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: start 2 [#50](https://github.com/Yakutoc/plasma-sandbox/pull/50) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(web): add otherMethod2 [#41](https://github.com/Yakutoc/plasma-sandbox/pull/41) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: add other method ([@Yakutoc](https://github.com/Yakutoc))
+- feat: next 2 [#39](https://github.com/Yakutoc/plasma-sandbox/pull/39) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(web): 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Bump independent versions \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update CHANGELOG.md \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.9.0 (Tue Aug 01 2023)
 
 #### 🚀 Enhancement

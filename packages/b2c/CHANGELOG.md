@@ -1,3 +1,31 @@
+# v0.19.0 (Tue Aug 01 2023)
+
+#### 🚀 Enhancement
+
+- feat: start [#49](https://github.com/Yakutoc/plasma-sandbox/pull/49) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: other test pr [#48](https://github.com/Yakutoc/plasma-sandbox/pull/48) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: use method [#46](https://github.com/Yakutoc/plasma-sandbox/pull/46) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(b2c): used twice otherMethod2 [#44](https://github.com/Yakutoc/plasma-sandbox/pull/44) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(b2c): used twice otherMethod2 ([@Yakutoc](https://github.com/Yakutoc))
+- feat(web): used otherMethod2 [#42](https://github.com/Yakutoc/plasma-sandbox/pull/42) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(web): used otherMethod2 ([@Yakutoc](https://github.com/Yakutoc))
+- feat(b2c): used other method ([@Yakutoc](https://github.com/Yakutoc))
+- feat: 1 [#37](https://github.com/Yakutoc/plasma-sandbox/pull/37) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: что-то новое [#31](https://github.com/Yakutoc/plasma-sandbox/pull/31) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+- Bump independent versions \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update CHANGELOG.md \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.18.0 (Tue Aug 01 2023)
 
 #### 🚀 Enhancement
