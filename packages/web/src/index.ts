@@ -17,3 +17,7 @@ export const otherMethod4 = () => {
 export const otherMethod5 = () => {
 	console.log('Hello world');
 }
+
+export const otherMethod6 = () => {
+	console.log('Hello world');
+}
