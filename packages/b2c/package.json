@@ -1,6 +1,6 @@
 {
   "name": "plasmax-b2c",
-  "version": "0.23.0-rc.0",
+  "version": "0.24.0-rc.0",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -14,7 +14,7 @@
     "postbuild": "npm run generate:typings"
   },
   "dependencies": {
-    "plasmax-web": "0.12.0-rc.0"
+    "plasmax-web": "0.13.0-rc.0"
   },
   "devDependencies": {
     "@types/node": "16.7.13",
