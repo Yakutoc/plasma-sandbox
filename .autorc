@@ -1,12 +1,11 @@
 {
-  "shipit": {
-    "onlyGraduateWithReleaseLabel": true
-  },
+  "prereleaseBranches": ["rc"],
   "plugins": [
     [
       "npm",
       {
-        "setRcToken": false
+        "setRcToken": false,
+        "commitNextVersion": true
       }
     ],
     "conventional-commits",
