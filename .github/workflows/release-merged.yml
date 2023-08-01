@@ -1,13 +1,16 @@
 name: Release
 
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
+      - rc
       - main
 
 jobs:
   publish:
-    name: Publish Latest
+    name: Publish RC
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

@@ -5,7 +5,7 @@ on:
 
 jobs:
   publish:
-    name: Publish PR
+    name: Publish Canary
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
