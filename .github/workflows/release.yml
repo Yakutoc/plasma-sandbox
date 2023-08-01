@@ -41,7 +41,7 @@ jobs:
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Create Release
-        run: npm run release
+        run: npm run release -- --only-publish-with-release-label
 
       - name: Update package-lock's
         if: github.event_name != 'pull_request'
