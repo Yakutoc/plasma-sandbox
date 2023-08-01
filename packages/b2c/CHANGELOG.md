@@ -1,3 +1,27 @@
+# v0.25.0 (Tue Aug 01 2023)
+
+#### 🚀 Enhancement
+
+- Update versions [#62](https://github.com/Yakutoc/plasma-sandbox/pull/62) ([@Salute-Eva](https://github.com/Salute-Eva))
+- feat(b2c): use otherMethod2 [#62](https://github.com/Yakutoc/plasma-sandbox/pull/62) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(b2c): -- [#59](https://github.com/Yakutoc/plasma-sandbox/pull/59) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update package-locks \[skip ci\] [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Salute-Eva](https://github.com/Salute-Eva))
+- feat(b2c): use otherMethod3 [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(b2c): use new method [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions [#59](https://github.com/Yakutoc/plasma-sandbox/pull/59) ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.20.0 (Tue Aug 01 2023)
 
 #### 🚀 Enhancement

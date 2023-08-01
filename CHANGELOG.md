@@ -2,6 +2,44 @@
 
 #### 🚀 Enhancement
 
+- `plasmax-b2c@0.25.0`, `plasmax-web@0.14.0`
+  - Update versions [#62](https://github.com/Yakutoc/plasma-sandbox/pull/62) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-b2c@0.25.0`
+  - feat(b2c): use otherMethod2 [#62](https://github.com/Yakutoc/plasma-sandbox/pull/62) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(b2c): -- [#59](https://github.com/Yakutoc/plasma-sandbox/pull/59) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(b2c): use otherMethod3 [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(b2c): use new method [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-web@0.14.0`
+  - feat: add [#62](https://github.com/Yakutoc/plasma-sandbox/pull/62) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(web): add new method [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: new add [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: ci [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Yakutoc](https://github.com/Yakutoc))
+- chore(b2c): ci [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update ci [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-b2c@0.25.0`, `plasmax-web@0.14.0`
+  - Update versions [#59](https://github.com/Yakutoc/plasma-sandbox/pull/59) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - Update versions [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-b2c@0.25.0`
+  - Update versions [#57](https://github.com/Yakutoc/plasma-sandbox/pull/57) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### ⚠️ Pushed to `main`
+
+- chore: add ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Tue Aug 01 2023)
+
+#### 🚀 Enhancement
+
 - `plasmax-b2c@0.20.0`
   - feat: add [#52](https://github.com/Yakutoc/plasma-sandbox/pull/52) ([@Yakutoc](https://github.com/Yakutoc))
 
