@@ -1,6 +1,6 @@
 {
   "shipit": {
-    "prerelease": true
+    "onlyGraduateWithReleaseLabel": true
   },
   "plugins": [
     [
@@ -14,8 +14,7 @@
       "released",
       {
         "message": "🚀 This %TYPE is included in version: %VERSION 🚀",
-        "includeBotPrs": true,
-        "label": ":shipit:"
+        "includeBotPrs": true
       }
     ]
   ]
