@@ -2,6 +2,9 @@ name: Release PR
 
 on:
   pull_request:
+    branches:
+      - rc
+      - main
 
 jobs:
   publish:
