@@ -1,5 +1,4 @@
 {
-  "shipit": {"baseBranch": "rc"},
   "prereleaseBranches": ["rc"],
   "plugins": [
     [
