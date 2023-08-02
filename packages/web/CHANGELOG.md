@@ -1,3 +1,21 @@
+# v0.19.0 (Wed Aug 02 2023)
+
+#### 🚀 Enhancement
+
+- feat(web): add new method [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.16.0 (Wed Aug 02 2023)
 
 #### 🚀 Enhancement

@@ -2,6 +2,34 @@
 
 #### 🚀 Enhancement
 
+- `plasmax-b2c@0.32.0`
+  - chore: update package-locks [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - feat(b2c): add new method [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-web@0.19.0`
+  - feat(web): add new method [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- fix: ci [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-b2c@0.32.0`
+  - Update versions [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - fix(b2c): use "callMe" [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Yakutoc](https://github.com/Yakutoc))
+  - chore: update package-locks [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-b2c@0.32.0`, `plasmax-web@0.19.0`
+  - chore: update package-locks [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - Update versions [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Wed Aug 02 2023)
+
+#### 🚀 Enhancement
+
 - `plasmax-b2c@0.27.0`, `plasmax-web@0.16.0`
   - chore: update package-locks [#66](https://github.com/Yakutoc/plasma-sandbox/pull/66) ([@Salute-Eva](https://github.com/Salute-Eva))
 - `plasmax-b2c@0.27.0`

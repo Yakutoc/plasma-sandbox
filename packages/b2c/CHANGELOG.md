@@ -1,3 +1,24 @@
+# v0.32.0 (Wed Aug 02 2023)
+
+#### 🚀 Enhancement
+
+- chore: update package-locks [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Salute-Eva](https://github.com/Salute-Eva))
+- feat(b2c): add new method [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Update versions [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Salute-Eva](https://github.com/Salute-Eva))
+- fix(b2c): use "callMe" [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update package-locks [#72](https://github.com/Yakutoc/plasma-sandbox/pull/72) ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: update package-locks \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.27.0 (Wed Aug 02 2023)
 
 #### 🚀 Enhancement
