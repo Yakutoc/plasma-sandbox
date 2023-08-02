@@ -31,8 +31,8 @@ jobs:
 
       - name: Install
         run: |
-          npx lerna bootstrap --since
           npm ci --no-audit
+          npx lerna bootstrap --since
 
       - name: Lerna bootstrap
         run: npx lerna bootstrap
