@@ -1,3 +1,27 @@
+# (Wed Aug 02 2023)
+
+#### 🚀 Enhancement
+
+- `plasmax-b2c@0.27.0`, `plasmax-web@0.16.0`
+  - chore: update package-locks [#66](https://github.com/Yakutoc/plasma-sandbox/pull/66) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-b2c@0.27.0`
+  - feat(b2c): use otherMethod2 [#66](https://github.com/Yakutoc/plasma-sandbox/pull/66) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-web@0.16.0`
+  - feat(web): add new method [#64](https://github.com/Yakutoc/plasma-sandbox/pull/64) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- `plasmax-b2c@0.27.0`, `plasmax-web@0.16.0`
+  - Update versions [#66](https://github.com/Yakutoc/plasma-sandbox/pull/66) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - Update versions [#64](https://github.com/Yakutoc/plasma-sandbox/pull/64) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Tue Aug 01 2023)
 
 #### 🚀 Enhancement
