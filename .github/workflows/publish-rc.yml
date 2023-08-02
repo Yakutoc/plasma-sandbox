@@ -1,14 +1,16 @@
-name: Release
+name: Publish RC
 
 on:
-  push:
+  pull_request:
+    types: [closed]
     branches:
-      - main
       - rc
+      - main
 
 jobs:
-  publish:
-    name: Publish Latest
+  release:
+    name: RC
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -42,7 +44,6 @@ jobs:
         run: npm run release
 
       - name: Update package-lock's
-        if: github.event.pull_request.merged == true
         run: |
           npm i --package-lock-only
           lerna clean -y
@@ -51,12 +52,10 @@ jobs:
           npm i --package-lock-only
 
       - name: Extract branch name
-        if: github.event.pull_request.merged == true
         run: echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
         id: extract_branch
 
       - name: Commit & Push package-lock's
-        if: github.event.pull_request.merged == true
         uses: actions-js/push@master
         with:
           github_token: ${{ secrets.GH_TOKEN }}

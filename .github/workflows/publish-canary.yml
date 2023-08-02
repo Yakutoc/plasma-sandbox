@@ -1,4 +1,4 @@
-name: Release PR
+name: Publish Canary
 
 on:
   pull_request:
@@ -7,8 +7,8 @@ on:
       - main
 
 jobs:
-  publish:
-    name: Publish Canary
+  release:
+    name: Canary
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -30,8 +30,7 @@ jobs:
           cache: 'npm'
 
       - name: Install
-        run: |
-          npm ci --no-audit
+        run: npm ci --no-audit
 
       - name: Lerna bootstrap
         run: npx lerna bootstrap
