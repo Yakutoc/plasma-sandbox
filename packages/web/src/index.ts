@@ -21,3 +21,7 @@ export const callMe = () => {
 export const callMeNow = () => {
 	console.log('Hello world');
 }
+
+export const callMeNow2 = () => {
+	console.log('Hello world');
+}
