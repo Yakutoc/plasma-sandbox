@@ -8,7 +8,7 @@ on:
 
 jobs:
   release:
-    name: Canary
+    name: Publish Canary
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

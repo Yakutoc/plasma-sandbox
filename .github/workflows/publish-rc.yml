@@ -5,11 +5,10 @@ on:
     types: [closed]
     branches:
       - rc
-      - main
 
 jobs:
   release:
-    name: RC
+    name: Publish RC
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
