@@ -30,7 +30,9 @@ jobs:
           cache: 'npm'
 
       - name: Install
-        run: npm ci --no-audit
+        run: |
+          npx lerna bootstrap --since
+          npm ci --no-audit
 
       - name: Lerna bootstrap
         run: npx lerna bootstrap
