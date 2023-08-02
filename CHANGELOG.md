@@ -1,5 +1,18 @@
 # (Wed Aug 02 2023)
 
+#### 🐛 Bug Fix
+
+- `plasmax-web@0.19.1`
+  - fix(web): hotfix [#73](https://github.com/Yakutoc/plasma-sandbox/pull/73) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Wed Aug 02 2023)
+
 #### 🚀 Enhancement
 
 - `plasmax-b2c@0.32.0`

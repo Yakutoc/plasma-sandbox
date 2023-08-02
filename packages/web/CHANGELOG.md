@@ -1,3 +1,15 @@
+# v0.19.1 (Wed Aug 02 2023)
+
+#### 🐛 Bug Fix
+
+- fix(web): hotfix [#73](https://github.com/Yakutoc/plasma-sandbox/pull/73) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.19.0 (Wed Aug 02 2023)
 
 #### 🚀 Enhancement
