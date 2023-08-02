@@ -17,3 +17,7 @@ export const other = () => {
 export const callMe = () => {
 	console.log('Hello world');
 }
+
+export const callMeNow = () => {
+	console.log('Hello world');
+}
