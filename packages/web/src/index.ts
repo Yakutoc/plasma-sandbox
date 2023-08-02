@@ -5,3 +5,7 @@ export const otherMethod2 = () => {
 export const method = () => {
 	console.log('Hello world');
 }
+
+export const call = () => {
+	console.log('Hello world');
+}
