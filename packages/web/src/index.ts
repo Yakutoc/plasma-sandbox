@@ -9,3 +9,7 @@ export const method = () => {
 export const call = () => {
 	console.log('Hello world');
 }
+
+export const callMe = () => {
+	console.log('Hello world');
+}
