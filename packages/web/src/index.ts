@@ -6,6 +6,6 @@ export const callMe = () => {
 	console.log('Hello world');
 }
 
-export const callMe2 = () => {
+export const newAPICall = () => {
 	console.log('Hello world');
 }
