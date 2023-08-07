@@ -9,7 +9,7 @@ on:
 
 jobs:
   run:
-    name: Blank check
+    name: Check Health
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
