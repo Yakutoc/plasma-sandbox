@@ -22,7 +22,7 @@ export const callMeNow = () => {
 	console.log('Hello world');
 }
 
-//WIP
+//WIP dadasdads
 export const callMeNow2 = () => {
 	console.log('Hello world');
 }
