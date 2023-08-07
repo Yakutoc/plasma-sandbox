@@ -22,6 +22,7 @@ export const callMeNow = () => {
 	console.log('Hello world');
 }
 
+//WIP
 export const callMeNow2 = () => {
 	console.log('Hello world');
 }
