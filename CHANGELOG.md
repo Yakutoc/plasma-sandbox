@@ -1,3 +1,32 @@
+# (Mon Aug 07 2023)
+
+#### 🚀 Enhancement
+
+- `plasmax-b2c@0.36.0`, `plasmax-web@0.23.0`
+  - chore: update package-locks [#82](https://github.com/PoligonSa/plasma-sandbox/pull/82) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-web@0.23.0`
+  - feat(web): add new method [#82](https://github.com/PoligonSa/plasma-sandbox/pull/82) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(web): add new method [#76](https://github.com/PoligonSa/plasma-sandbox/pull/76) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- `plasmax-b2c@0.36.0`, `plasmax-web@0.23.0`
+  - Update versions [#82](https://github.com/PoligonSa/plasma-sandbox/pull/82) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - chore: update package-locks [#82](https://github.com/PoligonSa/plasma-sandbox/pull/82) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - chore: update package-locks [#76](https://github.com/PoligonSa/plasma-sandbox/pull/76) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - Update versions [#76](https://github.com/PoligonSa/plasma-sandbox/pull/76) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### ⚠️ Pushed to `main`
+
+- chore: ci ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Wed Aug 02 2023)
 
 #### 🐛 Bug Fix

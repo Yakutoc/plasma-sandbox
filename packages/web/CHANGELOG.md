@@ -1,3 +1,25 @@
+# v0.23.0 (Mon Aug 07 2023)
+
+#### 🚀 Enhancement
+
+- chore: update package-locks [#82](https://github.com/PoligonSa/plasma-sandbox/pull/82) ([@Salute-Eva](https://github.com/Salute-Eva))
+- feat(web): add new method [#82](https://github.com/PoligonSa/plasma-sandbox/pull/82) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(web): add new method [#76](https://github.com/PoligonSa/plasma-sandbox/pull/76) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Update versions [#82](https://github.com/PoligonSa/plasma-sandbox/pull/82) ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: update package-locks [#82](https://github.com/PoligonSa/plasma-sandbox/pull/82) ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: update package-locks [#76](https://github.com/PoligonSa/plasma-sandbox/pull/76) ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions [#76](https://github.com/PoligonSa/plasma-sandbox/pull/76) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.19.1 (Wed Aug 02 2023)
 
 #### 🐛 Bug Fix
