@@ -9,7 +9,7 @@ on:
 
 jobs:
   run:
-    name: Check Health
+    name: Publish check
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -27,3 +27,9 @@ jobs:
 
       - name: Lerna bootstrap
         run: npx lerna bootstrap
+
+      - name: Release Info
+        run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
+
+      - name: Create Pre-Release
+        run: npm run release --dry-run
