@@ -30,10 +30,12 @@ jobs:
           cache: 'npm'
 
       - name: Install
-        run: npm ci --no-audit
+        run: | 
+          npm ci --no-audit
+          npx lerna bootstrap --since=$(git merge-base --fork-point origin/dev)
 
       - name: Lerna bootstrap
-        run: npx lerna bootstrap --since=$(git merge-base --fork-point origin/dev)
+        run: npx lerna bootstrap
 
       - name: Release Info
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
