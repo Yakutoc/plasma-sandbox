@@ -1,3 +1,7 @@
+import { APICall } from 'plasmax-hope'
+
+APICall();
+
 export const otherMethod2 = () => {
 	console.log('Hello world');
 }
