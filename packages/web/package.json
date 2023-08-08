@@ -1,6 +1,6 @@
 {
   "name": "plasmax-web",
-  "version": "0.31.0-dev.0",
+  "version": "0.31.0",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -14,7 +14,7 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "plasmax-hope": "0.2.0-dev.0"
+    "plasmax-hope": "0.2.0"
   },
   "devDependencies": {
     "@types/node": "16.7.13",
