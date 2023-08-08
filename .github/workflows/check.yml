@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -29,4 +31,4 @@ jobs:
         run: npx lerna bootstrap --since=$(git merge-base --fork-point origin/dev)
 
       - name: Lint
-        run: npm run lint -- --since=$(git merge-base --fork-point origin/dev)
+        run: npm run lint

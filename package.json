@@ -6,7 +6,7 @@
     "diff": "git diff",
     "release": "auto shipit",
     "prepare": "test ! -n \"$CI\" && husky install || echo skip husky",
-    "lint": "lerna run lint --parallel"
+    "lint": "lerna run lint --parallel --since=$(git merge-base --fork-point origin/dev)"
   },
   "devDependencies": {
     "@auto-it/conventional-commits": "10.36.6",
