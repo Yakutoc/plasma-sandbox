@@ -5,7 +5,8 @@
   "scripts": {
     "diff": "git diff",
     "release": "auto shipit",
-    "prepare": "test ! -n \"$CI\" && husky install || echo skip husky"
+    "prepare": "test ! -n \"$CI\" && husky install || echo skip husky",
+    "lint": "lerna run lint --parallel"
   },
   "devDependencies": {
     "@auto-it/conventional-commits": "10.36.6",

@@ -11,7 +11,8 @@
     "build:clean": "rm -rf esm && npm run build:clean-type",
     "build:clean-type": "rm -f index.d.ts",
     "generate:typings": "tsc --outDir . --emitDeclarationOnly",
-    "postbuild": "npm run generate:typings"
+    "postbuild": "npm run generate:typings",
+    "lint": "eslint . --ext .ts"
   },
   "dependencies": {
     "plasmax-web": "0.29.0-dev.0"
