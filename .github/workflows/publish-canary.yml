@@ -30,9 +30,7 @@ jobs:
           cache: 'npm'
 
       - name: Install
-        run: | 
-          npm ci --no-audit
-          npx lerna bootstrap --since=$(git merge-base --fork-point origin/dev)
+        run: npm ci --no-audit
 
       - name: Lerna bootstrap
         run: npx lerna bootstrap

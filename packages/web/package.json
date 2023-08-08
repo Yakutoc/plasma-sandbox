@@ -10,7 +10,8 @@
     "build:cjs": "tsc -b ./tsconfig.cjs.json",
     "build:clean": "rm -rf esm && npm run build:clean-type",
     "build:clean-type": "rm -f index.d.ts",
-    "generate:typings": "tsc --outDir . --emitDeclarationOnly"
+    "generate:typings": "tsc --outDir . --emitDeclarationOnly",
+    "lint": "eslint . --ext .ts"
   },
   "devDependencies": {
     "@types/node": "16.7.13",
