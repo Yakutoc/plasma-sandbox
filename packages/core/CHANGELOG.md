@@ -1,3 +1,22 @@
+# v0.1.0 (Tue Aug 08 2023)
+
+#### 🚀 Enhancement
+
+- feat(core): add api [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(core): add package \[skip ci\] ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.23.0 (Mon Aug 07 2023)
 
 #### 🚀 Enhancement

@@ -1,3 +1,45 @@
+# (Tue Aug 08 2023)
+
+#### 🚀 Enhancement
+
+- feat(web): add new method [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-b2c@0.46.0`, `plasmax-web@0.31.0`
+  - chore: update package-locks [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-web@0.31.0`
+  - feat(web): add new method [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-hope@0.2.0`
+  - feat(hope): add api [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.1.0`
+  - feat(core): add api [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-b2c@0.46.0`
+  - feat(b2c): delete config file [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(b2c): should be run lint only for B2C [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat(b2c): add new method [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- `plasmax-b2c@0.46.0`, `plasmax-web@0.31.0`
+  - Update versions [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - chore: update package-locks [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-hope@0.2.0`
+  - chore: update package-locks [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - Update versions [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-core@0.1.0`
+  - chore: update package-locks [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - Update versions [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-b2c@0.46.0`
+  - chore: update package-locks [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - Update versions [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-web@0.31.0`
+  - chore: ci [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Mon Aug 07 2023)
 
 #### 🚀 Enhancement

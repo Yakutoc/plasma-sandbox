@@ -1,3 +1,26 @@
+# v0.46.0 (Tue Aug 08 2023)
+
+#### 🚀 Enhancement
+
+- chore: update package-locks [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+- feat(b2c): delete config file [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(b2c): should be run lint only for B2C [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+- feat(b2c): add new method [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Update versions [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: update package-locks [#102](https://github.com/PoligonSa/plasma-sandbox/pull/102) ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: \[skip ci\] ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update package-locks \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.36.0 (Mon Aug 07 2023)
 
 #### 🚀 Enhancement
