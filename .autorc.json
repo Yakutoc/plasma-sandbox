@@ -5,7 +5,7 @@
       "npm",
       {
         "setRcToken": false,
-        "commitNextVersion": false
+        "commitNextVersion": true
       }
     ],
     "conventional-commits",
