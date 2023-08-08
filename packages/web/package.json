@@ -11,8 +11,7 @@
     "build:clean": "rm -rf esm && npm run build:clean-type",
     "build:clean-type": "rm -f index.d.ts",
     "generate:typings": "tsc --outDir . --emitDeclarationOnly",
-    "postbuild": "npm run generate:typings",
-    "postinstall": "npm run postbuild"
+    "postbuild": "npm run generate:typings"
   },
   "devDependencies": {
     "@types/node": "16.7.13",
