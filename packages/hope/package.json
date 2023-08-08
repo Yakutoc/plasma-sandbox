@@ -14,7 +14,7 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "plasmax-core": "0.0.1"
+    "plasmax-core": "0.1.0-dev.0"
   },
   "devDependencies": {
     "@types/node": "16.7.13",
