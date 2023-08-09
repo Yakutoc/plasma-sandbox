@@ -33,3 +33,7 @@ export const newAPICall5 = () => {
 export const newAPICall6 = () => {
 	console.log('Hello world');
 }
+
+export const newAPICall7 = () => {
+	console.log('Hello world');
+}
