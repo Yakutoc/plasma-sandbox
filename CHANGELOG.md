@@ -1,3 +1,24 @@
+# (Wed Aug 09 2023)
+
+#### 🚀 Enhancement
+
+- `plasmax-b2c@0.47.0`, `plasmax-core@0.2.0`, `plasmax-hope@0.3.0`, `plasmax-web@0.32.0`
+  - chore: update package-locks [#104](https://github.com/PoligonSa/plasma-sandbox/pull/104) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-core@0.2.0`
+  - feat(core): add new method [#104](https://github.com/PoligonSa/plasma-sandbox/pull/104) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- `plasmax-b2c@0.47.0`, `plasmax-core@0.2.0`, `plasmax-hope@0.3.0`, `plasmax-web@0.32.0`
+  - Update versions [#104](https://github.com/PoligonSa/plasma-sandbox/pull/104) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Tue Aug 08 2023)
 
 #### 🚀 Enhancement
