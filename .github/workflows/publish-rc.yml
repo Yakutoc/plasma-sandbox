@@ -34,7 +34,7 @@ jobs:
         run: npm ci --no-audit
 
       - name: Lerna bootstrap
-        run: npx lerna bootstrap
+        run: npx lerna bootstrap --since=$(git merge-base --fork-point origin/dev)
 
       - name: Release Info
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
