@@ -1,6 +1,6 @@
 {
   "name": "plasmax-b2c",
-  "version": "0.47.0",
+  "version": "0.51.0-dev.1",
   "author": "Salute Frontend Team <salute.developers@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -15,7 +15,7 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "plasmax-web": "0.32.0"
+    "plasmax-web": "0.33.0-dev.1"
   },
   "devDependencies": {
     "@types/node": "16.7.13",
