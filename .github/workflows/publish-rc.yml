@@ -58,7 +58,7 @@ jobs:
         uses: actions-js/push@master
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          message: 'chore: update package-locks'
+          message: 'chore: update package-locks [skip ci]'
           branch: ${{ steps.extract_branch.outputs.BRANCH }}
           author_name: Salute Frontend Team
           author_email: salute.developers@gmail.com
