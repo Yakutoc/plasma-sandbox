@@ -1,0 +1,54 @@
+name: Publish reusable
+
+on:
+  workflow_call:
+    inputs:
+      with-update-package-lock:
+        type: boolean
+        default: false
+      commit-message:
+        type: string
+        default: 'chore: update package-locks [skip ci]'
+    secrets:
+      token:
+        required: true
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Unset header
+        # https://github.com/intuit/auto/issues/1030
+        run: git config --local --unset http.https://github.com/.extraheader
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci --no-audit
+
+      - name: Lerna bootstrap
+        run: npx lerna bootstrap
+
+      - name: Release Info
+        run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
+
+      - name: Create Release
+        run: npm run release
+
+      - name: Update package-lock files
+        if: ${{ inputs.with-update-package-lock }}
+        uses: ./.github/actions/update-package-lock
+        with:
+          commit-message: ${{ inputs.commit-message }}
+          token: ${{ secrets.token }}
+

@@ -7,58 +7,12 @@ on:
       - dev
 
 jobs:
-  release:
-    name: Publish RC
+  publish:
+    name: Publish RC version
     if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      NPM_REGISTRY_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }}
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: Unset header
-        # https://github.com/intuit/auto/issues/1030
-        run: git config --local --unset http.https://github.com/.extraheader
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
-      - name: Install
-        run: npm ci --no-audit
-
-      - name: Lerna bootstrap
-        run: npx lerna bootstrap --since=$(git rev-parse HEAD^^)
-
-      - name: Release Info
-        run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
-
-      - name: Create Release
-        run: npm run release
-
-      - name: Update package-lock's
-        run: |
-          npm i --package-lock-only
-          lerna clean -y
-          lerna exec --no-private -- npm i --package-lock-only --ignore-scripts
-          # root deps don't update correctly on first regeneration
-          npm i --package-lock-only
-
-      - name: Extract branch name
-        run: echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
-        id: extract_branch
-
-      - name: Commit & Push package-lock's
-        uses: actions-js/push@master
-        with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          message: 'chore: update package-locks [skip ci]'
-          branch: ${{ steps.extract_branch.outputs.BRANCH }}
-          author_name: Salute Frontend Team
-          author_email: salute.developers@gmail.com
+    uses: ./.github/workflows/publish-common.yml
+    with:
+      with-update-package-lock: true
+      commit-message: "chore: update package-locks"
+    secrets:
+      token: ${{ secrets.GH_TOKEN }}
