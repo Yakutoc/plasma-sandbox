@@ -1,3 +1,28 @@
+# (Fri Aug 18 2023)
+
+#### 🚀 Enhancement
+
+- feat: ci [#123](https://github.com/PoligonSa/plasma-sandbox/pull/123) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-b2c@0.52.0`
+  - feat: fix [#123](https://github.com/PoligonSa/plasma-sandbox/pull/123) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: ci [#123](https://github.com/PoligonSa/plasma-sandbox/pull/123) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.4.0`
+  - feat(b2c): other test commit 2 [#118](https://github.com/PoligonSa/plasma-sandbox/pull/118) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- `plasmax-b2c@0.52.0`, `plasmax-core@0.4.0`, `plasmax-hope@0.5.0`, `plasmax-web@0.34.0`
+  - chore: update package-locks [#123](https://github.com/PoligonSa/plasma-sandbox/pull/123) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - Update versions [#123](https://github.com/PoligonSa/plasma-sandbox/pull/123) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - Update versions [#118](https://github.com/PoligonSa/plasma-sandbox/pull/118) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Wed Aug 09 2023)
 
 #### 🚀 Enhancement

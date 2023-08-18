@@ -1,3 +1,25 @@
+# v0.52.0 (Fri Aug 18 2023)
+
+#### 🚀 Enhancement
+
+- feat: fix [#123](https://github.com/PoligonSa/plasma-sandbox/pull/123) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: ci [#123](https://github.com/PoligonSa/plasma-sandbox/pull/123) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update package-locks \[skip ci\] [#118](https://github.com/PoligonSa/plasma-sandbox/pull/118) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks [#123](https://github.com/PoligonSa/plasma-sandbox/pull/123) ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions [#123](https://github.com/PoligonSa/plasma-sandbox/pull/123) ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions [#118](https://github.com/PoligonSa/plasma-sandbox/pull/118) ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: update package-locks \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.47.0 (Wed Aug 09 2023)
 
 #### 🚀 Enhancement
