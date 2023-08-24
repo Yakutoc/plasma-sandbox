@@ -9,6 +9,7 @@ on:
 
 jobs:
   run:
+    if: ${{ contains(toJson(github.event.pull_request.labels.*.name), 'skip perf') }}
     name: Check Health
     runs-on: ubuntu-latest
     env:
@@ -27,8 +28,6 @@ jobs:
       - name: Install
         run: |
           npm ci --no-audit
-          echo "${{ github.event.pull_request.labels }}"
-          echo "${{ contains(toJson(github.event.pull_request.labels.*.name), 'skip perf') }}"
 
       - name: Lerna bootstrap
         run: npx lerna bootstrap --since=$(git merge-base --fork-point origin/dev)
