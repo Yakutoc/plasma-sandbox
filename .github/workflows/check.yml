@@ -8,7 +8,7 @@ on:
       - main
 
 env:
-  SKIP_PERF: ${{ contains(toJson(github.event.pull_request.labels.*.name), 'skip perf') === 'true' }}
+  SKIP_PERF: ${{ contains(toJson(github.event.pull_request.labels.*.name), 'skip perf') == 'true' }}
 
 jobs:
   run:
