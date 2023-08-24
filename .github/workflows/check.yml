@@ -12,7 +12,7 @@ env:
 
 jobs:
   run:
-    if: ${{ env.SKIP_PERF }}
+    if: ${{ SKIP_PERF }}
     name: Check Health
     runs-on: ubuntu-latest
     env:
