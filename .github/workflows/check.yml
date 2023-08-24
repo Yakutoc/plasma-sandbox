@@ -7,12 +7,9 @@ on:
       - dev
       - main
 
-env:
-  SKIP_PERF: ${{ contains(toJson(github.event.pull_request.labels.*.name), 'skip perf') == 'true' }}
-
 jobs:
   run:
-    if: ${{ SKIP_PERF }}
+    if: ${{ contains(toJson(github.event.pull_request.labels.*.name), 'skip perf') == 'true' }}
     name: Check Health
     runs-on: ubuntu-latest
     env:
