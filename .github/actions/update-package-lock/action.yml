@@ -27,7 +27,7 @@ runs:
         npm i --package-lock-only
 
     - name: Update package-lock's in private packages
-      if: {{ inputs.stage == 'dev' }}
+      if: ${{ inputs.stage == 'dev' }}
       shell: bash
       run: |
         npx lerna run install:dev --scope=plasmax-tools
