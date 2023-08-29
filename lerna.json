@@ -21,8 +21,7 @@
       ]
     },
     "publish": {
-      "verifyAccess": false,
-      "includePrivate": ["plasmax-tools"]
+      "verifyAccess": false
     },
     "init": {
       "exact": true
