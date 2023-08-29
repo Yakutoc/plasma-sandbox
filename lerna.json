@@ -20,7 +20,8 @@
       ]
     },
     "publish": {
-      "verifyAccess": false
+      "verifyAccess": false,
+      "includePrivate": ["plasmax-tools"]
     },
     "init": {
       "exact": true
