@@ -9,6 +9,9 @@ on:
       commit-message:
         type: string
         default: 'chore: update package-locks [skip ci]'
+      stage:
+        description: 'Commit message when updated package-lock'
+        type: string
     secrets:
       gh_token:
         required: true
@@ -56,4 +59,5 @@ jobs:
         with:
           commit-message: ${{ inputs.commit-message }}
           token: ${{ secrets.gh_token }}
+          stage: ${{ inputs.stage } }
 
