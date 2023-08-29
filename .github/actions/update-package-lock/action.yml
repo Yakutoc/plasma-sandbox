@@ -7,6 +7,9 @@ inputs:
     description: 'Commit message when updated package-lock'
     required: false
     default: 'chore: update package-locks [skip ci]'
+  stage:
+    description: 'Commit message when updated package-lock'
+    required: false
   token:
     description: 'A Github Token'
     required: true
@@ -17,11 +20,17 @@ runs:
     - name: Update package-lock's
       shell: bash
       run: |
-        npm i --package-lock-only
+        npm i --no-audit --no-progress --package-lock-only
         lerna clean -y
-        lerna exec --no-private -- npm i --package-lock-only --ignore-scripts
+        lerna exec --no-private -- npm i --no-audit --no-progress --package-lock-only --ignore-scripts
         # root deps don't update correctly on first regeneration O_o
         npm i --package-lock-only
+
+    - name: Update package-lock's in private packages
+      if: {{ inputs.stage == 'dev' }}
+      shell: bash
+      run: |
+        npx lerna run install:dev --scope=plasmax-tools
 
     - name: Extract branch name
       id: branch_name
