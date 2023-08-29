@@ -14,9 +14,7 @@
         "typescript": "5.2.2"
     },
     "scripts": {
-        "prepare": "npm run build",
-        "prebuild": "npm run clean",
-        "build": "tsc",
-        "clean": "rm -rf lib"
+        "clean": "rm -rf lib",
+        "install:dev": "npm i plasmax-core@dev"
     }
 }
