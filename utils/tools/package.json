@@ -1,20 +1,20 @@
 {
-    "name": "plasmax-tools",
-    "version": "0.0.1",
-    "author": "Alex Czech <yakutoc@gmail.com>",
-    "license": "MIT",
-    "private": true,
-    "publishConfig": {
-        "access": "restricted"
-    },
-    "dependencies": {
-        "plasmax-core": "^0.7.0-dev.0"
-    },
-    "devDependencies": {
-        "typescript": "5.2.2"
-    },
-    "scripts": {
-        "clean": "rm -rf lib",
-        "install:dev": "npm i plasmax-core@dev"
-    }
+  "name": "plasmax-tools",
+  "version": "0.1.0",
+  "author": "Alex Czech <yakutoc@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "dependencies": {
+    "plasmax-core": "0.7.0"
+  },
+  "devDependencies": {
+    "typescript": "5.2.2"
+  },
+  "scripts": {
+    "clean": "rm -rf lib",
+    "install:dev": "npm i plasmax-core@dev"
+  }
 }
