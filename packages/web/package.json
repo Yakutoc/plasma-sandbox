@@ -1,7 +1,7 @@
 {
   "name": "plasmax-web",
   "version": "0.34.0",
-  "author": "Salute Frontend Team <salute.developers@gmail.com>",
+  "author": "Alex Czech <yakutoc@gmail.com>",
   "license": "MIT",
   "scripts": {
     "prepare": "npm run build",
