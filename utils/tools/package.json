@@ -1,0 +1,13 @@
+{
+    "name": "plasmax-tools",
+    "version": "0.0.1",
+    "author": "Alex Czech <yakutoc@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "publishConfig": {
+        "access": "restricted"
+    },
+    "dependencies": {
+        "plasmax-core": "0.4.0"
+    }
+}
