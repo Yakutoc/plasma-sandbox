@@ -28,7 +28,7 @@ jobs:
         run: npm ci --no-audit
 
       - name: Lerna bootstrap
-        run: npx lerna bootstrap --since=$(git merge-base --fork-point origin/dev)
+        run: npx lerna bootstrap
 
       - name: Lint
         run: npm run lint
