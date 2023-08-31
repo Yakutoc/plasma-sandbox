@@ -35,6 +35,7 @@ jobs:
       - name: Lerna found changed packages
         run: |
           lerna=$(npx lerna changed || echo "$?")
+          echo #lerna
           if [[ $lerna -eq 1 ]]
             then
               echo "LERNA_NO_CHANGED=true" >> $GITHUB_ENV
@@ -44,4 +45,23 @@ jobs:
 
       - name: test
         run: |
-          echo "var -> ${{ env.LERNA_NO_CHANGED }}"
+          echo "LERNA_NO_CHANGED -> ${{ env.LERNA_NO_CHANGED }}"
+
+      - name: Lerna bootstrap
+        if: ${{ env.LERNA_NO_CHANGED }}
+        run: npx lerna bootstrap
+
+      - name: Release Info
+        run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
+
+      - name: Create Release
+        if: ${{ env.LERNA_NO_CHANGED }}
+        run: npm run release
+
+      - name: Update package-lock files
+        if: ${{ inputs.with-update-package-lock }}
+        uses: ./.github/actions/update-package-lock
+        with:
+          commit-message: ${{ inputs.commit-message }}
+          token: ${{ secrets.gh_token }}
+          stage: ${{ inputs.stage }}
