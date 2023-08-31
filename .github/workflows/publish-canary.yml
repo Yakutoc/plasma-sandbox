@@ -36,26 +36,26 @@ jobs:
         run: |
           lerna=$(npx lerna changed || echo "$?")
           echo #lerna
-          if [[ $lerna -eq 1 ]]
+          if [[ $lerna -eq 0 ]]
             then
-              echo "LERNA_NO_CHANGED=true" >> $GITHUB_ENV
+              echo "LERNA_CHANGED=true" >> $GITHUB_ENV
             else
-              echo "LERNA_NO_CHANGED=false" >> $GITHUB_ENV
+              echo "LERNA_CHANGED=false" >> $GITHUB_ENV
           fi
 
       - name: test
         run: |
-          echo "LERNA_NO_CHANGED -> ${{ env.LERNA_NO_CHANGED }}"
+          echo "LERNA_CHANGED -> ${{ env.LERNA_CHANGED }}"
 
       - name: Lerna bootstrap
-        if: ${{ fromJSON(env.LERNA_NO_CHANGED) }}
+        if: ${{ env.LERNA_CHANGED == true }}
         run: npx lerna bootstrap
 
       - name: Release Info
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Create Release
-        if: ${{ env.LERNA_NO_CHANGED }}
+        if: ${{ env.LERNA_CHANGED }}
         run: npm run release
 
       - name: Update package-lock files
