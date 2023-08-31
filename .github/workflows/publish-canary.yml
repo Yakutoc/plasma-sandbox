@@ -32,11 +32,16 @@ jobs:
       - name: Install
         run: npm ci --no-audit
 
-      - name: Lerna bootstrap
-        run: npx lerna bootstrap
+      - name: Lerna found changed packages
+        run: |
+          lerna=$(npx lerna changed || echo "$?")
+          if [[ $lerna -eq 1 ]]
+            then
+              echo "LERNA_NO_CHANGED=true" >> $GITHUB_ENV
+            else
+              echo "LERNA_NO_CHANGED=false" >> $GITHUB_ENV
+          fi
 
-      - name: Release Info
-        run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
-
-      - name: Create Release
-        run: npm run release
+      - name: test
+        run: |
+          echo "var -> ${{ env.LERNA_NO_CHANGED }}"
