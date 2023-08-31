@@ -44,6 +44,12 @@ jobs:
       - name: Install
         run: npm ci --no-audit
 
+      - name: Lerna found changed packages
+        run: |
+          echo "NO_CHANGED=$(npx lerna changed || echo "$?")" >> $GITHUB_ENV
+          echo "0 -> ${{ env.NO_CHANGED == 0 }}"
+          echo "1 -> ${{ env.NO_CHANGED == 1 }}"
+
       - name: Lerna bootstrap
         run: npx lerna bootstrap
 
