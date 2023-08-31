@@ -52,6 +52,7 @@ jobs:
         run: npx lerna bootstrap
 
       - name: Release Info
+        if: ${{ env.LERNA_CHANGED == true }}
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Create Release
@@ -59,7 +60,7 @@ jobs:
         run: npm run release
 
       - name: Update package-lock files
-        if: ${{ inputs.with-update-package-lock }}
+        if: ${{ env.LERNA_CHANGED == true && inputs.with-update-package-lock }}
         uses: ./.github/actions/update-package-lock
         with:
           commit-message: ${{ inputs.commit-message }}
