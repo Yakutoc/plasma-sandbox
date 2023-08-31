@@ -48,7 +48,7 @@ jobs:
           echo "LERNA_NO_CHANGED -> ${{ env.LERNA_NO_CHANGED }}"
 
       - name: Lerna bootstrap
-        if: ${{ env.LERNA_NO_CHANGED }}
+        if: ${{ fromJSON(env.LERNA_NO_CHANGED) }}
         run: npx lerna bootstrap
 
       - name: Release Info
