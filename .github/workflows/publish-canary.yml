@@ -30,7 +30,21 @@ jobs:
           cache: 'npm'
 
       - name: Install
-        run: npm ci --no-audit
+        run: |
+          npm ci --no-audit
+
+      - name: Install
+        shell: bash
+        run: |
+          function get() {
+            version=$( ( echo "$2" | jq --arg name "$1" -r -c '.[] | select( .name == $name ) | .version' ) )
+            echo "$1@$version"
+          }
+          
+          lerna_ls=$(npx lerna ls --json)
+          core=$(get "plasmax-core" $lerna_ls)
+          echo "The result is: $core"
+          npm i --no-progress --no-audit $core --prefix="./utils/plasma-pack"
 
       - name: Lerna found changed packages
         run: |
