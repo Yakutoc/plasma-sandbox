@@ -34,7 +34,6 @@ jobs:
           npm ci --no-audit
 
       - name: Install
-        shell: bash
         run: |
           function get() {
             v=$( ( echo "$2" | jq --arg name "$1" -r -c '.[] | select( .name == $name ) | .version' ) )
