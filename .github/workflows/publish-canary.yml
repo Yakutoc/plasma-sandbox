@@ -35,9 +35,9 @@ jobs:
 
       - name: Install
         run: |
-          function get() {
-            v=$( ( echo "$2" | jq --arg name "$1" -r -c '.[] | select( .name == $name ) | .version' ) )
-            echo "$1@$v"
+          function get {
+            ver=$( ( echo "$2" | jq --arg name "$1" -r -c '.[] | select( .name == $name ) | .version' ) )
+            echo "${1}@${ver}"
           }
           
           lerna_ls=$(npx lerna ls --json)
