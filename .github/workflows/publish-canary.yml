@@ -41,7 +41,7 @@ jobs:
           }
           
           lerna_ls=$(npx lerna ls --json)
-          echo $lerna_ls
+          echo $(echo $lerna_ls | jq -r -c '.[] | select( .name == "plasmax-core" ) | .version' ))
           core=$(get "plasmax-core" $lerna_ls)
           echo "The result is: $core"
           npm i --no-progress --no-audit $core --prefix="./utils/plasma-pack"
