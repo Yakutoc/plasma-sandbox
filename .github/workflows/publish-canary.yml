@@ -45,5 +45,5 @@ jobs:
         run: npx lerna bootstrap
 
       - name: Release Info
-        if: ${{ env.IS_DIRTY == true }}
+        if: ${{ fromJSON(env.IS_DIRTY) }}
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'

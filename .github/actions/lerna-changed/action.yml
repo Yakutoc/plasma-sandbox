@@ -6,7 +6,7 @@ description: 'Check if has changed'
 outputs:
   is-dirty:
     description: "Have changed state since the last tagged release"
-    value: ${{ fromJSON(steps.is-dirty.outputs.IS_DIRTY) }}
+    value: ${{ steps.is-dirty.outputs.IS_DIRTY }}
 
 runs:
   using: "composite"
