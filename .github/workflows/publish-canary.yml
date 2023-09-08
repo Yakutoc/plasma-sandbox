@@ -33,50 +33,14 @@ jobs:
         run: |
           npm ci --no-audit
 
-      - name: Install
-        run: |
-          function get {
-            ver=$( ( echo "$2" | jq --arg name "$1" -r -c '.[] | select( .name == $name ) | .version' ) )
-            echo "${1}@${ver}"
-          }
-          
-          lerna_ls=$(npx lerna ls --json)
-          echo $(echo $lerna_ls | jq -r -c '.[] | select( .name == "plasmax-core" ) | .version' ))
-          core=$(get "plasmax-core" $lerna_ls)
-          echo "The result is: $core"
-          npm i --no-progress --no-audit $core --prefix="./utils/plasma-pack"
-
       - name: Lerna found changed packages
-        run: |
-          lerna=$(npx lerna changed || echo "$?")
-          echo #lerna
-          if [[ $lerna -eq 0 ]]
-            then
-              echo "LERNA_CHANGED=true" >> $GITHUB_ENV
-            else
-              echo "LERNA_CHANGED=false" >> $GITHUB_ENV
-          fi
-
-      - name: test
-        run: |
-          echo "LERNA_CHANGED -> ${{ env.LERNA_CHANGED }}"
+        id: is-dirty
+        uses: ./.github/actions/lerna-changed
 
       - name: Lerna bootstrap
-        if: ${{ env.LERNA_CHANGED == true }}
+        if: ${{ steps.is-dirty.outputs.LERNA_CHANGED }}
         run: npx lerna bootstrap
 
       - name: Release Info
-        if: ${{ env.LERNA_CHANGED == true }}
+        if: ${{ steps.is-dirty.outputs.LERNA_CHANGED == true }}
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
-
-      - name: Create Release
-        if: ${{ env.LERNA_CHANGED }}
-        run: npm run release
-
-      - name: Update package-lock files
-        if: ${{ env.LERNA_CHANGED == true && inputs.with-update-package-lock }}
-        uses: ./.github/actions/update-package-lock
-        with:
-          commit-message: ${{ inputs.commit-message }}
-          token: ${{ secrets.gh_token }}
-          stage: ${{ inputs.stage }}
