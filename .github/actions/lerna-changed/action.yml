@@ -15,7 +15,7 @@ runs:
       shell: bash
       id: is-dirty
       run: |
-        npx lerna changed --all --json
+        npx lerna changed --json
         if [ $? -eq 1 ]
           then
             echo "IS_DIRTY=false" >> $GITHUB_OUTPUT
