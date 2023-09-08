@@ -38,7 +38,7 @@ jobs:
         uses: ./.github/actions/lerna-changed
 
       - name: Create shortcut
-        run: echo "LERNA_CHANGED=${{ steps.is-dirty.outputs.LERNA_CHANGED }}" >> $GITHUB_ENV
+        run: echo "LERNA_CHANGED=${{ steps.is-dirty.outputs.is_dirty }}" >> $GITHUB_ENV
 
       - name: Lerna bootstrap
         if: ${{ env.LERNA_CHANGED }}
