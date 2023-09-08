@@ -15,7 +15,7 @@ runs:
       shell: bash
       id: is-dirty
       run: |
-        echo "IS_DIRTY=$([[ $(npx lerna changed) ]] && echo " true" || echo "false")" >> $GITHUB_OUTPUT
+        echo "IS_DIRTY=$([[ $(npx lerna changed) ]] && echo "true" || echo "false")" >> $GITHUB_OUTPUT
 
     - name: Echo
       shell: bash
