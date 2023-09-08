@@ -38,12 +38,12 @@ jobs:
         uses: ./.github/actions/lerna-changed
 
       - name: Create shortcut
-        run: echo "LERNA_CHANGED=${{ fromJSON(steps.is-dirty.outputs.is_dirty) }}" >> $GITHUB_ENV
+        run: echo "IS_DIRTY=${{ steps.is-dirty.outputs.is-dirty == 'true' }}" >> $GITHUB_ENV
 
       - name: Lerna bootstrap
-        if: ${{ env.LERNA_CHANGED }}
+        if: ${{ env.IS_DIRTY }}
         run: npx lerna bootstrap
 
       - name: Release Info
-        if: ${{ env.LERNA_CHANGED == true }}
+        if: ${{ env.IS_DIRTY == true }}
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'

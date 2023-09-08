@@ -4,14 +4,14 @@ description: 'Check if has changed'
 
 
 outputs:
-  is_dirty:
+  is-dirty:
     description: "Have changed state since the last tagged release"
-    value: ${{ fromJSON(steps.is-dirty.outputs.LERNA_CHANGED) }}
+    value: ${{ fromJSON(steps.is-dirty.outputs.IS_DIRTY) }}
 
 runs:
   using: "composite"
   steps:
-    - name: Lerna changed
+    - name: Lerna changed check
       shell: bash
       id: is-dirty
       run: |
@@ -19,11 +19,11 @@ runs:
 
         if [[ $output -eq 0 ]]
           then
-            echo "LERNA_CHANGED=true" >> $GITHUB_OUTPUT
+            echo "IS_DIRTY=true" >> $GITHUB_OUTPUT
           else
-            echo "LERNA_CHANGED=false" >> $GITHUB_OUTPUT
+            echo "IS_DIRTY=false" >> $GITHUB_OUTPUT
         fi
 
-    - name: Echo var LERNA_CHANGED
+    - name: Echo
       shell: bash
-      run: echo "LERNA_CHANGED -> ${{ steps.is-dirty.outputs.LERNA_CHANGED }}"
+      run: echo "IS_DIRTY -> ${{ steps.is-dirty.outputs.IS_DIRTY }}"
