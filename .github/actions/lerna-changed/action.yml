@@ -15,14 +15,7 @@ runs:
       shell: bash
       id: is-dirty
       run: |
-        output=$(npx lerna changed --json || echo "$?" |  jq '. | length')
-
-        if [[ $output -eq 0 ]]
-        then
-          echo "IS_DIRTY=true" >> $GITHUB_OUTPUT
-        else
-          echo "IS_DIRTY=false" >> $GITHUB_OUTPUT
-        fi
+        echo "IS_DIRTY=$([[ $(npx lerna changed) ]] && echo " true" || echo "false")" >> $GITHUB_OUTPUT
 
     - name: Echo
       shell: bash
