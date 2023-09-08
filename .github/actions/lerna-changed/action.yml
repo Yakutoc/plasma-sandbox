@@ -21,6 +21,7 @@ runs:
             echo "IS_DIRTY=false" >> $GITHUB_OUTPUT
           else
             echo "IS_DIRTY=true" >> $GITHUB_OUTPUT
+          exit 0
         fi
 
     - name: Echo
