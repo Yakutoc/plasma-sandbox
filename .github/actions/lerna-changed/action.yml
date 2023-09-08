@@ -25,4 +25,5 @@ runs:
         fi
 
     - name: Echo var LERNA_CHANGED
+      shell: bash
       run: echo "LERNA_CHANGED -> ${{ steps.is-dirty.outputs.LERNA_CHANGED }}"
