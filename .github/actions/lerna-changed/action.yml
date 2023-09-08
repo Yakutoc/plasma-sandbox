@@ -14,6 +14,7 @@ runs:
     - name: Lerna changed check
       shell: bash
       id: is-dirty
+      continue-on-error: true
       run: |
         npx lerna changed --json
         if [[ $? -eq 1 ]]
