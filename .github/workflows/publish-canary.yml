@@ -37,10 +37,13 @@ jobs:
         id: is-dirty
         uses: ./.github/actions/lerna-changed
 
+      - name: Create shortcut
+        run: echo "LERNA_CHANGED=${{ steps.is-dirty.outputs.LERNA_CHANGED }}" >> $GITHUB_ENV
+
       - name: Lerna bootstrap
-        if: ${{ steps.is-dirty.outputs.LERNA_CHANGED }}
+        if: ${{ env.LERNA_CHANGED }}
         run: npx lerna bootstrap
 
       - name: Release Info
-        if: ${{ steps.is-dirty.outputs.LERNA_CHANGED == true }}
+        if: ${{ env.LERNA_CHANGED == true }}
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
