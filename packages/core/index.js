@@ -20,5 +20,6 @@ exports.APICall6 = function () {
     console.log('API Call');
     console.log('API Call');
     console.log('API Call');
+    console.log('API Call');
 };
 //# sourceMappingURL=index.js.map
