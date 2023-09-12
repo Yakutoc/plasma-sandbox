@@ -14,3 +14,5 @@ perftest
 .perftool
 s3_build
 temp
+
+.DS_Store
