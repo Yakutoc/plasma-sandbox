@@ -8,6 +8,7 @@
     "package-lock.json"
   ],
   "loglevel": "verbose",
+  "exact": true,
   "command": {
     "bootstrap": {
       "npmClientArgs": [
