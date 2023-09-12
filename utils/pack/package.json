@@ -9,7 +9,7 @@
     },
     "dependencies": {
         "plasmax-tools": "0.1.0",
-        "plasmax-core": "0.7.0"
+        "plasmax-core": "0.8.0-dev.0"
     },
     "devDependencies": {
         "typescript": "5.2.2"
