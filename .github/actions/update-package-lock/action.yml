@@ -44,7 +44,7 @@ runs:
       if: ${{ inputs.stage == 'dev' }}
       shell: bash
       run: |
-        npx lerna run install:dev --scope=plasmax-{tools,pack}
+        npx lerna run install:dev --scope=plasmax-tools
 
     - name: Commit & Push package-lock's
       if: ${{ inputs.stage == 'dev' }}
