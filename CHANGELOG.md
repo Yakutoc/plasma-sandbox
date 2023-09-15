@@ -1,3 +1,30 @@
+# (Fri Sep 15 2023)
+
+#### 🚀 Enhancement
+
+- fix: version [#145](https://github.com/PoligonSa/plasma-sandbox/pull/145) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: new api [#145](https://github.com/PoligonSa/plasma-sandbox/pull/145) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: add new things [#145](https://github.com/PoligonSa/plasma-sandbox/pull/145) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.9.0`
+  - feat: new api [#145](https://github.com/PoligonSa/plasma-sandbox/pull/145) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- fix: version [#145](https://github.com/PoligonSa/plasma-sandbox/pull/145) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: version [#145](https://github.com/PoligonSa/plasma-sandbox/pull/145) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: enable exact [#145](https://github.com/PoligonSa/plasma-sandbox/pull/145) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: disable exact [#145](https://github.com/PoligonSa/plasma-sandbox/pull/145) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.9.0`, `plasmax-hope@0.10.0`, `plasmax-rew@0.6.0`, `plasmax-web@0.39.0`
+  - chore: update package-locks [#145](https://github.com/PoligonSa/plasma-sandbox/pull/145) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - Update versions [#145](https://github.com/PoligonSa/plasma-sandbox/pull/145) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Tue Aug 29 2023)
 
 #### 🚀 Enhancement
