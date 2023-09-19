@@ -2,6 +2,30 @@
 
 #### 🚀 Enhancement
 
+- ci: update include private [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.15.0`
+  - feat: after this commit bump version for all packs [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: add patch for @auto logic [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: update include private [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: fix version [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.15.0`, `plasmax-hope@0.16.0`, `plasmax-rew@0.12.0`, `plasmax-web@0.45.0`
+  - chore: update package-locks [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Salute-Eva](https://github.com/Salute-Eva))
+  - Update versions [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Tue Sep 19 2023)
+
+#### 🚀 Enhancement
+
 - `plasmax-core@0.11.0`
   - feat: after this commit bump version for all packs [#151](https://github.com/PoligonSa/plasma-sandbox/pull/151) ([@Yakutoc](https://github.com/Yakutoc))
 

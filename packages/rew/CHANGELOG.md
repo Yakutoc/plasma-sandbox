@@ -1,3 +1,17 @@
+# v0.12.0 (Tue Sep 19 2023)
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: update package-locks \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 1
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+
+---
+
 # v0.8.0 (Tue Sep 19 2023)
 
 #### 🐛 Bug Fix

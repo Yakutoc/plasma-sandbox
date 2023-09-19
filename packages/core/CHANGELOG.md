@@ -1,3 +1,21 @@
+# v0.15.0 (Tue Sep 19 2023)
+
+#### 🚀 Enhancement
+
+- feat: after this commit bump version for all packs [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions [#157](https://github.com/PoligonSa/plasma-sandbox/pull/157) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.11.0 (Tue Sep 19 2023)
 
 #### 🚀 Enhancement
