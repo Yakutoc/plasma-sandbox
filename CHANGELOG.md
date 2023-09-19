@@ -2,6 +2,19 @@
 
 #### 🚀 Enhancement
 
+- `plasmax-core@0.11.0`
+  - feat: after this commit bump version for all packs [#151](https://github.com/PoligonSa/plasma-sandbox/pull/151) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Tue Sep 19 2023)
+
+#### 🚀 Enhancement
+
 - `plasmax-core@0.10.0`
   - feat: add new api [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Yakutoc](https://github.com/Yakutoc))
 

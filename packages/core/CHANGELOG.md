@@ -1,3 +1,15 @@
+# v0.11.0 (Tue Sep 19 2023)
+
+#### 🚀 Enhancement
+
+- feat: after this commit bump version for all packs [#151](https://github.com/PoligonSa/plasma-sandbox/pull/151) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.10.0 (Tue Sep 19 2023)
 
 #### 🚀 Enhancement
