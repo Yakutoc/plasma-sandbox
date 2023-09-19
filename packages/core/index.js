@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.APICall8 = exports.APICall7 = exports.APICall6 = exports.APICall5 = exports.APICall4 = exports.APICall3 = exports.APICall2 = exports.APICall = void 0;
+exports.APICall9 = exports.APICall8 = exports.APICall7 = exports.APICall6 = exports.APICall5 = exports.APICall4 = exports.APICall3 = exports.APICall2 = exports.APICall = void 0;
 exports.APICall = function () {
     console.log('API Call');
 };
@@ -24,6 +24,9 @@ exports.APICall7 = function () {
     console.log('API Call 87');
 };
 exports.APICall8 = function () {
+    console.log('API Call 87');
+};
+exports.APICall9 = function () {
     console.log('API Call 87');
 };
 //# sourceMappingURL=index.js.map
