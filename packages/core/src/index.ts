@@ -35,3 +35,7 @@ export const APICall9 = () => {
 	console.log('API Call 87');
 }
 
+export const APICall10 = () => {
+	console.log('API Call 87');
+}
+
