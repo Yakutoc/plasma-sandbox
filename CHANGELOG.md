@@ -1,3 +1,29 @@
+# (Tue Sep 19 2023)
+
+#### 🚀 Enhancement
+
+- `plasmax-core@0.10.0`
+  - feat: add new api [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: add patch for @auto logic [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: add patch-package [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: delete manual version update [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Yakutoc](https://github.com/Yakutoc))
+- fix: version [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Yakutoc](https://github.com/Yakutoc))
+- Bump independent versions [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: .DS_Store ignore [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: add next cmd [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Fri Sep 15 2023)
 
 #### 🚀 Enhancement

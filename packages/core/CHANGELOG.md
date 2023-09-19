@@ -1,3 +1,15 @@
+# v0.10.0 (Tue Sep 19 2023)
+
+#### 🚀 Enhancement
+
+- feat: add new api [#149](https://github.com/PoligonSa/plasma-sandbox/pull/149) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.9.0 (Fri Sep 15 2023)
 
 #### 🚀 Enhancement
