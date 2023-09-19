@@ -22,7 +22,7 @@ runs:
       run: |
         npm i --no-audit --no-progress --package-lock-only
         lerna clean -y
-        lerna exec --no-private -- npm i --no-audit --no-progress --package-lock-only --ignore-scripts
+        lerna exec -- npm i --no-audit --no-progress --package-lock-only --ignore-scripts
         # root deps don't update correctly on first regeneration O_o
         npm i --package-lock-only
 
