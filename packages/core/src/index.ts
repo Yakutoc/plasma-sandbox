@@ -16,6 +16,10 @@ export const APICall4 = () => {
 
 export const APICall5 = () => {
 	console.log('API Call');
+	console.log('API Call');
+	console.log('API Call');
+	console.log('API Call');
+	console.log('API Call');
 }
 
 export const APICall6 = () => {
