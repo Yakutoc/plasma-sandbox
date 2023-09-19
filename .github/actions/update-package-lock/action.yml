@@ -21,7 +21,9 @@ runs:
       shell: bash
       run: |
         npm i --no-audit --no-progress --package-lock-only
+        # delete node_modules for all packages
         lerna clean -y
+        # update package-lock.json file for all packages
         lerna exec -- npm i --no-audit --no-progress --package-lock-only --ignore-scripts
         # root deps don't update correctly on first regeneration O_o
         npm i --package-lock-only
