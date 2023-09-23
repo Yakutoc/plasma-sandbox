@@ -9,7 +9,7 @@ on:
 jobs:
   release:
     name: Publish Canary
-    if: ${{ contains(fromJSON('["dependabot[bot]", "renovate[bot]"]'), github.actor) }}
+    if: ${{ !contains(fromJSON('["dependabot[bot]", "renovate[bot]"]'), github.actor) }}
 
     runs-on: ubuntu-latest
     env:
