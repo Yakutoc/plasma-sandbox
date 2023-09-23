@@ -9,17 +9,13 @@ on:
 jobs:
   release:
     name: Publish Canary
+    if: ${{ contains(fromJSON('["dependabot[bot]", "renovate[bot]"]'), github.actor) }}
+
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       NPM_REGISTRY_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }}
     steps:
-      - name: Skip job by actor type
-        id: exclude_by_actor
-        uses: ./.github/actions/skip
-
-        if: ${{ exclude_by_actor == false }}
-
       - name: Checkout
         uses: actions/checkout@v3
         with:
