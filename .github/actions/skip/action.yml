@@ -1,0 +1,16 @@
+name: 'Exclude by actor type'
+
+description: 'Skip job by actor type'
+
+outputs:
+  random-number:
+    description: "Exclude by actor"
+    value: ${{ steps.exclude_by_actor.outputs.EXCLUDE_BY_ACTOR }}
+
+runs:
+  using: "composite"
+  steps:
+    - name: Exclude by actor
+      id: exclude_by_actor
+      shell: bash
+      run: echo "EXCLUDE_BY_ACTOR=${{ contains(fromJSON('["dependabot[bot]", "renovate[bot]"]'), github.actor) }}" >> $GITHUB_OUTPUT
