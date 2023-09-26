@@ -34,11 +34,8 @@ jobs:
         id: is-changed
         uses: ./.github/actions/lerna-changed
 
-      - name: Create "IS_CHANGED" shortcut
-        run: echo "IS_CHANGED=${{ steps.is-changed.outputs.is-changed }}" >> $GITHUB_ENV
-
       - name: Lerna bootstrap
-        if: ${{ fromJSON(env.IS_CHANGED) }}
+        if: ${{ fromJSON(steps.is-changed.outputs.is-changed) }}
         run: npx lerna bootstrap
 
       - name: Release Info
