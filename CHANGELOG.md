@@ -1,3 +1,21 @@
+# (Tue Sep 26 2023)
+
+#### 🚀 Enhancement
+
+- chore: update package-locks [#163](https://github.com/PoligonSa/plasma-sandbox/pull/163) ([@Salute-Eva](https://github.com/Salute-Eva))
+- feat: fffff [#163](https://github.com/PoligonSa/plasma-sandbox/pull/163) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Update versions [#163](https://github.com/PoligonSa/plasma-sandbox/pull/163) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Tue Sep 19 2023)
 
 #### 🚀 Enhancement
