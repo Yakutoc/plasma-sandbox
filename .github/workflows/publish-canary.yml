@@ -34,11 +34,11 @@ jobs:
 
       - name: Lerna bootstrap
         env:
-          options: "--no-audit --no-progress --package-lock-only --ignore-scripts"
+          options: "--no-audit --no-progress --package-lock-only"
         run: |
           lerna clean -y
           # update package-lock.json file for all packages
-          lerna exec -- npm i ${{ env.options }}
+          lerna exec -- npm i ${{ env.options }} --ignore-scripts
           npx lerna bootstrap
 
       - name: Release Info
