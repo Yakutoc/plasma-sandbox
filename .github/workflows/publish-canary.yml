@@ -33,7 +33,13 @@ jobs:
         run: npm ci --no-audit
 
       - name: Lerna bootstrap
-        run: npx lerna bootstrap
+        env:
+          options: "--no-audit --no-progress --package-lock-only --ignore-scripts"
+        run: |
+          lerna clean -y
+          # update package-lock.json file for all packages
+          lerna exec -- npm i ${{ env.options }}
+          npx lerna bootstrap
 
       - name: Release Info
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
