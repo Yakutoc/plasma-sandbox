@@ -15,9 +15,7 @@ jobs:
       NPM_REGISTRY_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v4
 
       - name: Unset header
         # https://github.com/intuit/auto/issues/1030
@@ -32,11 +30,21 @@ jobs:
       - name: Install
         run: npm ci --no-audit
 
+      - name: Lerna found changed packages
+        id: is-changed
+        uses: ./.github/actions/lerna-changed
+
+      - name: Create "IS_CHANGED" shortcut
+        run: echo "IS_CHANGED=${{ steps.is-changed.outputs.is-changed }}" >> $GITHUB_ENV
+
       - name: Lerna bootstrap
+        if: ${{ fromJSON(env.IS_CHANGED) }}
         run: npx lerna bootstrap
 
       - name: Release Info
+        if: ${{ success() }}
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Create Release
+        if: ${{ success() }}
         run: npm run release
