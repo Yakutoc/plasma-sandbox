@@ -1,11 +1,8 @@
 name: Publish Canary
 
 on:
-  pull_request:
   pull_request_target:
-    branches:
-      - dev
-      - main
+    branches: [dev]
 
 jobs:
   release:
@@ -16,9 +13,11 @@ jobs:
       NPM_REGISTRY_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
+          show-progress: false
           fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Unset header
         # https://github.com/intuit/auto/issues/1030
@@ -40,6 +39,4 @@ jobs:
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Create Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run release
