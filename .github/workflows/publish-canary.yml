@@ -2,6 +2,7 @@ name: Publish Canary
 
 on:
   pull_request:
+  pull_request_target:
     branches:
       - dev
       - main
@@ -39,4 +40,6 @@ jobs:
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Create Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: npm run release
