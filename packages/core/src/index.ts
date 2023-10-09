@@ -32,5 +32,5 @@ export const APICall7 = () => {
 }
 
 export const APICall8 = () => {
-	console.log('API Call');
+	console.log('API Call + whatt!!!');
 }
