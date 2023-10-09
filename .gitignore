@@ -1,4 +1,5 @@
 node_modules/
+.gitconfig
 .idea/
 tsconfig.tsbuildinfo
 tsconfig.es.tsbuildinfo
