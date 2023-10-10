@@ -25,7 +25,9 @@ jobs:
           node-version-file: '.nvmrc'
 
       - name: Install
-        run: npm ci --no-audit
+        run: |
+          npm ci --no-audit
+          echo "${{ github.actor }}"
 
       - name: Lerna bootstrap
         run: npx lerna bootstrap

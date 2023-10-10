@@ -12,10 +12,11 @@ jobs:
       - name: Echo
         run: |
           echo "$GITHUB_REF"
-          echo "$GITHUB_SHA"
+          echo "${{ github.actor }}"
 
   publish:
     name: Publish RC version
+    if: ${{ github.actor != 'github-merge-queue[bot]' }}
     uses: ./.github/workflows/publish-common.yml
     with:
       with-update-package-lock: true
