@@ -25,12 +25,3 @@ export const newAPICall3 = () => {
 export const newAPICall4 = () => {
 	console.log('Hello world');
 }
-
-export const newAPICall5 = () => {
-	console.log('Hello world');
-}
-
-export const newAPICall6 = () => {
-	console.log('Hello world');
-	console.log('Hello world');
-}
