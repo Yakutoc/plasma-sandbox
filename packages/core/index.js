@@ -35,5 +35,7 @@ exports.APICall9 = function () {
 };
 exports.APICall10 = function () {
     console.log('API Call');
+    console.log('API Call');
+    console.log('API Call');
 };
 //# sourceMappingURL=index.js.map
