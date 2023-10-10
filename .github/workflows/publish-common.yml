@@ -12,6 +12,9 @@ on:
       ref:
         type: string
         default: ''
+      cmd:
+        type: string
+        default: 'npx auto shipit -v'
     secrets:
       gh_token:
         required: true
@@ -53,7 +56,7 @@ jobs:
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Create Release
-        run: npm run release
+        run: ${{ inputs.cmd }}
 
       - name: Update package-lock files
         if: ${{ inputs.with-update-package-lock }}
