@@ -56,7 +56,7 @@ jobs:
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Create Release
-        run: ${{ inputs.cmd }}
+        run: npm run release -- --base-branch dev
 
       - name: Update package-lock files
         if: ${{ inputs.with-update-package-lock }}
