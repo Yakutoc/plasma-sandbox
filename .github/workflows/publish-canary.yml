@@ -11,7 +11,14 @@ jobs:
       github.event.pull_request.head.repo.full_name != github.repository &&
       'external' || 'internal' }}
     steps:
-      - run: "External pull request, (from fork) approved by code owners"
+      - name: Echo
+        run: "External pull request, (from fork) approved by code owners"
+      - name: Echo
+        run: |
+          echo "1 => ${{ github.event_name == 'pull_request_target' }}"
+          echo "2 => ${{ github.event.pull_request.head.repo.full_name }}"
+          echo "3 => ${{ github.repository }}"
+          echo "4 => ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository && 'external' || 'internal' }}"
 
   publish:
     name: Publish RC version
