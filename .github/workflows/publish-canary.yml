@@ -15,8 +15,8 @@ jobs:
       - name: Echo
         run: |
           echo "External pull request approved by code owners"
-          echo "${{ GITHUB_REF }}"
-          echo "${{ GITHUB_SHA }}"
+          echo "$GITHUB_REF"
+          echo "$GITHUB_SHA"
 
   publish:
     name: Publish RC version
