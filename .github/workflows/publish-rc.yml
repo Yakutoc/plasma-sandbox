@@ -7,6 +7,14 @@ on:
       - dev
 
 jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: |
+          echo "$GITHUB_REF"
+          echo "$GITHUB_SHA"
+
   publish:
     name: Publish RC version
     if: github.event.pull_request.merged == true

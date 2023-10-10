@@ -19,7 +19,7 @@ jobs:
           echo "$GITHUB_SHA"
 
   publish:
-    name: Publish RC version
+    name: Canary version
     needs: [ authorize ]
     uses: ./.github/workflows/publish-common.yml
     with:
