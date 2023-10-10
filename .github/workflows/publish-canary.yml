@@ -12,7 +12,7 @@ jobs:
       'external' || 'internal' }}
     steps:
       - name: Echo
-        run: "External pull request, (from fork) approved by code owners"
+        run: "External pull request, from fork, approved by code owners"
       - name: Echo
         run: |
           echo "1 => ${{ github.event_name == 'pull_request_target' }}"
@@ -24,6 +24,8 @@ jobs:
     name: Publish RC version
     needs: [ authorize ]
     uses: ./.github/workflows/publish-common.yml
+    with:
+      ref: refs/pull/${{github.event.pull_request.number}}/merge
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
