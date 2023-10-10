@@ -26,5 +26,6 @@ exports.newAPICall5 = function () {
 };
 exports.newAPICall6 = function () {
     console.log('Hello world');
+    console.log('Hello world');
 };
 //# sourceMappingURL=index.js.map
