@@ -1,7 +1,7 @@
 name: Publish RC
 
 on:
-  pull_request:
+  pull_request_target:
     types: [closed]
     branches:
       - dev
@@ -14,7 +14,6 @@ jobs:
     with:
       with-update-package-lock: true
       commit-message: "chore: update package-locks"
-      stage: "dev"
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
