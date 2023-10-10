@@ -4,29 +4,36 @@ on:
   pull_request_target:
     branches: [dev]
 
-env:
-  ENVIRONMENT: github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository && 'external' || 'internal'
-
 jobs:
   authorize:
     runs-on: ubuntu-latest
-    environment: $ENVIRONMENT
+    outputs:
+      ENVIRONMENT: ${{ steps.environment.outputs.ENVIRONMENT }}
+    env:
+      ENVIRONMENT: github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository && 'external' || 'internal'
+    environment: ${{ env.ENVIRONMENT }}
     steps:
       - name: Echo
-        run: echo "External, fork pull request approved by code owners"
+        run: |
+          echo "External pull request approved by code owners"
+
+      - name: ENVIRONMENT
+        id: environment
+        run: |
+          echo "ENVIRONMENT= ${{ env.ENVIRONMENT }}" >> "$GITHUB_OUTPUT"
+
       - name: Echo
         run: |
-          echo "1 => ${{ github.event_name == 'pull_request_target' }}"
           echo "2 => ${{ github.event.pull_request.head.repo.full_name }}"
           echo "3 => ${{ github.repository }}"
-          echo "4 => $ENVIRONMENT"
+          echo "4 => ${{ env.ENVIRONMENT }}"
 
   publish:
     name: Publish RC version
     needs: [ authorize ]
     uses: ./.github/workflows/publish-common.yml
     with:
-      ref: ${{ $ENVIRONMENT == 'external' && 'refs/pull/${{github.event.pull_request.number}}/merge' || '' }}
+      ref: ${{ needs.authorize.outputs.ENVIRONMENT == 'external' && 'refs/pull/${{github.event.pull_request.number}}/merge' || '' }}
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
