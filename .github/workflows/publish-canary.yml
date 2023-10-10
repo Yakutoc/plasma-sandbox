@@ -7,20 +7,12 @@ on:
 jobs:
   authorize:
     runs-on: ubuntu-latest
-    outputs:
-      ENVIRONMENT: ${{ steps.environment.outputs.ENVIRONMENT }}
-
+    ## Possible value external
     environment: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository && 'external' || 'internal' }}
-
     steps:
       - name: Echo
         run: |
           echo "External pull request approved by code owners"
-
-      - name: ENVIRONMENT
-        id: environment
-        run: |
-          echo "ENVIRONMENT=${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository && 'external' || 'internal' }}" >> "$GITHUB_OUTPUT"
 
       - name: Echo
         run: |
@@ -32,7 +24,7 @@ jobs:
     needs: [ authorize ]
     uses: ./.github/workflows/publish-common.yml
     with:
-      ref: ${{ needs.authorize.outputs.ENVIRONMENT == 'external' && refs/pull/${{github.event.pull_request.number}}/merge || '' }}
+      ref: refs/pull/${{github.event.pull_request.number}}/merge
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
