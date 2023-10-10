@@ -9,9 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       ENVIRONMENT: ${{ steps.environment.outputs.ENVIRONMENT }}
-    env:
-      ENVIRONMENT: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository && 'external' || 'internal' }}
-    environment: ${{ env.ENVIRONMENT }}
+
+    environment: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository && 'external' || 'internal' }}
+
     steps:
       - name: Echo
         run: |
@@ -20,13 +20,12 @@ jobs:
       - name: ENVIRONMENT
         id: environment
         run: |
-          echo "ENVIRONMENT= ${{ env.ENVIRONMENT }}" >> "$GITHUB_OUTPUT"
+          echo "ENVIRONMENT= ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository && 'external' || 'internal' }}" >> "$GITHUB_OUTPUT"
 
       - name: Echo
         run: |
           echo "2 => ${{ github.event.pull_request.head.repo.full_name }}"
           echo "3 => ${{ github.repository }}"
-          echo "4 => ${{ env.ENVIRONMENT }}"
 
   publish:
     name: Publish RC version
