@@ -9,9 +9,6 @@ on:
       commit-message:
         type: string
         default: 'chore: update package-locks [skip ci]'
-      ref:
-        type: string
-        default: ''
     secrets:
       gh_token:
         required: true
@@ -31,7 +28,7 @@ jobs:
         with:
           show-progress: false
           fetch-depth: 0
-          ref: ${{ inputs.ref }}
+          ref: ${{ github.event.pull_request.head.sha || github.ref }}
 
       - name: Unset header
         # https://github.com/intuit/auto/issues/1030
