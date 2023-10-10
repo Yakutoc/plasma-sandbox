@@ -4,3 +4,5 @@ export { APICall } from "plasmax-core";
 APICall();
 
 APICall();
+
+APICall();
