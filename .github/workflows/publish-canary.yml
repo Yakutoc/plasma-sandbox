@@ -5,51 +5,18 @@ on:
     branches: [dev]
 
 jobs:
-  approve:
+  authorize:
     runs-on: ubuntu-latest
+    environment: ${{ github.event_name == 'pull_request_target' &&
+      github.event.pull_request.head.repo.full_name != github.repository &&
+      'external' || 'internal' }}
     steps:
-      - name: Approve
-        run: echo "For security reasons, all pull requests need to be approved first before running any automated CI."
+      - run: "External pull request, (from fork) approved by code owners"
 
-  release:
-    name: Publish Canary
-    needs: [ approve ]
-
-    environment:
-      name: Integrate Pull Request
-
-    runs-on: ubuntu-latest
-
-    env:
-      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      NPM_REGISTRY_TOKEN: ${{ secrets.NPM_REGISTRY_TOKEN }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          show-progress: false
-          fetch-depth: 0
-          ref: refs/pull/${{github.event.pull_request.number}}/merge
-
-      - name: Unset header
-        # https://github.com/intuit/auto/issues/1030
-        run: git config --local --unset http.https://github.com/.extraheader
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
-      - name: Install
-        run: npm ci --no-audit
-
-      - name: Lerna bootstrap
-        run: npx lerna bootstrap
-
-      - name: Release Info
-        run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
-
-      - name: Create Release
-        run: npm run release
+  publish:
+    name: Publish RC version
+    needs: [ authorize ]
+    uses: ./.github/workflows/publish-common.yml
+    secrets:
+      gh_token: ${{ secrets.GH_TOKEN }}
+      npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
