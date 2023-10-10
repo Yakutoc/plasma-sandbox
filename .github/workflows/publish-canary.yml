@@ -10,7 +10,7 @@ env:
 jobs:
   authorize:
     runs-on: ubuntu-latest
-    environment: ${{ env.ENVIRONMENT }}
+    environment: ${{ ENVIRONMENT }}
     steps:
       - name: Echo
         run: echo "External, fork pull request approved by code owners"
@@ -19,14 +19,14 @@ jobs:
           echo "1 => ${{ github.event_name == 'pull_request_target' }}"
           echo "2 => ${{ github.event.pull_request.head.repo.full_name }}"
           echo "3 => ${{ github.repository }}"
-          echo "4 => ${{  }}"
+          echo "4 => ${{ ENVIRONMENT }}"
 
   publish:
     name: Publish RC version
     needs: [ authorize ]
     uses: ./.github/workflows/publish-common.yml
     with:
-      ref: ${{ env.ENVIRONMENT == 'external' && 'refs/pull/${{github.event.pull_request.number}}/merge' || '' }}
+      ref: ${{ ENVIRONMENT == 'external' && 'refs/pull/${{github.event.pull_request.number}}/merge' || '' }}
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
