@@ -12,7 +12,7 @@ jobs:
     with:
       with-update-package-lock: true
       commit-message: "chore: update package-locks"
-      cmd: 'npx auto next -v'
+      ref: ${{ github.event.pull_request.base.ref }}
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
