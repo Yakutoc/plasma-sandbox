@@ -12,7 +12,7 @@ jobs:
       'external' || 'internal' }}
     steps:
       - name: Echo
-        run: "External pull request, from fork, approved by code owners"
+        run: echo "External, fork pull request approved by code owners"
       - name: Echo
         run: |
           echo "1 => ${{ github.event_name == 'pull_request_target' }}"
