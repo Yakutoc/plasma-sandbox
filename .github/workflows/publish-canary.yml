@@ -32,7 +32,7 @@ jobs:
     needs: [ authorize ]
     uses: ./.github/workflows/publish-common.yml
     with:
-      ref: ${{ needs.authorize.outputs.ENVIRONMENT == 'external' && 'refs/pull/${{github.event.pull_request.number}}/merge' || '' }}
+      ref: ${{ needs.authorize.outputs.ENVIRONMENT == 'external' && refs/pull/${{github.event.pull_request.number}}/merge || '' }}
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
