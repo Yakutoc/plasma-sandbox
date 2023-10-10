@@ -12,9 +12,6 @@ on:
       ref:
         type: string
         default: ''
-      cmd:
-        type: string
-        default: 'npx auto shipit -v'
     secrets:
       gh_token:
         required: true
@@ -33,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           show-progress: false
-          fetch-depth: 0
+          fetch-depth: 2
           ref: ${{ inputs.ref }}
 
       - name: Unset header
