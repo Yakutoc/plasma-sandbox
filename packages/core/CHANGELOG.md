@@ -1,3 +1,32 @@
+# v0.20.0 (Tue Oct 31 2023)
+
+#### 🚀 Enhancement
+
+- feat: refactoring [#208](https://github.com/PoligonSa/plasma-sandbox/pull/208) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: refactoring [#206](https://github.com/PoligonSa/plasma-sandbox/pull/206) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: refactoring [#205](https://github.com/PoligonSa/plasma-sandbox/pull/205) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: refactoring [#204](https://github.com/PoligonSa/plasma-sandbox/pull/204) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: sasfhgAls [#202](https://github.com/PoligonSa/plasma-sandbox/pull/202) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: change by fork [#201](https://github.com/PoligonSa/plasma-sandbox/pull/201) ([@Aleksander-LS](https://github.com/Aleksander-LS))
+- feat: rollback [#192](https://github.com/PoligonSa/plasma-sandbox/pull/192) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Update package-locks files ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: update package-locks ([@Salute-Eva](https://github.com/Salute-Eva))
+- fix: fix typo [#203](https://github.com/PoligonSa/plasma-sandbox/pull/203) ([@Aleksander-LS](https://github.com/Aleksander-LS))
+- fix: fix ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update api [#166](https://github.com/PoligonSa/plasma-sandbox/pull/166) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 3
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+- Lobyntsev Aleksander ([@Aleksander-LS](https://github.com/Aleksander-LS))
+
+---
+
 # v0.15.0 (Tue Sep 19 2023)
 
 #### 🚀 Enhancement

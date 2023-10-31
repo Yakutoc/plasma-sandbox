@@ -1,3 +1,23 @@
+# v0.18.0 (Tue Oct 31 2023)
+
+#### 🚀 Enhancement
+
+
+#### 🐛 Bug Fix
+
+- Update package-locks files ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: update package-locks ([@Salute-Eva](https://github.com/Salute-Eva))
+- chore: update package-locks \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 3
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+- Lobyntsev Aleksander ([@Aleksander-LS](https://github.com/Aleksander-LS))
+
+---
+
 # v0.12.0 (Tue Sep 19 2023)
 
 #### 🐛 Bug Fix
