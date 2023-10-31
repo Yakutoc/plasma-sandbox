@@ -5,3 +5,6 @@ export declare const APICall4: () => void;
 export declare const APICall5: () => void;
 export declare const APICall6: () => void;
 export declare const APICall7: () => void;
+export declare const APICall8: () => void;
+export declare const APICall9: () => void;
+export declare const APICall10: () => void;

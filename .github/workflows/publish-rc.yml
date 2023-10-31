@@ -1,20 +1,18 @@
 name: Publish RC
 
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
       - dev
 
 jobs:
   publish:
     name: Publish RC version
-    if: github.event.pull_request.merged == true
+    if: ${{ github.actor == 'github-merge-queue[bot]' }}
     uses: ./.github/workflows/publish-common.yml
     with:
       with-update-package-lock: true
-      commit-message: "chore: update package-locks"
-      stage: "dev"
+      commit-message: "Update package-locks files"
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}

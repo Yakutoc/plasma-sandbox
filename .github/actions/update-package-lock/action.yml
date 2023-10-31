@@ -7,9 +7,6 @@ inputs:
     description: 'Commit message when updated package-lock'
     required: false
     default: 'chore: update package-locks [skip ci]'
-  stage:
-    description: 'Commit message when updated package-lock'
-    required: false
   token:
     description: 'A Github Token'
     required: true
