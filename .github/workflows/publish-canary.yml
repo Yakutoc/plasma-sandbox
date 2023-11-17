@@ -10,13 +10,8 @@ on:
 
 jobs:
   authorize:
-    runs-on: ubuntu-latest
-    environment: ${{ github.event_name == 'pull_request_target' && github.event.pull_request.head.repo.full_name != github.repository && 'external' || 'internal' }}
-
-    steps:
-      - name: Echo
-        run: |
-          echo "External pull request approved by code owners"
+    name: Authorize external pull request
+    uses: ./.github/workflows/auth.yml
 
   publish:
     name: Canary version

@@ -1,0 +1,51 @@
+name: Sync package-lock files
+
+on:
+  workflow_dispatch:
+    branches:
+      - dev
+
+jobs:
+  sync:
+    name: Sync
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci --no-audit
+
+      - name: Update package-lock's
+        run: |
+          npm i --no-audit --no-progress --package-lock-only
+          # delete node_modules for all packages
+          lerna clean -y
+          # update package-lock.json file for all packages
+          lerna exec -- npm i --no-audit --no-progress --package-lock-only --ignore-scripts
+          # root deps don't update correctly on first regeneration O_o
+          npm i --package-lock-only
+
+      - name: Extract branch name
+        id: branch_name
+        shell: bash
+        run: echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
+
+      - name: Commit & Push package-lock's
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          message: 'chore: Update package-lock.json files'
+          branch: ${{ steps.branch_name.outputs.BRANCH }}
+          author_name: Salute Frontend Team
+          author_email: salute.developers@gmail.com
+
