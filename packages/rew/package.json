@@ -1,6 +1,6 @@
 {
   "name": "plasmax-rew",
-  "version": "0.21.1-dev.0",
+  "version": "0.21.1",
   "author": "Alex Czech <yakutoc@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -15,7 +15,7 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "plasmax-web": "0.54.1-dev.0"
+    "plasmax-web": "0.54.1"
   },
   "devDependencies": {
     "@types/node": "16.7.13",
