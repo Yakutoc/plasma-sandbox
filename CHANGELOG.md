@@ -1,3 +1,22 @@
+# (Fri Nov 24 2023)
+
+#### 🚀 Enhancement
+
+- `plasmax-core@0.21.0`
+  - feat: c1 [#217](https://github.com/PoligonSa/plasma-sandbox/pull/217) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- ci: add "Sync package-lock files" workflow [no ci] [#213](https://github.com/PoligonSa/plasma-sandbox/pull/213) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: add auth workflow [no ci] [#213](https://github.com/PoligonSa/plasma-sandbox/pull/213) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Tue Oct 31 2023)
 
 #### 🚀 Enhancement

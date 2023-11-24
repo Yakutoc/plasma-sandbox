@@ -1,3 +1,21 @@
+# v0.21.0 (Fri Nov 24 2023)
+
+#### 🚀 Enhancement
+
+- feat: c1 [#217](https://github.com/PoligonSa/plasma-sandbox/pull/217) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Update package-locks files ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.20.0 (Tue Oct 31 2023)
 
 #### 🚀 Enhancement
