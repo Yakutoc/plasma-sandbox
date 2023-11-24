@@ -1,5 +1,27 @@
 # (Fri Nov 24 2023)
 
+### Release Notes
+
+#### Release ([#220](https://github.com/PoligonSa/plasma-sandbox/pull/220))
+
+Это из самого PR release
+
+---
+
+#### 🚀 Enhancement
+
+- `plasmax-core@0.22.0`
+  - feat(core): new description field [#219](https://github.com/PoligonSa/plasma-sandbox/pull/219) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Fri Nov 24 2023)
+
 #### 🚀 Enhancement
 
 - `plasmax-core@0.21.0`

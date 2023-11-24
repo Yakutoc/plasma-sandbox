@@ -1,3 +1,29 @@
+# v0.22.0 (Fri Nov 24 2023)
+
+### Release Notes
+
+#### Release ([#220](https://github.com/PoligonSa/plasma-sandbox/pull/220))
+
+Это из самого PR release
+
+---
+
+#### 🚀 Enhancement
+
+- feat(core): new description field [#219](https://github.com/PoligonSa/plasma-sandbox/pull/219) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Update package-locks files ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.21.0 (Fri Nov 24 2023)
 
 #### 🚀 Enhancement
