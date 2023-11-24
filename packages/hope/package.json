@@ -1,6 +1,6 @@
 {
   "name": "plasmax-hope",
-  "version": "0.24.2-dev.0",
+  "version": "0.24.2",
   "author": "Alex Czech <yakutoc@gmail.com>",
   "license": "MIT",
   "scripts": {
@@ -14,7 +14,7 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "plasmax-core": "0.22.2-dev.0"
+    "plasmax-core": "0.22.2"
   },
   "devDependencies": {
     "@types/node": "16.7.13",
