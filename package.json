@@ -5,6 +5,7 @@
   "scripts": {
     "diff": "git diff",
     "release": "auto shipit",
+    "release:rc": "auto shipit --no-changelog",
     "next": "auto next",
     "prepare": "test ! -n \"$CI\" && husky install || echo skip husky",
     "lint": "lerna run lint --parallel --since=$(git merge-base --fork-point origin/dev)",

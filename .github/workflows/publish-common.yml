@@ -12,6 +12,9 @@ on:
       ref:
         type: string
         default: ''
+      cmd:
+        type: string
+        default: 'npm run release'
     secrets:
       gh_token:
         required: true
@@ -52,8 +55,8 @@ jobs:
       - name: Release Info
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
-      - name: Create Release
-        run: npm run release
+      - name: Release
+        run: ${{ inputs.cmd }}
 
       - name: Update package-lock files
         if: ${{ inputs.with-update-package-lock }}
