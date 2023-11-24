@@ -2,6 +2,7 @@
   "name": "plasmax-web",
   "version": "0.51.0-dev.0",
   "author": "Alex Czech <yakutoc@gmail.com>",
+  "description": "1",
   "license": "MIT",
   "scripts": {
     "prepare": "npm run build",
