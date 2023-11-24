@@ -11,6 +11,34 @@ jobs:
     uses: ./.github/workflows/publish-common.yml
     with:
       with-update-package-lock: true
+      cmd: 'npm run release:rc'
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
+
+  release-notes:
+    name: Release
+    needs:
+      - publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci --no-audit
+
+      - name: Build Changelog
+        id: github_release
+        uses: mikepenz/release-changelog-builder-action@v4.1.0
+        env:
+          GITHUB_TOKEN: ${{  secrets.GH_TOKEN }}
+
