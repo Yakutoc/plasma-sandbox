@@ -17,7 +17,7 @@ jobs:
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
 
   release-notes:
-    name: Release
+    name: Build Changelog
     needs:
       - publish
     runs-on: ubuntu-latest
@@ -26,6 +26,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           show-progress: false
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
