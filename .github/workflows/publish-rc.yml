@@ -13,6 +13,7 @@ jobs:
     with:
       with-update-package-lock: true
       commit-message: "Update package-locks files"
+      cmd: 'npm run release:rc'
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
