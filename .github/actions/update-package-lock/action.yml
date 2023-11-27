@@ -37,4 +37,4 @@ runs:
         message: ${{ inputs.commit-message }}
         branch: ${{ steps.branch_name.outputs.BRANCH }}
         author_name: Salute Frontend Team
-        author_email: salute.developers@gmail.com
+        author_email: yakutoc@gmail.com
