@@ -34,7 +34,7 @@ jobs:
           fromTag: ${{ env.FROM_TAG }}
           configurationJson: |
             {
-              "pr_template": "- #{{TITLE}}\n   - Notes: ##{{BODY}}",
+              "pr_template": "- #{{TITLE}}\n   - Notes: ##{{BODY}}"
             }
         env:
           GITHUB_TOKEN: ${{  secrets.GH_TOKEN }}
