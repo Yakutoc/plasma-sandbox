@@ -32,6 +32,10 @@ jobs:
         uses: mikepenz/release-changelog-builder-action@v4.1.0
         with:
           fromTag: ${{ env.FROM_TAG }}
+          configurationJson: |
+            {
+                "pr_template": "- #{{TITLE}}\n   - Notes: ##{{BODY}}",
+            }
         env:
           GITHUB_TOKEN: ${{  secrets.GH_TOKEN }}
 
