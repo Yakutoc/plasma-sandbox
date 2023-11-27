@@ -40,6 +40,8 @@ jobs:
       - name: Build Changelog
         id: github_release
         uses: mikepenz/release-changelog-builder-action@v4.1.0
+        with:
+         fromTag: ${{ git merge-base --fork-point origin/main }}
         env:
           GITHUB_TOKEN: ${{  secrets.GH_TOKEN }}
 

@@ -1,6 +1,6 @@
 {
   "name": "plasmax",
-  "author": "Salute Frontend Team <salute.developers@gmail.com>",
+  "author": "Salute Frontend Team <yakutoc@gmail.com>",
   "license": "MIT",
   "scripts": {
     "diff": "git diff",
