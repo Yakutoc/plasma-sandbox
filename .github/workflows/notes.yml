@@ -36,10 +36,11 @@ jobs:
             {
               "categories": [
                 {
+                  "title": "## Components",
                   "labels": ["components"]
                 }
               ],
-              "pr_template": "- #{{TITLE}}\n PR: ##{{URL}}\n{{BODY}}\n ----"
+              "pr_template": "- #{{TITLE}}\n PR: ##{{URL}}\n\n {{BODY}}\n ----"
             }
         env:
           GITHUB_TOKEN: ${{  secrets.GH_TOKEN }}
