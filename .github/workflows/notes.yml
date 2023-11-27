@@ -41,7 +41,7 @@ jobs:
                 },
                 {
                   "title": "## Uncategorized",
-                  labels: []
+                  "labels": []
                 }
               ],
               "pr_template": "- #{{TITLE}}\n PR: #{{URL}}\n\n##{{BODY}}\n\n"
