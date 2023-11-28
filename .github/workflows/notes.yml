@@ -26,7 +26,7 @@ jobs:
 
       - name: Install
         run: |
-          npm ci --no-audit
+          echo "DATE=$(date +'%d.%m.%Y')" >> $GITHUB_ENV
           echo "FROM_TAG=$(git merge-base --fork-point origin/main)" >> $GITHUB_ENV
 
       - name: Build Changelog
@@ -53,4 +53,4 @@ jobs:
 
       - name: Create PR
         run: |
-          gh pr create --base main --head dev --title "Release by " --body "${{ steps.github_release.outputs.changelog }}"
+          gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body "${{ steps.github_release.outputs.changelog }}"
