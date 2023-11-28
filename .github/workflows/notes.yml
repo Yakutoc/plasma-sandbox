@@ -52,7 +52,7 @@ jobs:
 
       - name: Create release changelog md file
         run: |
-          echo pwd
+          echo $(pwd)
           tr -d '\r' < echo ${{ steps.github_release.outputs.changelog }} > /home/runner/work/plasma/plasma/changelog_artifacts.md
 
       - name: Upload release changelog md
