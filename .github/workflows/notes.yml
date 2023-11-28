@@ -49,3 +49,12 @@ jobs:
         run: |
           gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body '## Release Notes
           ${{ steps.github_release.outputs.changelog }}'
+
+      - name: Create release changelog md file
+        run: echo ${{ steps.github_release.outputs.changelog }} > /home/runner/work/plasma/plasma/changelog_artifacts.md
+
+      - name: Upload release changelog md
+        uses: actions/upload-artifact@master
+        with:
+          name: Release-changelog-artifacts
+          path: /home/runner/work/plasma/plasma/changelog_artifacts.md
