@@ -9,6 +9,8 @@ jobs:
   release-notes:
     name: Build Changelog
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
