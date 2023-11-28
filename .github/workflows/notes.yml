@@ -52,7 +52,7 @@ jobs:
 
       - name: Create release changelog md file
         run: |
-          sed -i 's/\r$//' < ${{ steps.github_release.outputs.changelog }} | tee /home/runner/work/plasma/plasma/changelog_artifacts.md
+          tr -d '\r' < echo ${{ steps.github_release.outputs.changelog }} > /home/runner/work/plasma/plasma/changelog_artifacts.md
 
       - name: Upload release changelog md
         uses: actions/upload-artifact@master
