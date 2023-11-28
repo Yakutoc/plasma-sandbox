@@ -49,5 +49,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{  secrets.GH_TOKEN }}
 
-      - name: Changelog
-        run: echo "${{ steps.github_release.outputs.changelog }}"
+      - name: Create PR
+        run: |
+          gh pr create --base main --head dev --title "Release by " --body "${{ steps.github_release.outputs.changelog }}"
