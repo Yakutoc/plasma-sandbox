@@ -51,7 +51,7 @@ jobs:
           ${{ steps.github_release.outputs.changelog }}'
 
       - name: Create release changelog md file
-        run: echo ${{ steps.github_release.outputs.changelog }} > /home/runner/work/plasma/plasma/changelog_artifacts.md
+        run: echo "${{ steps.github_release.outputs.changelog }}" >> /home/runner/work/plasma/plasma/changelog_artifacts.md
 
       - name: Upload release changelog md
         uses: actions/upload-artifact@master
