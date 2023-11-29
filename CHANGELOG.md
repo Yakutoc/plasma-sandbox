@@ -2,6 +2,27 @@
 
 ### Release Notes
 
+#### Release by 29.11.2023 ([#259](https://github.com/PoligonSa/plasma-sandbox/pull/259))
+
+
+
+---
+
+#### 🚀 Enhancement
+
+- `plasmax-core@0.29.0`
+  - feat(core): again [#258](https://github.com/PoligonSa/plasma-sandbox/pull/258) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Wed Nov 29 2023)
+
+### Release Notes
+
 #### Release by 29.11.2023 ([#257](https://github.com/PoligonSa/plasma-sandbox/pull/257))
 
 
