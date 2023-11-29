@@ -1,6 +1,6 @@
 {
   "name": "plasmax-pack",
-  "version": "0.20.0",
+  "version": "0.21.0-dev.0",
   "author": "Alex Czech <yakutoc@gmail.com>",
   "license": "MIT",
   "private": true,
@@ -8,7 +8,7 @@
     "access": "restricted"
   },
   "dependencies": {
-    "plasmax-core": "0.28.0",
+    "plasmax-core": "0.29.0-dev.0",
     "plasmax-tools": "file:./utils/tools"
   },
   "devDependencies": {
