@@ -1,3 +1,34 @@
+# v0.60.0 (Wed Nov 29 2023)
+
+### Release Notes
+
+#### Release by 29.11.2023 ([#257](https://github.com/PoligonSa/plasma-sandbox/pull/257))
+
+
+
+#### Релиз ([#228](https://github.com/PoligonSa/plasma-sandbox/pull/228))
+
+Описание из тело ПР для релиза
+
+---
+
+#### 🚀 Enhancement
+
+
+#### 🐛 Bug Fix
+
+- Update package-locks files ([@Yakutoc](https://github.com/Yakutoc))
+- Update versions ([@Yakutoc](https://github.com/Yakutoc))
+- ci: update [no ci] ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update package-locks \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.54.0 (Fri Nov 24 2023)
 
 ### Release Notes
