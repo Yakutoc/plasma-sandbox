@@ -1,3 +1,34 @@
+# v0.30.0 (Wed Nov 29 2023)
+
+### Release Notes
+
+#### Release by 29.11.2023 ([#261](https://github.com/PoligonSa/plasma-sandbox/pull/261))
+
+## Uncategorized
+
+#### Заголовок, например Dropdown
+
+- резюме изменений 
+
+feat: Some pr (https://github.com/PoligonSa/plasma-sandbox/pull/260)
+
+---
+
+#### 🚀 Enhancement
+
+- feat: some pr [#260](https://github.com/PoligonSa/plasma-sandbox/pull/260) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Update package-locks files ([@Yakutoc](https://github.com/Yakutoc))
+- Update versions ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.29.0 (Wed Nov 29 2023)
 
 ### Release Notes
