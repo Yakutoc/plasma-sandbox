@@ -45,7 +45,7 @@ jobs:
                   "labels": []
                 }
               ],
-              "pr_template": "##{{BODY}}\n\n #{{TITLE}} (#{{URL}})\n\n"
+              "pr_template": "##{{BODY}}\n\n#{{TITLE}} (#{{URL}})\n\n"
             }
 
       - name: Create "changelog_artifacts.md"
