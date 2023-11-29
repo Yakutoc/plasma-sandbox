@@ -45,7 +45,6 @@ jobs:
                   "labels": []
                 }
               ],
-              "template": "# Release Notes\n#{{CHANGELOG}}\n\n",
               "pr_template": "#{{DESCR}}\n\n",
               "custom_placeholders": [
                 {
