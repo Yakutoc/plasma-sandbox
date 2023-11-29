@@ -49,7 +49,7 @@ jobs:
               "transformers": [
                 {
                   "pattern": "/(?<=## Release Notes)(.*)(?=### What\/why Changed)/s",
-                  "target": "$0"
+                  "target": "$1"
                 }
               ]
             }
