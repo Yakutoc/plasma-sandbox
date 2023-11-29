@@ -50,7 +50,7 @@ jobs:
                 {
                   "name": "DESC",
                   "source": "BODY",
-                  "r": {
+                  "transformer": {
                     "pattern": "(?<=## Release Notes)(.*)(?=### What\/why Changed)",
                     "target": "$0"
                   }
