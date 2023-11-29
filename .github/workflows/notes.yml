@@ -52,7 +52,7 @@ jobs:
                   "source": "BODY",
                   "transformer": {
                     "pattern": "/(?<=## Release Notes)(.*)(?=### What\/why Changed)/gs",
-                    "target": "$0"
+                    "target": "$0 - $1 - $2 - $3"
                   }
                 }
               ]
