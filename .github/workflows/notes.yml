@@ -52,8 +52,8 @@ jobs:
                   "name": "DESCR",
                   "source": "BODY",
                   "transformer": {
-                    "pattern": "## Release Notes",
-                    "target": "- $2"
+                    "pattern": "Release Notes",
+                    "target": "$1"
                   }
                 }
               ]
