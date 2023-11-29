@@ -46,14 +46,14 @@ jobs:
                 }
               ],
               "template": "# Release Notes\n#{{CHANGELOG}}\n\n",
-              "pr_template": "##{{DESC}}",
+              "pr_template": "#{{DESC}}",
               "custom_placeholders": [
                 {
                   "name": "DESC",
                   "source": "BODY",
                   "transformer": {
                     "pattern": "(## Release Notes)",
-                    "target": "$1"
+                    "target": "$0"
                   }
                 }
               ]
