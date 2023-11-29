@@ -45,15 +45,11 @@ jobs:
                   "labels": []
                 }
               ],
-              "pr_template": "#{{DESC}}\n\n#{{TITLE}} (#{{URL}})\n\n",
-              "custom_placeholders": [
+              "pr_template": "#{{BODY}}\n\n#{{TITLE}} (#{{URL}})\n\n",
+              "transformers": [
                 {
-                  "name": "DESC",
-                  "source": "BODY",
-                  "transformer": {
-                    "pattern": "/(?<=## Release Notes)(.*)(?=### What\/why Changed)/s",
-                    "target": "$1"
-                  }
+                  "pattern": "/(?<=## Release Notes)(.*)(?=### What\/why Changed)/s",
+                  "target": "$0"
                 }
               ]
             }
@@ -69,7 +65,3 @@ jobs:
         with:
           name: release-changelog-artifacts
           path: ${{ github.workspace }}/changelog_artifacts.md
-
-      - name: Create release PR
-        run: |
-          ${{ steps.github_release.outputs.changelog }}
