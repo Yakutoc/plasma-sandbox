@@ -45,7 +45,13 @@ jobs:
                   "labels": []
                 }
               ],
-              "pr_template": "##{{BODY}}\n\n#{{TITLE}} (#{{URL}})\n\n"
+              "pr_template": "##{{BODY}}\n\n#{{TITLE}} (#{{URL}})\n\n",
+              "transformers": [
+                {
+                  "pattern": "(?<=## Release Notes)(.*)(?=### What\/why Changed)",
+                  "target": "$1"
+                }
+              ]
             }
 
       - name: Create "changelog_artifacts.md"
