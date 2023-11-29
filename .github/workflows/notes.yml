@@ -52,8 +52,8 @@ jobs:
                   "name": "DESC",
                   "source": "BODY",
                   "transformer": {
-                    "pattern": "(## Release Notes)",
-                    "target": "$0"
+                    "pattern": "## Release Notes",
+                    "target": "$1"
                   }
                 }
               ]
