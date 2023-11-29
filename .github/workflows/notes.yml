@@ -68,6 +68,4 @@ jobs:
 
       - name: Create release PR
         run: |
-          gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body '# Release Notes
-          
-          ${{ steps.github_release.outputs.changelog }}'
+          ${{ steps.github_release.outputs.changelog }}
