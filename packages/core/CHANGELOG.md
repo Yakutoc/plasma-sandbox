@@ -1,3 +1,48 @@
+# v0.32.0 (Wed Nov 29 2023)
+
+### Release Notes
+
+#### Release by 29.11.2023 ([#264](https://github.com/PoligonSa/plasma-sandbox/pull/264))
+
+## Components
+
+#### Calendar
+
+- Удален из библиотеки `plasma-hope`
+- Добавлена реализация на новой архитектуре в `plasma-new-hope`
+- Добавлены сборки компонента для старых библиотек `plasma-web`, `plasma-b2c`
+
+
+feat: add Calendar (https://github.com/PoligonSa/plasma-sandbox/pull/263)
+
+
+
+## Icons
+
+#### Raised hand icon
+
+<img width="48" alt="raisedHand" src="https://github.com/salute-developers/plasma/assets/46107741/212dbd44-1739-456e-83c3-e4362a2a10fd">
+
+feat: add RaisedHand icon (https://github.com/PoligonSa/plasma-sandbox/pull/262)
+
+---
+
+#### 🚀 Enhancement
+
+- feat: add Dropdown [#263](https://github.com/PoligonSa/plasma-sandbox/pull/263) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: add RaisedHand icon [#262](https://github.com/PoligonSa/plasma-sandbox/pull/262) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Update package-locks files ([@Yakutoc](https://github.com/Yakutoc))
+- Update versions ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.30.0 (Wed Nov 29 2023)
 
 ### Release Notes
