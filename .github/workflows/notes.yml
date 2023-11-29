@@ -45,13 +45,13 @@ jobs:
                   "labels": []
                 }
               ],
-              "pr_template": "##{{DESC}}\n\n#{{TITLE}} (#{{URL}})\n\n",
+              "pr_template": "#{{DESC}}\n\n#{{TITLE}} (#{{URL}})\n\n",
               "custom_placeholders": [
                 {
                   "name": "DESC",
                   "source": "BODY",
                   "transformer": {
-                    "pattern": "(?<=## Release Notes)(.*)(?=### What\/why Changed)",
+                    "pattern": "/(?<=## Release Notes)(.*)(?=### What\/why Changed)/gs",
                     "target": "$0"
                   }
                 }
