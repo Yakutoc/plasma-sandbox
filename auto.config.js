@@ -14,6 +14,7 @@ module.exports = function rc() {
     const plugins = [['npm', npmOptions], 'conventional-commits'];
 
     if (uploadAssets === 'true') {
+        console.log('uploadAssets >>>', uploadAssets);
         plugins.unshift(['released', releasedOptions]);
     }
 

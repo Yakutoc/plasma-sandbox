@@ -48,7 +48,9 @@ jobs:
           cache: 'npm'
 
       - name: Install
-        run: npm ci --no-audit
+        run: |
+          upload_assets="false"
+          npm ci --no-audit
 
       - name: Lerna bootstrap
         run: npx lerna bootstrap
@@ -57,7 +59,7 @@ jobs:
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Release
-        run: upload_assets="false" npm run release -- ${{ inputs.auto-options }}
+        run: npm run release -- ${{ inputs.auto-options }}
 
       - name: Update package-lock files
         if: ${{ inputs.with-update-package-lock }}
