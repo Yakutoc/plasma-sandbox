@@ -52,10 +52,8 @@ jobs:
                   "source": "BODY",
                   "transformer": [
                     {
-                      "pattern": "(?:## Release Notes)(?:<!-- GITHUB_RELEASE PR BODY: canary-version -->)(.*)",
+                      "pattern": "(?:## Release Notes)(.*)(?:### What\/why Changed)",
                       "flags": "s",
-                      "target": " ",
-                      "method": "replace"
                     }
                   ]
                 }
