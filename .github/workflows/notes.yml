@@ -45,13 +45,13 @@ jobs:
                   "labels": []
                 }
               ],
-              "pr_template": "#{{TITLE}}\n\n#{{DESC}}\n\n",
+              "pr_template": "#{{DESC}}",
               "custom_placeholders": [
                 {
                   "name": "DESC",
                   "source": "BODY",
                   "transformer": {
-                    "pattern": "(?:## Release Notes)(.*)(?:### What\/why Changed)",
+                    "pattern": "(?:<!-- GITHUB_RELEASE PR BODY: canary-version -->)(.*)",
                     "target": "$1",
                     "flags": "gs",
                     "method": "replace"
