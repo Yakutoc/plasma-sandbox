@@ -53,7 +53,9 @@ jobs:
                   "transformer": {
                     "pattern": "(?:## Release Notes)(.*)(?:### What\/why Changed)",
                     "flags": "s",
-                    "method": "match"
+                    "target": "",
+                    "on_property": "body"
+                    "method": "replace"
                   }
                 }
               ]
