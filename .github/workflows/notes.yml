@@ -46,18 +46,15 @@ jobs:
                 }
               ],
               "pr_template": "#{{BODY}}\n\n#{{TITLE}} (#{{URL}})\n\n",
-              "transformers": [
-                {    
-                  "pattern": "(?:## Release Notes\/n)(.*)",
-                  "target": " ",
-                  "flags": "gs",
-                  "method": "replace"
-                },
-                {    
-                  "pattern": "(?:<!-- GITHUB_RELEASE PR BODY: canary-version -->)(.*)",
-                  "target": " ",
-                  "flags": "gs",
-                  "method": "replace"
+              "custom_placeholders": [
+                {
+                  "name": "DESC",
+                  "source": "BODY",
+                  "transformer": {
+                    "pattern": "(?:## Release Notes)(.*)(?:### What\/why Changed)",
+                    "flags": "gs",
+                    "method": "match"
+                  }
                 }
               ]
             }
