@@ -50,12 +50,20 @@ jobs:
                 {
                   "name": "DESC",
                   "source": "BODY",
-                  "transformer": {
-                    "pattern": "(?:<!-- GITHUB_RELEASE PR BODY: canary-version -->)(.*)",
-                    "flags": "s",
-                    "target": " ",
-                    "method": "replace"
-                  }
+                  "transformer": [
+                    {
+                      "pattern": "(?:## Release Notes)(.*)",
+                      "flags": "s",
+                      "target": " ",
+                      "method": "replace"
+                    },
+                    {
+                      "pattern": "(?:<!-- GITHUB_RELEASE PR BODY: canary-version -->)(.*)",
+                      "flags": "s",
+                      "target": " ",
+                      "method": "replace"
+                    }
+                  ]
                 }
               ]
             }
