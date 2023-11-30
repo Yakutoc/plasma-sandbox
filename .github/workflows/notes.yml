@@ -54,8 +54,7 @@ jobs:
                     {
                       "pattern": "(?:## Release Notes)(.*)",
                       "flags": "s",
-                      "target": " ",
-                      "method": "replace"
+                      "method": "match"
                     },
                     {
                       "pattern": "(?:<!-- GITHUB_RELEASE PR BODY: canary-version -->)(.*)",
