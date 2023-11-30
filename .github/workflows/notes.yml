@@ -54,6 +54,7 @@ jobs:
                     "pattern": "(?:## Release Notes)(.*)(?:### What\/why Changed)",
                     "target": "$1 $0",
                     "flags": "gs",
+                    "method": "replace"
                   }
                 }
               ]
