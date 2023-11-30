@@ -50,12 +50,10 @@ jobs:
                 {
                   "name": "DESC",
                   "source": "BODY",
-                  "transformer": [
-                    {
+                  "transformer": {
                       "pattern": "(?:## Release Notes)(.*)(?:### What\/why Changed)",
                       "flags": "s",
-                    }
-                  ]
+                  }
                 }
               ]
             }
