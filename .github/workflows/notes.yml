@@ -52,12 +52,7 @@ jobs:
                   "source": "BODY",
                   "transformer": [
                     {
-                      "pattern": "(?:## Release Notes)(.*)",
-                      "flags": "s",
-                      "method": "match"
-                    },
-                    {
-                      "pattern": "(?:<!-- GITHUB_RELEASE PR BODY: canary-version -->)(.*)",
+                      "pattern": "(?:## Release Notes)(?:<!-- GITHUB_RELEASE PR BODY: canary-version -->)(.*)",
                       "flags": "s",
                       "target": " ",
                       "method": "replace"
