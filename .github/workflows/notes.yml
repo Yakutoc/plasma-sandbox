@@ -51,9 +51,10 @@ jobs:
                   "name": "DESC",
                   "source": "BODY",
                   "transformer": {
-                    "pattern": "(?:## Release Notes)(.*)(?:### What\/why Changed)",
+                    "pattern": "(?:## Release Notes)(.*)",
+                    "target": " ",
                     "flags": "gs",
-                    "method": "match"
+                    "method": "replace"
                   }
                 }
               ]
