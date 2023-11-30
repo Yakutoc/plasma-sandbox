@@ -49,7 +49,7 @@ jobs:
 
       - name: Install
         run: |
-          upload_assets="false"
+          upload_assets="true"
           npm ci --no-audit
 
       - name: Lerna bootstrap
