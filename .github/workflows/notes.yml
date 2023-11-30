@@ -51,9 +51,9 @@ jobs:
                   "name": "DESC",
                   "source": "BODY",
                   "transformer": {
-                    "pattern": "(?:## Release Notes)(.*)(?:### What\/why Changed)",
+                    "pattern": "(?:## <!-- GITHUB_RELEASE PR BODY: canary-version -->)(.*)",
                     "flags": "s",
-                    "target": "",
+                    "target": " ",
                     "on_property": "body"
                     "method": "replace"
                   }
