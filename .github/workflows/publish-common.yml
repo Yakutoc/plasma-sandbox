@@ -12,9 +12,10 @@ on:
       ref:
         type: string
         default: ''
-      cmd:
+      auto-options:
         type: string
-        default: 'npm run release'
+        description: "@auto-it cli arguments for example --no-changelog"
+        default: ''
     secrets:
       gh_token:
         required: true
@@ -56,7 +57,7 @@ jobs:
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Release
-        run: upload_assets="false" npm run release -- --no-changelog
+        run: upload_assets="false" npm run release -- ${{ inputs.auto-options }}
 
       - name: Update package-lock files
         if: ${{ inputs.with-update-package-lock }}
