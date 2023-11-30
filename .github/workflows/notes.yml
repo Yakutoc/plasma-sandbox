@@ -52,9 +52,8 @@ jobs:
                   "source": "BODY",
                   "transformer": {
                     "pattern": "(?:## Release Notes)(.*)(?:### What\/why Changed)",
-                    "target": "$0",
+                    "target": "$1 $0",
                     "flags": "gs",
-                    "method": "replace"
                   }
                 }
               ]
