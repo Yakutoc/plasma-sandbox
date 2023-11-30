@@ -53,6 +53,7 @@ jobs:
                   "transformer": {
                       "pattern": "(?:## Release Notes)(.*)(?:### What\/why Changed)",
                       "flags": "s",
+                      "target": "$1"
                   }
                 }
               ]
