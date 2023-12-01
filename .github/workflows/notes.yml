@@ -45,16 +45,12 @@ jobs:
                   "labels": []
                 }
               ],
-              "pr_template": "#{{DESC}}\n\n#{{TITLE}} (#{{URL}})\n\n",
-              "custom_placeholders": [
+              "pr_template": "#{{BODY}}\n\n#{{TITLE}} (#{{URL}})\n\n",
+              "transformers": [
                 {
-                  "name": "DESC",
-                  "source": "BODY",
-                  "transformer": {
-                      "pattern": "(?:## Release Notes\n)(.*)(?:\n\n### What\/why Changed)",
-                      "flags": "s",
-                      "target": "$1"
-                  }
+                  "pattern": "(?:## Release Notes\n)(.*)(?:\n\n### What\/why Changed)",
+                  "flags": "s",
+                  "method": "match"
                 }
               ]
             }
