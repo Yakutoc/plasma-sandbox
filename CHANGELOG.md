@@ -1,3 +1,45 @@
+# (Fri Dec 01 2023)
+
+### Release Notes
+
+#### Release by 01.12.2023 ([#269](https://github.com/PoligonSa/plasma-sandbox/pull/269))
+
+## Components
+
+### Calendar
+
+- Удален из библиотеки plasma-hope
+- Добавлена реализация на новой архитектуре в plasma-new-hope
+- Добавлены сборки компонента для старых библиотек plasma-web, plasma-b2c
+ 
+feat: add Dropdown (https://github.com/PoligonSa/plasma-sandbox/pull/265)
+
+
+## Uncategorized
+
+### Select
+
+- Удален из библиотеки plasma-hope
+- Добавлена реализация на новой архитектуре в plasma-new-hope
+- Добавлены сборки компонента для старых библиотек plasma-web, plasma-b2c
+ 
+feat: add Select (https://github.com/PoligonSa/plasma-sandbox/pull/267)
+
+---
+
+#### 🚀 Enhancement
+
+- `plasmax-web@0.66.0`
+  - feat: add Select [#267](https://github.com/PoligonSa/plasma-sandbox/pull/267) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.33.0`
+  - feat: add Dropdown [#265](https://github.com/PoligonSa/plasma-sandbox/pull/265) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Wed Nov 29 2023)
 
 ### Release Notes
