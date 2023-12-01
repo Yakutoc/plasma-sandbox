@@ -45,7 +45,18 @@ jobs:
                   "labels": []
                 }
               ],
-              "pr_template": "##{{BODY}}\n\n#{{TITLE}} (#{{URL}})\n\n"
+              "pr_template": "#{{DESC}}\n#{{TITLE}} (#{{URL}})\n",
+              "custom_placeholders": [
+                {
+                  "name": "DESC",
+                  "source": "BODY",
+                  "transformer": {
+                      "pattern": "(?:\n### What\/why Changed)(.*)",
+                      "flags": "s",
+                      "target": " "
+                  }
+                }
+              ]
             }
 
       - name: Create "changelog_artifacts.md"
@@ -63,5 +74,5 @@ jobs:
       - name: Create release PR
         run: |
           gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body '# Release Notes
-          
           ${{ steps.github_release.outputs.changelog }}'
+

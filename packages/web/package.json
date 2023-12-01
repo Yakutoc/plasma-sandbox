@@ -1,8 +1,9 @@
 {
   "name": "plasmax-web",
-  "version": "0.64.0",
+  "version": "0.66.0-dev.0",
   "author": "Alex Czech <yakutoc@gmail.com>",
   "license": "MIT",
+  "description": "description",
   "scripts": {
     "prepare": "npm run build",
     "build": "npm run build:clean && npm run build:cjs && npm run build:esm",
@@ -14,7 +15,7 @@
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
-    "plasmax-hope": "0.34.0"
+    "plasmax-hope": "0.35.0-dev.0"
   },
   "devDependencies": {
     "@types/node": "16.7.13",
