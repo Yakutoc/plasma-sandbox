@@ -45,6 +45,7 @@ jobs:
                   "labels": []
                 }
               ],
+              "template": "# Release Notes\n${{CHANGELOG}}"
               "pr_template": "#{{DESC}}\n#{{TITLE}} (#{{URL}})\n",
               "custom_placeholders": [
                 {
@@ -70,3 +71,8 @@ jobs:
         with:
           name: release-changelog-artifacts
           path: ${{ github.workspace }}/changelog_artifacts.md
+
+      - name: Create release PR
+        run: |
+          gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body '${{ steps.github_release.outputs.changelog }}'
+
