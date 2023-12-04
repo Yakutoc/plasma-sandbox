@@ -55,7 +55,7 @@ jobs:
                   "name": "DESC",
                   "source": "BODY",
                   "transformer": {
-                      "pattern": "(?:\n### What\/why Changed)(.*)",
+                      "pattern": "(?:\n### What\/why changed)(.*)",
                       "flags": "s",
                       "target": " "
                   }
