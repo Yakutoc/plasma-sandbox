@@ -33,35 +33,7 @@ jobs:
         uses: mikepenz/release-changelog-builder-action@v4.1.0
         with:
           fromTag: ${{ env.FROM_TAG }}
-          configurationJson: |
-            {
-              "categories": [
-                {
-                  "title": "## Components",
-                  "labels": ["components"]
-                },
-                {
-                  "title": "## Icons",
-                  "labels": ["plasma-icons"]
-                },
-                {
-                  "title": "## Uncategorized",
-                  "labels": []
-                }
-              ],
-              "pr_template": "#{{DESC}}\n#{{TITLE}} (#{{URL}})\n",
-              "custom_placeholders": [
-                {
-                  "name": "DESC",
-                  "source": "BODY",
-                  "transformer": {
-                      "pattern": "(?:\n### What\/why changed)(.*)",
-                      "flags": "s",
-                      "target": " "
-                  }
-                }
-              ]
-            }
+          configuration: "changelog-builder-config.json"
 
       - name: Create "changelog_artifacts.md"
         run: |
