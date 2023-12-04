@@ -33,7 +33,7 @@ jobs:
         uses: mikepenz/release-changelog-builder-action@v4.1.0
         with:
           fromTag: ${{ env.FROM_TAG }}
-          configuration: "changelog-builder-config.json"
+          configuration: "./.github/workflows/changelog-builder-config.json"
 
       - name: Create "changelog_artifacts.md"
         run: |
