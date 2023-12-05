@@ -23,8 +23,10 @@ jobs:
           name: scope-json
           path: ${{ github.workspace }}/scope.json
 
-      - name: Create "scope.json"
-        run: rm ${{ github.workspace }}/scope.json
+      - name: LIST
+        run: |
+          rm ${{ github.workspace }}/scope.json
+          ls -R
 
       - name: Download "scope.json"
         id: download-scope
@@ -32,6 +34,10 @@ jobs:
         with:
           name: scope-json
           path: ${{ github.workspace }}/scope.json
+
+      - name: LIST
+        run: |
+          ls -R    
 
       - name: Computed scope state
         id: scope
