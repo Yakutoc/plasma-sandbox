@@ -47,7 +47,7 @@ jobs:
           STATE: ${{ toJSON(steps.state.outputs.CHANGED_STATE) }}
         with:
           script: |
-            const { STATE } = process.env;
+            const { STATE = [] } = process.env;
             
             const changedState = JSON.parse(JSON.parse(STATE));
             
