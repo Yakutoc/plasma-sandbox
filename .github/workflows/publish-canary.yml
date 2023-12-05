@@ -14,25 +14,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create file
+        id: state
         run: |
-          echo "module.exports = { HAS_ASSETS:true }" > ${{ github.workspace }}/scope.js
-          echo "FILE_NAME=scope-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
-
-      - name: Upload
-        uses: actions/upload-artifact@master
-        with:
-          name: ${{ env.FILE_NAME}}
-          path: ${{ github.workspace }}/${{ env.FILE_NAME}}.js
+          echo "CHANGED_STATE=$(npx lerna changed --all --json | jq -c)" >> "$GITHUB_OUTPUT"
 
       - name: Computed scope state
         id: scope
         uses: actions/github-script@v6
+        env:
+          STATE: ${{ toJSON(steps.changed-state.outputs.CHANGED_STATE) }}
         with:
           script: |
-            const processingScope = require('${{ github.workspace }}/${{ env.FILE_NAME}}.js');
+            const { CHANGED_STATE, AS_ENUMERATION } = process.env;
+            
+            const changedState = JSON.parse(JSON.parse(CHANGED_STATE));
+            
+            const packagesList = changedState.map(({ name }) => name);
 
-            console.log(processingScope); 
-            console.log(processingScope.HAS_ASSETS); 
+            console.log(packagesList); 
 
   authorize:
     name: Authorize external pull request
