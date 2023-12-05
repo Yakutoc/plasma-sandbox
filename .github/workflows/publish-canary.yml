@@ -18,6 +18,12 @@ jobs:
           ref: refs/pull/${{github.event.pull_request.number}}/merge
           show-progress: false
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
       - name: Create "scope.json"
         run: |
           jq -n "{ HAS_ASSETS:true }" > ${{ github.workspace }}/scope.json
