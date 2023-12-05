@@ -12,8 +12,6 @@ jobs:
   test:
     name: Release
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.gh_token }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -28,27 +26,22 @@ jobs:
 
       - name: Create "scope.json"
         run: |
-          echo "module.exports = { HAS_ASSETS:true }" > ./.github/scope.js
-          echo "module.exports = { HAS_ASSETS:true }" > ./scope.js
+          jq -n "{ HAS_ASSETS:true }" > ${{ github.workspace }}/scope.json
 
-      - name: Upload "scope.js"
+      - name: Upload "scope.json"
         uses: actions/upload-artifact@master
         with:
-          name: scope-js
-          path: ./.github/scope.js
-
-      - name: LIST
-        run: |
-          ls -R    
+          name: scope-json
+          path: ${{ github.workspace }}/scope.json
 
       - name: Computed scope state
         id: scope
         uses: actions/github-script@v6
         with:
           script: |
-            const processingScope = require('./.github/scope.js');
- 
-            console.log(processingScope);    
+            const processingScope = require('${{ github.workspace }}/scope.json');
+
+            console.log(JSON.parse(processingScope));    
 
   authorize:
     name: Authorize external pull request
