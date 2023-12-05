@@ -13,6 +13,11 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: refs/pull/${{github.event.pull_request.number}}/merge
+          show-progress: false
+
       - name: Create "scope.json"
         run: |
           jq -n "{ HAS_ASSETS:true }" > ${{ github.workspace }}/scope.json
@@ -44,9 +49,11 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
+            const d = await import('${{ github.workspace }}/scope.json')
             const processingScope = require('./scope.json');
 
-            console.log(JSON.parse(processingScope))    
+            console.log(JSON.parse(processingScope));    
+            console.log(JSON.parse(d));    
 
   authorize:
     name: Authorize external pull request
