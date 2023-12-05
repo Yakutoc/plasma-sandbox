@@ -9,6 +9,20 @@ on:
       - dev
 
 jobs:
+  test:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create "scope.json"
+        run: |
+          echo "{"HAS_ASSETS"=true}" | jq -c > ${{ github.workspace }}/scope.json
+
+      - name: Upload "scope.json"
+        uses: actions/upload-artifact@master
+        with:
+          name: scope-json
+          path: ${{ github.workspace }}/scope.json
+
   authorize:
     name: Authorize external pull request
     uses: ./.github/workflows/auth.yml

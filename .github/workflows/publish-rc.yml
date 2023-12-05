@@ -6,6 +6,26 @@ on:
       - dev
 
 jobs:
+  test:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download "scope.json"
+        id: download-scope
+        uses: actions/download-artifact@master
+        with:
+          name: scope-json
+          path: ${{ github.workspace }}/scope.json
+
+      - name: Computed scope state
+        id: scope
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const processingScope = require('${{ github.workspace }}/scope.json');
+
+            console.log(JSON.parse(processingScope))
+
   publish:
     name: Publish RC version
     if: ${{ github.actor == 'github-merge-queue[bot]' }}
