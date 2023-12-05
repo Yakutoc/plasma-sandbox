@@ -49,8 +49,8 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const d = await import('${{ github.workspace }}/scope.json')
-            const processingScope = require('./scope.json');
+            const d = import('${{ github.workspace }}/scope.json')
+            const processingScope = require('${{ github.workspace }}/scope.json');
 
             console.log(JSON.parse(processingScope));    
             console.log(JSON.parse(d));    
