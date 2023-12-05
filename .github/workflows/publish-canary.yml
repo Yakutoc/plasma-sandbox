@@ -10,38 +10,29 @@ on:
 
 jobs:
   test:
-    name: Release
+    name: Save state
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: refs/pull/${{github.event.pull_request.number}}/merge
-          show-progress: false
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
-
-      - name: Create "scope.json"
+      - name: Create file
         run: |
-          jq -n "{HAS_ASSETS:true}" > ${{ github.workspace }}/scope.json
+          echo "module.exports = { HAS_ASSETS:true }" > ./.github/scope.js
+          echo "FILE_NAME=scope-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
 
-      - name: Upload "scope.json"
+      - name: Upload
         uses: actions/upload-artifact@master
         with:
-          name: scope-json
-          path: ${{ github.workspace }}/scope.json
+          name: ${{ env.FILE_NAME}}
+          path: ${{ github.workspace }}/${{ env.FILE_NAME}}.js
 
       - name: Computed scope state
         id: scope
         uses: actions/github-script@v6
         with:
           script: |
-            const processingScope = require('${{ github.workspace }}/scope.json');
+            const processingScope = require('${{ github.workspace }}/${{ env.FILE_NAME}}.js');
 
-            console.log(JSON.parse(processingScope));    
+            console.log(processingScope); 
+            console.log(processingScope.HAS_ASSETS); 
 
   authorize:
     name: Authorize external pull request
