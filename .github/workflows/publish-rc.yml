@@ -6,34 +6,61 @@ on:
       - dev
 
 jobs:
-  test:
-    name: Release
+  scope:
+    name: Save state
     runs-on: ubuntu-latest
+    outputs:
+      HAS_ASSETS: ${{ steps.scope.outputs.result }}
     steps:
-      - name: Download "scope.json"
-        id: download-scope
-        uses: actions/download-artifact@master
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
-          name: scope-json
-          path: ${{ github.workspace }}/scope.json
+          show-progress: false
+          fetch-depth: 0
+
+      - name: Unset header
+        # https://github.com/intuit/auto/issues/1030
+        run: git config --local --unset http.https://github.com/.extraheader
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci --no-audit
+
+      - name: Save state
+        id: state
+        run: |
+          echo "CHANGED_STATE=$(npx lerna changed --all --json | jq -c)" >> "$GITHUB_OUTPUT"
 
       - name: Computed scope state
         id: scope
         uses: actions/github-script@v6
+        env:
+          STATE: ${{ toJSON(steps.state.outputs.CHANGED_STATE) }}
         with:
           script: |
-            const processingScope = require('${{ github.workspace }}/scope.json');
+            const { STATE } = process.env;
+            
+            const changedState = JSON.parse(JSON.parse(STATE));
+            
+            const packagesList = changedState.map(({ name }) => name);
 
-            console.log(JSON.parse(processingScope))
+            return packagesList.includes('plasmax-core')
 
   publish:
     name: Publish RC version
+    needs: [scope]
     if: ${{ github.actor == 'github-merge-queue[bot]' }}
     uses: ./.github/workflows/publish-common.yml
     with:
       with-update-package-lock: true
       commit-message: "Update package-locks files"
       auto-options: '--no-changelog'
+      upload_assets: ${{ needs.scope.outputs.HAS_ASSETS == 'true' }}
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
