@@ -26,7 +26,7 @@ jobs:
 
       - name: Create "scope.json"
         run: |
-          jq -n "{ HAS_ASSETS:true }" > ${{ github.workspace }}/scope.json
+          jq -n "{HAS_ASSETS:true}" > ${{ github.workspace }}/scope.json
 
       - name: Upload "scope.json"
         uses: actions/upload-artifact@master
