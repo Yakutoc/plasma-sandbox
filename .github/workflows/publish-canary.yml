@@ -12,6 +12,8 @@ jobs:
   test:
     name: Release
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.gh_token }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -27,21 +29,10 @@ jobs:
       - name: Create "scope.json"
         run: |
           echo "module.exports = { HAS_ASSETS:true }" > ./.github/scope.js
+          echo "module.exports = { HAS_ASSETS:true }" > ./scope.js
 
       - name: Upload "scope.js"
         uses: actions/upload-artifact@master
-        with:
-          name: scope-js
-          path: ./.github/scope.js
-
-      - name: LIST
-        run: |
-          rm ./.github/scope.js
-          ls -R
-
-      - name: Download "scope.js"
-        id: download-scope
-        uses: actions/download-artifact@master
         with:
           name: scope-js
           path: ./.github/scope.js
