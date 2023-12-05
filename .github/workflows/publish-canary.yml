@@ -55,7 +55,6 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const processingScope = require('${{ github.workspace }}/scope.json');
             const processingScope1 = require('scope.json');
 
             console.log(JSON.parse(processingScope1));    
