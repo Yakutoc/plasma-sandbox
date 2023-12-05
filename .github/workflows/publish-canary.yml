@@ -49,11 +49,11 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const d = import('${{ github.workspace }}/scope.json')
             const processingScope = require('${{ github.workspace }}/scope.json');
+            const processingScope1 = require('scope.json');
 
+            console.log(JSON.parse(processingScope1));    
             console.log(JSON.parse(processingScope));    
-            console.log(JSON.parse(d));    
 
   authorize:
     name: Authorize external pull request
