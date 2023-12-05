@@ -26,25 +26,25 @@ jobs:
 
       - name: Create "scope.json"
         run: |
-          echo "module.exports = { HAS_ASSETS:true }" > ${{ github.workspace }}/scope.js
+          echo "module.exports = { HAS_ASSETS:true }" > ./.github/scope.js
 
       - name: Upload "scope.js"
         uses: actions/upload-artifact@master
         with:
           name: scope-js
-          path: ${{ github.workspace }}/scope.js
+          path: ./.github/scope.js
 
       - name: LIST
         run: |
-          rm ${{ github.workspace }}/scope.js
+          rm ./.github/scope.js
           ls -R
 
-      - name: Download "scope.json"
+      - name: Download "scope.js"
         id: download-scope
         uses: actions/download-artifact@master
         with:
           name: scope-js
-          path: ${{ github.workspace }}/scope.js
+          path: ./.github/scope.js
 
       - name: LIST
         run: |
@@ -55,7 +55,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const processingScope = require('./scope.js');
+            const processingScope = require('./.github/scope.js');
  
             console.log(processingScope);    
 
