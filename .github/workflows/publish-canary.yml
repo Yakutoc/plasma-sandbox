@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Create file
         run: |
-          echo "module.exports = { HAS_ASSETS:true }" > ./.github/scope.js
+          echo "module.exports = { HAS_ASSETS:true }" > ${{ github.workspace }}/scope.js
           echo "FILE_NAME=scope-${{ github.event.pull_request.number }}" >> $GITHUB_ENV
 
       - name: Upload
