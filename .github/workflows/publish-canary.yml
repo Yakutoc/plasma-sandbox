@@ -23,6 +23,9 @@ jobs:
           name: scope-json
           path: ${{ github.workspace }}/scope.json
 
+      - name: Create "scope.json"
+        run: rm ${{ github.workspace }}/scope.json
+
       - name: Download "scope.json"
         id: download-scope
         uses: actions/download-artifact@master
