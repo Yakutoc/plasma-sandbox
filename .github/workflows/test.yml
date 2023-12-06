@@ -1,11 +1,11 @@
-name: Publish RC
+name: Get pull request info
 
 on:
+  workflow_dispatch:
   push:
 
 jobs:
   pull-r:
-    name: Save state
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
