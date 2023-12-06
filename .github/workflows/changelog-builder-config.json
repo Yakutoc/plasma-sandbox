@@ -11,13 +11,9 @@
     {
       "title": "## Uncategorized",
       "labels": []
-    },
-    {
-      "title": "## Skip",
-      "exclude_labels": ["skip"],
-      "exhaustive": true
     }
   ],
+  "ignore_labels": ["skip"],
   "pr_template": "#{{DESC}}\n#{{TITLE}} (#{{URL}})\n",
   "custom_placeholders": [
     {
