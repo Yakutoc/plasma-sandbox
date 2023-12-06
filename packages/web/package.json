@@ -1,9 +1,9 @@
 {
   "name": "plasmax-web",
-  "version": "0.68.0-dev.0",
+  "version": "0.69.0-dev.0",
   "author": "Alex Czech <yakutoc@gmail.com>",
   "license": "MIT",
-  "description": "description 1",
+  "description": "description",
   "scripts": {
     "prepare": "npm run build",
     "build": "npm run build:clean && npm run build:cjs && npm run build:esm",
