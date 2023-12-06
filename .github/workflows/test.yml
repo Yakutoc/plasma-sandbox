@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  scope:
+  pull-r:
     name: Save state
     runs-on: ubuntu-latest
     steps:
@@ -19,11 +19,10 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-
-          console.log(context)
-          
-          const res =  await github.rest.repos.listPullRequestsAssociatedWithCommit({
-            commit_sha: context.sha,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-          }
+            console.log(context);
+            
+            const res = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+              commit_sha: context.sha,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            })
