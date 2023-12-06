@@ -43,9 +43,9 @@ jobs:
             });
             
             console.log("res >>>",res);
-            console.log("res >>>", res?.data?.base?.sha);
+            console.log("res >>>", res?.data[0]?.base?.sha);
             
-            return res?.data?.base?.sha || context.sha;
+            return res?.data[0]?.base?.sha || context.sha;
 
       - name: Two
         id: state
