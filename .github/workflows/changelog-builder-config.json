@@ -11,6 +11,11 @@
     {
       "title": "## Uncategorized",
       "labels": []
+    },
+    {
+      "title": "## Skip",
+      "exclude_labels": ["skip"],
+      "exhaustive": true
     }
   ],
   "pr_template": "#{{DESC}}\n#{{TITLE}} (#{{URL}})\n",
