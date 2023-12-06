@@ -42,10 +42,10 @@ jobs:
               repo: context.repo.repo,
             });
             
-            console.log("context.sha >>>>", context.sha);
             console.log("res >>>",res);
+            console.log("res >>>", res?.data?.base?.sha);
             
-            return context.sha;
+            return res?.data?.base?.sha || context.sha;
 
       - name: Two
         id: state
