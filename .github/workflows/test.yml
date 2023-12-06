@@ -2,7 +2,6 @@ name: Get pull request info
 
 on:
   workflow_dispatch:
-  push:
 
 jobs:
   pull-r:
