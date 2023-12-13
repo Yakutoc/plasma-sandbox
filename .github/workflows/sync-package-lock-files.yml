@@ -5,6 +5,9 @@ on:
     branches:
       - dev
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     name: Sync
@@ -25,15 +28,24 @@ jobs:
       - name: Install
         run: npm ci --no-audit
 
-      - name: Update package-lock's
-        run: |
-          npm i --no-audit --no-progress --package-lock-only
-          # delete node_modules for all packages
-          lerna clean -y
-          # update package-lock.json file for all packages
-          lerna exec --no-private -- npm i --no-audit --no-progress --package-lock-only --ignore-scripts
-          # root deps don't update correctly on first regeneration O_o
-          npm i --package-lock-only
+      - name: Sync package lock files
+        uses: nick-fields/retry@v2
+        env:
+          options: "--no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps"
+        with:
+          timeout_minutes: 5
+          shell: bash
+          max_attempts: 3
+          retry_on: error
+          command: |
+            # (1) Sync package-lock's root  level
+            npm i ${{ env.options }}
+            # (2) Remove the node_modules directory from all packages
+            lerna clean -y
+            # (3) Sync package-lock files state
+            lerna exec --no-private -- npm i ${{ env.options }} --ignore-scripts
+            # (4) root deps don't update correctly on first regeneration
+            npm i ${{ env.options }}
 
       - name: Extract branch name
         id: branch_name

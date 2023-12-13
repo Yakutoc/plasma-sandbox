@@ -6,14 +6,81 @@ on:
       - dev
 
 jobs:
+  scope:
+    name: Save state
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    outputs:
+      HAS_ASSETS: ${{ steps.scope.outputs.result }}
+    steps:
+      ## Получаем состояние dev branch
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci --no-audit
+
+      ## Получаем base sha commit для dev из pull request который был merged и запустил это событие
+      - name: One
+        id: base_sha
+        uses: actions/github-script@v6
+        with:
+          script: |            
+            const res = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+              commit_sha: context.sha,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            
+            console.log("res >>>",res);
+            console.log("res >>>", res?.data[0]?.base?.sha);
+            
+            return res?.data[0]?.base?.sha || context.sha;
+
+      - name: Two
+        id: state
+        run: |
+          echo "CHANGED_STATE=$(npx lerna la --json --since=${{ steps.base_sha.outputs.result }} | jq -c)" >> "$GITHUB_OUTPUT"
+
+      - name: Computed scope state
+        id: scope
+        uses: actions/github-script@v6
+        env:
+          STATE: ${{ toJSON(steps.state.outputs.CHANGED_STATE) }}
+        with:
+          script: |
+            const { STATE = [] } = process.env || {};
+            
+            if (!STATE.length) { 
+              return false;
+            }
+            
+            const changedState = JSON.parse(JSON.parse(STATE));
+            
+            const packagesList = changedState.map(({ name }) => name);
+
+            return packagesList.includes('plasmax-core')     
+
   publish:
     name: Publish RC version
+    needs: [scope]
     if: ${{ github.actor == 'github-merge-queue[bot]' }}
     uses: ./.github/workflows/publish-common.yml
     with:
       with-update-package-lock: true
       commit-message: "Update package-locks files"
       auto-options: '--no-changelog'
+      upload_assets: ${{ needs.scope.outputs.HAS_ASSETS == 'true' }}
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
