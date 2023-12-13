@@ -25,12 +25,12 @@ jobs:
       - name: Install
         run: npm ci --no-audit
 
-      - name: Sync package-lock files
+      - name: Sync package lock files
         uses: nick-fields/retry@v2
-        shell: bash
         env:
           options: "--no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps"
         with:
+          shell: bash
           max_attempts: 3
           retry_on: error
           command: |
