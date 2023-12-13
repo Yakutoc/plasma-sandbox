@@ -27,12 +27,14 @@ jobs:
         run: |
           echo "DATE=$(date +'%d.%m.%Y')" >> $GITHUB_ENV
           echo "FROM_TAG=$(git merge-base --fork-point origin/main)" >> $GITHUB_ENV
+          echo "${{ context.sha }}"
 
       - name: Build Changelog
         id: github_release
         uses: mikepenz/release-changelog-builder-action@v4.1.0
         with:
           fromTag: ${{ env.FROM_TAG }}
+          toTag: ${{ context.sha }}
           configuration: "./.github/workflows/changelog-builder-config.json"
 
       - name: Create "changelog_artifacts.md"

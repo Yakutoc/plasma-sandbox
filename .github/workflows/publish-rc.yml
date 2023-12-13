@@ -50,8 +50,6 @@ jobs:
       - name: Two
         id: state
         run: |
-          npx lerna la --json --since=$(git merge-base --fork-point origin/dev)
-          npx lerna la --json --since=${{ steps.base_sha.outputs.result }}
           echo "CHANGED_STATE=$(npx lerna la --json --since=${{ steps.base_sha.outputs.result }} | jq -c)" >> "$GITHUB_OUTPUT"
 
       - name: Computed scope state
