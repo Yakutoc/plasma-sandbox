@@ -1,3 +1,79 @@
+# (Wed Dec 13 2023)
+
+### Release Notes
+
+#### Release by 13.12.2023 ([#293](https://github.com/PoligonSa/plasma-sandbox/pull/293))
+
+## Components
+
+### Dropdown
+
+- что-то там новое добавили 
+feat: add Dropdown (https://github.com/PoligonSa/plasma-sandbox/pull/271)
+
+
+## Uncategorized
+
+
+feat: шняга (https://github.com/PoligonSa/plasma-sandbox/pull/279)
+
+
+feat: add (https://github.com/PoligonSa/plasma-sandbox/pull/282)
+
+
+feat: add 2 (https://github.com/PoligonSa/plasma-sandbox/pull/283)
+
+
+feat: add 3 (https://github.com/PoligonSa/plasma-sandbox/pull/284)
+
+
+feat: add 4 (https://github.com/PoligonSa/plasma-sandbox/pull/285)
+
+
+feat: add 5 (https://github.com/PoligonSa/plasma-sandbox/pull/286)
+
+
+feat: add 7 (https://github.com/PoligonSa/plasma-sandbox/pull/288)
+
+
+feat: add 8 (https://github.com/PoligonSa/plasma-sandbox/pull/289)
+
+
+feat: add 6 (https://github.com/PoligonSa/plasma-sandbox/pull/287)
+
+
+feat: add 2 (https://github.com/PoligonSa/plasma-sandbox/pull/291)
+
+
+feat: add 3 (https://github.com/PoligonSa/plasma-sandbox/pull/292)
+
+---
+
+#### 🚀 Enhancement
+
+- `plasmax-web@0.76.0`
+  - feat: add 3 [#292](https://github.com/PoligonSa/plasma-sandbox/pull/292) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add 7 [#288](https://github.com/PoligonSa/plasma-sandbox/pull/288) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add 5 [#286](https://github.com/PoligonSa/plasma-sandbox/pull/286) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: шняга [#279](https://github.com/PoligonSa/plasma-sandbox/pull/279) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add Dropdown [#271](https://github.com/PoligonSa/plasma-sandbox/pull/271) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.38.0`
+  - feat: add 2 [#291](https://github.com/PoligonSa/plasma-sandbox/pull/291) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add 6 [#287](https://github.com/PoligonSa/plasma-sandbox/pull/287) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add 4 [#285](https://github.com/PoligonSa/plasma-sandbox/pull/285) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add 3 [#284](https://github.com/PoligonSa/plasma-sandbox/pull/284) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add 2 [#283](https://github.com/PoligonSa/plasma-sandbox/pull/283) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add [#282](https://github.com/PoligonSa/plasma-sandbox/pull/282) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add Dropdown [#278](https://github.com/PoligonSa/plasma-sandbox/pull/278) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-hope@0.41.0`
+  - feat: add 8 [#289](https://github.com/PoligonSa/plasma-sandbox/pull/289) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Fri Dec 01 2023)
 
 ### Release Notes

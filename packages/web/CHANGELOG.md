@@ -1,3 +1,76 @@
+# v0.76.0 (Wed Dec 13 2023)
+
+### Release Notes
+
+#### Release by 13.12.2023 ([#293](https://github.com/PoligonSa/plasma-sandbox/pull/293))
+
+## Components
+
+### Dropdown
+
+- что-то там новое добавили 
+feat: add Dropdown (https://github.com/PoligonSa/plasma-sandbox/pull/271)
+
+
+## Uncategorized
+
+
+feat: шняга (https://github.com/PoligonSa/plasma-sandbox/pull/279)
+
+
+feat: add (https://github.com/PoligonSa/plasma-sandbox/pull/282)
+
+
+feat: add 2 (https://github.com/PoligonSa/plasma-sandbox/pull/283)
+
+
+feat: add 3 (https://github.com/PoligonSa/plasma-sandbox/pull/284)
+
+
+feat: add 4 (https://github.com/PoligonSa/plasma-sandbox/pull/285)
+
+
+feat: add 5 (https://github.com/PoligonSa/plasma-sandbox/pull/286)
+
+
+feat: add 7 (https://github.com/PoligonSa/plasma-sandbox/pull/288)
+
+
+feat: add 8 (https://github.com/PoligonSa/plasma-sandbox/pull/289)
+
+
+feat: add 6 (https://github.com/PoligonSa/plasma-sandbox/pull/287)
+
+
+feat: add 2 (https://github.com/PoligonSa/plasma-sandbox/pull/291)
+
+
+feat: add 3 (https://github.com/PoligonSa/plasma-sandbox/pull/292)
+
+---
+
+#### 🚀 Enhancement
+
+- feat: add 3 [#292](https://github.com/PoligonSa/plasma-sandbox/pull/292) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: add 7 [#288](https://github.com/PoligonSa/plasma-sandbox/pull/288) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: add 5 [#286](https://github.com/PoligonSa/plasma-sandbox/pull/286) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: шняга [#279](https://github.com/PoligonSa/plasma-sandbox/pull/279) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: add Dropdown [#271](https://github.com/PoligonSa/plasma-sandbox/pull/271) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: bump [no ci] ([@Yakutoc](https://github.com/Yakutoc))
+- Update package-locks files ([@Yakutoc](https://github.com/Yakutoc))
+- Update versions ([@Yakutoc](https://github.com/Yakutoc))
+- Merge remote-tracking branch 'origin/dev' into dev ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update package-locks \[skip ci\] ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.66.0 (Fri Dec 01 2023)
 
 ### Release Notes
