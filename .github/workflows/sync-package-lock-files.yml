@@ -30,6 +30,7 @@ jobs:
         env:
           options: "--no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps"
         with:
+          timeout_minutes: 5
           shell: bash
           max_attempts: 3
           retry_on: error
