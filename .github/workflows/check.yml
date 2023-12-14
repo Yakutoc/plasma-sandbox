@@ -32,19 +32,19 @@ jobs:
         run: npx lerna bootstrap
 
       - name: Lint
+        id: lint
         run: |
           npm run lint
-          echo "Job name is $GITHUB_JOB"
-          echo "How about ${{ github.jobs[github.job].name }}"
 
       - name: Set commit status "success"
         run: |
+          echo '${{ toJson(steps) }}'
           res=$(curl \
             -X POST \
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
             ${{ env.STATUS_URL }} \
-            -d '{"state":"success","target_url":"${{ env.RUN_URL }}","description":"${{github.jobs[github.job].name}}: Successful", }') || exit 1
+            -d '{"state":"success","target_url":"${{ env.RUN_URL }}","description": " 2 ": Successful", }') || exit 1
           echo $res
           if [[ $res != *"success"* ]]; then
             exit 1
