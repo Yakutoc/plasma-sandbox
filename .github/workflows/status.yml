@@ -1,7 +1,7 @@
 name: Status
 
 on:
-  status: {}
+  status:
 
 jobs:
   report:
@@ -11,4 +11,5 @@ jobs:
           DESCRIPTION: ${{ github.event.description }}
         run: |
           echo "${{ github.event }}"
+          echo "${{ github.event.state }}"
           echo The status is error or failed: $DESCRIPTION
