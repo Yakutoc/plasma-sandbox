@@ -7,11 +7,17 @@ jobs:
   report:
     runs-on: ubuntu-latest
     steps:
-      - env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-          DESCRIPTION: ${{ github.event.description }}
+      - name: Echo
         run: |
-          echo "${{ env.GITHUB_CONTEXT }}"
           echo "${{ github.event.state }}"
           echo "${{ github.event.context }}"
           echo The status is error or failed: $DESCRIPTION
+          
+      - name: Create the Mattermost Message
+        run: |
+          jq -n "{"text": "${{ github.event.description }}" }" > mattermost.json
+
+      - name: Send notification
+        uses: mattermost/action-mattermost-notify@master
+        env:
+          MATTERMOST_WEBHOOK_URL: ${{ secrets.WEBHOOKS_NOTIFICATIONS_MM }}
