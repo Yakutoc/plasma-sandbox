@@ -11,6 +11,9 @@ jobs:
   run:
     name: Check Health
     runs-on: ubuntu-latest
+    env:
+      RUN_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+      STATUS_URL: "https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }}"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -30,3 +33,16 @@ jobs:
 
       - name: Lint
         run: npm run lint
+
+      - name: Set commit status "success"
+        run: |
+          res=$(curl \
+            -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
+            ${{ env.STATUS_URL }} \
+            -d '{"state":"success","target_url":"${{ env.RUN_URL }}","description":"Check health successful"}') || exit 1
+          echo $res
+          if [[ $res != *"success"* ]]; then
+            exit 1
+          fi
