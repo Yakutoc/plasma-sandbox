@@ -8,9 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
           DESCRIPTION: ${{ github.event.description }}
         run: |
-          echo "${{ fromJSON(github.event) }}"
+          echo "${{ env.GITHUB_CONTEXT }}"
           echo "${{ github.event.state }}"
           echo "${{ github.event.context }}"
           echo The status is error or failed: $DESCRIPTION
