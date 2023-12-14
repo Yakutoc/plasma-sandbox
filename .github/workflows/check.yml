@@ -32,7 +32,10 @@ jobs:
         run: npx lerna bootstrap
 
       - name: Lint
-        run: npm run lint
+        run: |
+          npm run lint
+          echo "Job name is $GITHUB_JOB"
+          echo "How about ${{ github.jobs[github.job].name }}"
 
       - name: Set commit status "success"
         run: |
