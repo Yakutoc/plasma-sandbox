@@ -1,8 +1,7 @@
-name: Check run state
+name: Status
 
 on:
-  check_run:
-    types: [completed]
+  status: {}
 
 jobs:
   report:
