@@ -41,7 +41,7 @@ jobs:
             -H "Accept: application/vnd.github.v3+json" \
             -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
             ${{ env.STATUS_URL }} \
-            -d '{"state":"success","target_url":"${{ env.RUN_URL }}","description":"${github.jobs[github.job].name}: Successful", }') || exit 1
+            -d '{"state":"success","target_url":"${{ env.RUN_URL }}","description":"${{github.jobs[github.job].name}}: Successful", }') || exit 1
           echo $res
           if [[ $res != *"success"* ]]; then
             exit 1
