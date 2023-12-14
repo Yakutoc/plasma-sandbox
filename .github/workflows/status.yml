@@ -1,11 +1,12 @@
 name: Status
 
 on:
-  status
+  - status
 
 jobs:
   if_error_or_failure:
     runs-on: ubuntu-latest
+    if: github.event.state == 'success'
     steps:
       - env:
           DESCRIPTION: ${{ github.event.description }}
