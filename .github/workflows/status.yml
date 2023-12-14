@@ -15,7 +15,7 @@ jobs:
           
       - name: Create the Mattermost Message
         run: |
-          jq -n "{"text": "${{ github.event.description }}" }" > mattermost.json
+          echo "{\"text\":\" ${{github.event.description}}\"}" > mattermost.json
 
       - name: Send notification
         uses: mattermost/action-mattermost-notify@master
