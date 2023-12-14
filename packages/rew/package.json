@@ -1,6 +1,6 @@
 {
   "name": "plasmax-rew",
-  "version": "0.43.0",
+  "version": "0.44.0-dev.0",
   "author": "Alex Czech <yakutoc@gmail.com>",
   "license": "MIT",
   "scripts": {
