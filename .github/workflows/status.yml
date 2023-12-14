@@ -10,6 +10,7 @@ jobs:
       - env:
           DESCRIPTION: ${{ github.event.description }}
         run: |
-          echo "${{ github.event }}"
+          echo "${{ fromJSON(github.event) }}"
           echo "${{ github.event.state }}"
+          echo "${{ github.event.context }}"
           echo The status is error or failed: $DESCRIPTION
