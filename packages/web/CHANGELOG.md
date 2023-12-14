@@ -1,3 +1,34 @@
+# v0.77.0 (Thu Dec 14 2023)
+
+### Release Notes
+
+#### Release by 14.12.2023 ([#297](https://github.com/PoligonSa/plasma-sandbox/pull/297))
+
+## Uncategorized
+
+
+feat: add 1 (https://github.com/PoligonSa/plasma-sandbox/pull/294)
+
+
+feat: add 2 (https://github.com/PoligonSa/plasma-sandbox/pull/296)
+
+---
+
+#### 🚀 Enhancement
+
+- feat: add 2 [#296](https://github.com/PoligonSa/plasma-sandbox/pull/296) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- chore: bump ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update package-locks \[skip ci\] ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.76.0 (Wed Dec 13 2023)
 
 ### Release Notes
