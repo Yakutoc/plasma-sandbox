@@ -11,11 +11,11 @@ jobs:
         run: |
           echo "${{ github.event.state }}"
           echo "${{ github.event.context }}"
-          echo "NOTIFICATION="### Status: ${{ github.event.state }}\n###URL: ${{ github.event.target_url }}" " >> "$GITHUB_ENV"
+          echo "NOTIFICATION="##### Status: ${{ github.event.state }}/\n/\n ###### Link: ${{ github.event.target_url }}" " >> "$GITHUB_ENV"
 
       - name: Create the Mattermost Message
         run: |
-          echo "{\"text\":\" ${{ env.NOTIFICATION }}\"}" > mattermost.json
+          echo "{\"text\":\" ##### Status: ${{ github.event.state }}\\n\\n##### Description: ${{ github.event.description }}\\n\\n###### Link: ${{ github.event.target_url }}\"}" > mattermost.json
 
       - name: Send notification
         uses: mattermost/action-mattermost-notify@master
