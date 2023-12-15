@@ -56,10 +56,27 @@ jobs:
     runs-on: ubuntu-latest
     needs: run
     if: ${{ always() && contains(needs.*.result, 'failure') }}
+
     steps:
       - name: Set commit status "failure"
         run: |
-          { echo 'JSON_RESPONSE<<EOF'
-            ${{ toJson(needs.run)}}   
-            echo EOF
-          }
+          echo "${GITHUB_RUN_ID}"
+          echo "${GITHUB_RUN_ID}"
+          echo "${GITHUB_JOB}"
+
+      - name: Get jobs information
+        id: job
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const jobsList = await github.rest.repos.listJobsForWorkflowRun({
+              run_id: $GITHUB_RUN_ID,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            }) || [];
+            
+            // TODO: Input name job for FIND
+            const currentJob = jobsList.find(({ name }) => name === "Check Health")
+            const failureStep = currentJob.steps.filter(({ conclusion }) => conclusion === "failure" )
+            console.log("Failure step name: ", failureStep?.name)
+          
