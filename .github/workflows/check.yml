@@ -39,7 +39,7 @@ jobs:
       - name: Set commit status "success"
         run: |
           step_nr=$(echo '${{ toJson(steps) }}' | jq -n)
-          echo "step_nr"
+          echo "$step_nr"
           res=$(curl \
             -X POST \
             -H "Accept: application/vnd.github.v3+json" \
