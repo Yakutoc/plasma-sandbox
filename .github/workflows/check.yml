@@ -89,15 +89,11 @@ jobs:
 
       - name: Create message
         run: |
-          echo "##### Status: ${{ fromJSON(steps.job.outputs.result).conclusion }}" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "###### Failure step: fromJSON(steps.job.outputs.result).name" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "###### Link: fromJSON(steps.job.outputs.result).targetUrl" >> $GITHUB_STEP_SUMMARY
+          echo "NOTIFICATION=##### Status: ${{ fromJSON(steps.job.outputs.result).conclusion }}\n###### Failure step: fromJSON(steps.job.outputs.result).name\n###### Link: fromJSON(steps.job.outputs.result).targetUrl" >> $GITHUB_ENV
 
       - name: Create the Mattermost Message
         run: |
-          echo "{\"text\":\" ${GITHUB_STEP_SUMMARY}\"}" > mattermost.json
+          echo "{\"text\":\" ${{ env.NOTIFICATION }}\"}" > mattermost.json
 
       - name: Send notification
         uses: mattermost/action-mattermost-notify@master
