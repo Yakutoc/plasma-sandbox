@@ -81,10 +81,8 @@ jobs:
             
             // TODO: Input name job for FIND
             const currentJob = jobsList.find(({ name }) => name === "Check Health")
-            
-            console.log(currentJob);
-            
-            const failureStep = currentJob.steps.filter(({ conclusion }) => conclusion === "failure" )
+                        
+            const failureStep = currentJob.steps.find(({ conclusion }) => conclusion === "failure" )
             
             console.log("Failure step: ", failureStep)
             console.log("Failure step name: ", failureStep?.name)
