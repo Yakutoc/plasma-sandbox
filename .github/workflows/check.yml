@@ -73,11 +73,15 @@ jobs:
           script: |
             const { RUN_ID } = process.env;
             
-            const jobsList = await github.rest.actions.listJobsForWorkflowRun({
+            const res = await github.rest.actions.listJobsForWorkflowRun({
               run_id: RUN_ID,
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
+            
+            console.log(res);
+            
+            const { data: { jobs: jobsList } } = res;
 
             // TODO: Input name job for FIND
             const currentJob = jobsList.find(({ name }) => name === "Check Health")
