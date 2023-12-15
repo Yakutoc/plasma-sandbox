@@ -68,7 +68,7 @@ jobs:
         id: job
         uses: actions/github-script@v6
         env:
-          RUN_ID: ${{ GITHUB_RUN_ID }}
+          RUN_ID: ${GITHUB_RUN_ID}
         with:
           script: |
             const { RUN_ID } = process.env;
