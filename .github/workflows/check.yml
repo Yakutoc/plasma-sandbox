@@ -83,8 +83,13 @@ jobs:
             
             const { data: { jobs: jobsList } } = res;
 
+            console.log(jobsList);
+            
             // TODO: Input name job for FIND
             const currentJob = jobsList.find(({ name }) => name === "Check Health")
+            
+            console.log(currentJob);
+            
             const failureStep = currentJob.steps.filter(({ conclusion }) => conclusion === "failure" )
             console.log("Failure step name: ", failureStep?.name)
           
