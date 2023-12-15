@@ -85,9 +85,6 @@ jobs:
                         
             const {name, conclusion} = stepsList.find(({ conclusion }) => conclusion === "failure" )
             
-            console.log("Failure step: ", failureStep)
-            console.log("Failure step name: ", failureStep?.name)
-            
             return { targetUrl: html_url, name, conclusion }
 
       - name: Create message
