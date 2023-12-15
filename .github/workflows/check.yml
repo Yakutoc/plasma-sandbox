@@ -88,8 +88,12 @@ jobs:
             return { targetUrl: html_url, name, conclusion }
 
       - name: Create message
+        env:
+          STATUS: ${{ fromJSON(steps.job.outputs.result).conclusion }}
+          FAILURE_STEP: ${{ fromJSON(steps.job.outputs.result).name }}
+          TARGET_URL: ${{ fromJSON(steps.job.outputs.result).targetUrl }}
         run: |
-          echo "NOTIFICATION=##### Status: ${{ fromJSON(steps.job.outputs.result).conclusion }}\n###### Failure step: fromJSON(steps.job.outputs.result).name\n###### Link: fromJSON(steps.job.outputs.result).targetUrl" >> $GITHUB_ENV
+          echo "NOTIFICATION=##### Status: ${{ env.STATUS }}\n###### Failure step: ${{env.FAILURE_STEP}}\n###### Link: ${{ env.TARGET_URL }}" >> $GITHUB_ENV
 
       - name: Create the Mattermost Message
         run: |
