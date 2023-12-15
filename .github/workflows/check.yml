@@ -87,11 +87,17 @@ jobs:
             
             return { targetUrl: html_url, name, conclusion }
 
+      - name: shortener
+        id: shortener
+        uses: Gottox/url-shortener-action@v1.0.0
+        with:
+          url: ${{ fromJSON(steps.job.outputs.result).targetUrl }}
+
       - name: Create message
         env:
           STATUS: ${{ fromJSON(steps.job.outputs.result).conclusion }}
           FAILURE_STEP: ${{ fromJSON(steps.job.outputs.result).name }}
-          TARGET_URL: ${{ fromJSON(steps.job.outputs.result).targetUrl }}
+          TARGET_URL: ${{ steps.shortener.outputs.short_url }}
         run: |
           echo "NOTIFICATION=##### Status: ${{ env.STATUS }}\n###### Failure step: ${{env.FAILURE_STEP}}\n###### Link: ${{ env.TARGET_URL }}" >> $GITHUB_ENV
 
