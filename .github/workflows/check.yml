@@ -68,13 +68,13 @@ jobs:
         id: job
         uses: actions/github-script@v6
         env:
-          GITHUB_RUN_ID: ${{ GITHUB_RUN_ID }}
+          RUN_ID: ${{ GITHUB_RUN_ID }}
         with:
           script: |
-            const { GITHUB_RUN_ID } = process.env;
+            const { RUN_ID } = process.env;
             
             const jobsList = await github.rest.repos.listJobsForWorkflowRun({
-              run_id: GITHUB_RUN_ID,
+              run_id: RUN_ID,
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
