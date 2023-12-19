@@ -13,6 +13,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     outputs:
       HAS_ASSETS: ${{ steps.scope.outputs.result }}
+      PR: ${{ steps.pr_state.outputs.result }}
     steps:
       ## Получаем состояние dev branch
       - name: Checkout
@@ -30,27 +31,34 @@ jobs:
       - name: Install
         run: npm ci --no-audit
 
-      ## Получаем base sha commit для dev из pull request который был merged и запустил это событие
+      ## Получаем информацию о pull request
       - name: One
-        id: base_sha
+        id: pr_state
         uses: actions/github-script@v6
         with:
-          script: |            
+          script: |
+            const teammate = {
+              Yakutoc: "alex_czech",
+              'neretin-trike': "aaneretin",
+              'Yeti-or': "yeti-or",
+              TitanKuzmich: "aakrivonos",
+              kayman233: "ivakudryavtsev",
+            };
+            
             const res = await github.rest.repos.listPullRequestsAssociatedWithCommit({
               commit_sha: context.sha,
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
             
-            console.log("res >>>",res);
-            console.log("res >>>", res?.data[0]?.base?.sha);
+            const { base: { sha = context.sha }, title, user: { login } } = res?.data[0] || {};
             
-            return res?.data[0]?.base?.sha || context.sha;
+            return { sha, pr: title, user: teammate[login] || 'alex_czech' };
 
       - name: Two
         id: state
         run: |
-          echo "CHANGED_STATE=$(npx lerna la --json --since=${{ steps.base_sha.outputs.result }} | jq -c)" >> "$GITHUB_OUTPUT"
+          echo "CHANGED_STATE=$(npx lerna la --json --since=${{ fromJSON(steps.pr_state.outputs.result).sha }} | jq -c)" >> "$GITHUB_OUTPUT"
 
       - name: Computed scope state
         id: scope
@@ -84,3 +92,51 @@ jobs:
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
+  catch:
+    name: Catch errors
+    runs-on: ubuntu-latest
+    needs: [publish,scope]
+    steps:
+      - name: Get failed job information
+        id: job
+        uses: actions/github-script@v6
+        env:
+          RUN_ID: ${{github.run_id}}
+        with:
+          script: |
+            const { RUN_ID } = process.env;
+
+            const { data: { jobs: jobsList } } = await github.rest.actions.listJobsForWorkflowRun({
+              run_id: RUN_ID,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+
+            const { html_url, steps: stepsList } = jobsList.find(({ name }) => name === "Publish RC version") || {}; 
+
+            const { name } = stepsList.find(({ conclusion }) => conclusion === "failure" ) || { name: '' };
+
+            return { targetUrl: html_url, name }
+
+      - name: Create message
+        env:
+          PR: ${{ fromJSON(needs.publish.outputs.PR).pr }}
+          USER: ${{ fromJSON(needs.publish.outputs.PR).user }}
+          FAILURE_STEP: ${{ fromJSON(steps.job.outputs.result).name }}
+          TARGET_URL: ${{ fromJSON(steps.job.outputs.result).targetUrl }}
+        run: |
+          pr="**Publish RC**: ${{ env.PR }}"
+          step="**Failure step**: ${{ env.FAILURE_STEP }}"
+          job="**Job**: ${{ env.TARGET_URL }}"
+          message="@${{ env.USER }} Посмотри пожалуйста упала публикация"
+
+          echo "NOTIFICATION="$pr\\n$status\\n$step\\n$job\\n$message"" >> $GITHUB_ENV
+
+      - name: Create the Mattermost Message
+        run: |
+          echo "{\"text\":\" ${{ env.NOTIFICATION }}\"}" > mattermost.json
+
+      - name: Send notification
+        uses: mattermost/action-mattermost-notify@master
+        env:
+          MATTERMOST_WEBHOOK_URL: ${{ secrets.WEBHOOKS_NOTIFICATIONS_MM }}
