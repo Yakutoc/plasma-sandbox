@@ -36,16 +36,3 @@ jobs:
         run: |
           npm run lint
           echo "${GITHUB_ACTOR}"
-
-      - name: Set commit status "success"
-        run: |
-          res=$(curl \
-            -X POST \
-            -H "Accept: application/vnd.github.v3+json" \
-            -H "Authorization: token ${{ secrets.GH_TOKEN }}" \
-            ${{ env.STATUS_URL }} \
-            -d '{"state":"success","target_url":"${{ env.RUN_URL }}","description": Successful", }') || exit 1
-          echo $res
-          if [[ $res != *"success"* ]]; then
-            exit 1
-          fi
