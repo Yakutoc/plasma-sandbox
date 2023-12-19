@@ -80,25 +80,17 @@ jobs:
 
             return packagesList.includes('plasmax-core')
 
-      - name: Step set failed state
+  publish:
+    name: Publish RC version
+    runs-on: ubuntu-latest
+    needs: [scope]
+    if: ${{ github.actor == 'github-merge-queue[bot]' }}
+    steps:
+      - name: Failed when publish
         uses: actions/github-script@v6
         with:
           script: |
             core.setFailed('TEST')
-
-  publish:
-    name: Publish RC version
-    needs: [scope]
-    if: ${{ github.actor == 'github-merge-queue[bot]' }}
-    uses: ./.github/workflows/publish-common.yml
-    with:
-      with-update-package-lock: true
-      commit-message: "Update package-locks files"
-      auto-options: '--no-changelog'
-      upload_assets: ${{ needs.scope.outputs.HAS_ASSETS == 'true' }}
-    secrets:
-      gh_token: ${{ secrets.GH_TOKEN }}
-      npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
 
   catch:
     name: Handle errors
@@ -106,7 +98,7 @@ jobs:
     needs: [publish, scope]
     if: ${{ always() && contains(needs.*.result, 'failure') }}
     env:
-      FAILED_JOB_NAME: ${{ contains(needs.scope.result, 'failure') && 'Save state' || 'Publish RC version / Release' }}
+      FAILED_JOB_NAME: ${{ contains(needs.scope.result, 'failure') && 'Save state' || 'Publish RC version' }}
     steps:
       - name: Get failed job information
         id: job
