@@ -95,7 +95,7 @@ jobs:
   catch:
     name: Catch errors
     runs-on: ubuntu-latest
-    needs: [publish,scope]
+    needs: [publish, scope]
     steps:
       - name: Get failed job information
         id: job
@@ -120,8 +120,8 @@ jobs:
 
       - name: Create message
         env:
-          PR: ${{ fromJSON(needs.publish.outputs.PR).pr }}
-          USER: ${{ fromJSON(needs.publish.outputs.PR).user }}
+          PR: ${{ fromJSON(needs.scope.outputs.PR).pr }}
+          USER: ${{ fromJSON(needs.scope.outputs.PR).user }}
           FAILURE_STEP: ${{ fromJSON(steps.job.outputs.result).name }}
           TARGET_URL: ${{ fromJSON(steps.job.outputs.result).targetUrl }}
         run: |
