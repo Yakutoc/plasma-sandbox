@@ -113,15 +113,11 @@ jobs:
               repo: context.repo.repo,
             });
             
-            console.log(res);
-            
             const { data: { jobs: jobsList } } = res;
-            
-            console.log(jobsList);
 
-            // const { html_url, steps: stepsList } = jobsList.find(({ name }) => name === "Publish RC version") || {}; 
+            const { html_url, steps: stepsList } = jobsList.find(({ name }) => name === "Publish RC version / Release") || {}; 
 
-            // const { name } = stepsList.find(({ conclusion }) => conclusion === "failure" ) || { name: '' };
+            const { name } = stepsList.find(({ conclusion }) => conclusion === "failure" ) || { name: '' };
 
             return { targetUrl: html_url, name }
 
