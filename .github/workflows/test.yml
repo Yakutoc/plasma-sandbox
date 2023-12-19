@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  pull-r:
+  run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -13,17 +13,69 @@ jobs:
           show-progress: false
           fetch-depth: 0
 
-      - name: WIP
-        id: p
+      - name: listPullRequestsAssociatedWithCommit
+        id: pr_state
         uses: actions/github-script@v6
         with:
-          script: |
-            console.log(context);
-            
+          script: |            
             const res = await github.rest.repos.listPullRequestsAssociatedWithCommit({
               commit_sha: context.sha,
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
             
-            console.log(res);
+            const { base: { sha = context.sha }, title, user: { login } } = res?.data[0] || {};
+            
+            return { sha, pr: title, user: login };
+
+      - name: Get jobs information
+        id: job
+        uses: actions/github-script@v6
+        env:
+          RUN_ID: ${{github.run_id}}
+        with:
+          script: |
+            const { RUN_ID } = process.env;
+
+            const { data: { jobs: jobsList } } = await github.rest.actions.listJobsForWorkflowRun({
+              run_id: RUN_ID,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+
+            // TODO: Input name job for FIND
+            const { html_url, steps: stepsList } = jobsList.find(({ name }) => name === "Check Health")
+
+            const {name, conclusion} = stepsList.find(({ conclusion }) => conclusion === "failure" )
+
+            return { targetUrl: html_url, name, conclusion }
+
+      - name: Create message
+        env:
+          PR: ${{ fromJSON(steps.pr_state.outputs.result).pr }}
+          USER: ${{ fromJSON(steps.pr_state.outputs.result).user }}
+          STATUS: ${{ fromJSON(steps.job.outputs.result).conclusion }}
+          FAILURE_STEP: ${{ fromJSON(steps.job.outputs.result).name }}
+          TARGET_URL: ${{ fromJSON(steps.job.outputs.result).targetUrl }}
+        run: |
+          notification='
+          **Pull request**: ${{ env.PR }}
+          
+          **Status**: ${{ env.STATUS }}
+          
+          **Failure step**: ${{env.FAILURE_STEP}}
+          
+          **Job**: ${{ env.TARGET_URL }}
+          
+          @alex_czech Посмотри пожалуйста публикация RC упала 
+          '
+          echo "NOTIFICATION=$notification" >> $GITHUB_ENV
+
+      - name: Create the Mattermost Message
+        run: |
+          echo "{\"text\":\" ${{ env.NOTIFICATION }}\"}" > mattermost.json
+
+      - name: Send notification
+        uses: mattermost/action-mattermost-notify@master
+        env:
+          MATTERMOST_WEBHOOK_URL: ${{ secrets.WEBHOOKS_NOTIFICATIONS_MM }}
