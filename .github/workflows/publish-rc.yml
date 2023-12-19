@@ -136,7 +136,7 @@ jobs:
           job="**Job**: ${{ env.TARGET_URL }}"
           message="@${{ env.USER }} Посмотри пожалуйста упала публикация"
 
-          echo "NOTIFICATION="$pr\\n$status\\n$step\\n$job\\n$message"" >> $GITHUB_ENV
+          echo "NOTIFICATION="$pr\\n$status\\n$step\\n$job\\n\\n$message"" >> $GITHUB_ENV
 
       - name: Create the Mattermost Message
         run: |
