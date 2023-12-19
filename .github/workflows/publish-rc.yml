@@ -9,6 +9,7 @@ jobs:
   scope:
     name: Save state
     runs-on: ubuntu-latest
+    if: ${{ github.actor == 'github-merge-queue[bot]' }}
     env:
       GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
     outputs:
@@ -106,15 +107,21 @@ jobs:
           script: |
             const { RUN_ID } = process.env;
 
-            const { data: { jobs: jobsList } } = await github.rest.actions.listJobsForWorkflowRun({
+            const res = await github.rest.actions.listJobsForWorkflowRun({
               run_id: RUN_ID,
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
+            
+            console.log(res);
+            
+            const { data: { jobs: jobsList } } = res;
+            
+            console.log(jobsList);
 
-            const { html_url, steps: stepsList } = jobsList.find(({ name }) => name === "Publish RC version") || {}; 
+            // const { html_url, steps: stepsList } = jobsList.find(({ name }) => name === "Publish RC version") || {}; 
 
-            const { name } = stepsList.find(({ conclusion }) => conclusion === "failure" ) || { name: '' };
+            // const { name } = stepsList.find(({ conclusion }) => conclusion === "failure" ) || { name: '' };
 
             return { targetUrl: html_url, name }
 
