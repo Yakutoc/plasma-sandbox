@@ -16,7 +16,15 @@ jobs:
         id: pr_state
         uses: actions/github-script@v6
         with:
-          script: |            
+          script: | 
+            const teammate = {
+              Yakutoc: "alex_czech",
+              'neretin-trike': "aaneretin",
+              'Yeti-or': "yeti-or",
+              TitanKuzmich: "aakrivonos",
+              kayman233: "ivakudryavtsev",
+            };
+            
             const res = await github.rest.repos.listPullRequestsAssociatedWithCommit({
               commit_sha: '0be4654a770b02531948d59e5c326a07101135f4',
               owner: context.repo.owner,
@@ -25,7 +33,7 @@ jobs:
             
             const { base: { sha = context.sha }, title, user: { login } } = res?.data[0] || {};
             
-            return { sha, pr: title, user: login };
+            return { sha, pr: title, user: teammate[login] };
 
       - name: Create message
         env:
@@ -36,13 +44,13 @@ jobs:
           status="**Status**: 'Failure'"
           step="**Failure step**: 'Failure'"
           job="**Job**: 'Failure'"
-          message="@alex_czech Посмотри пожалуйста публикация RC упала"
+          message="@${{ env.USER }} Посмотри пожалуйста публикация RC упала"
 
           echo "NOTIFICATION="$pr\\n$status\\n$step\\n$job\\n$message"" >> $GITHUB_ENV
 
       - name: Create the Mattermost Message
         run: |
-          echo "{\"text\":\" ${{ env.NOTIFICATION }}\"}" > mattermost.json
+          echo "{\"text\":\"${{ env.NOTIFICATION }}\"}" > mattermost.json
 
       - name: Send notification
         uses: mattermost/action-mattermost-notify@master
