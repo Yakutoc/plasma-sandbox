@@ -11,7 +11,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           show-progress: false
-          fetch-depth: 0
 
       - name: listPullRequestsAssociatedWithCommit
         id: pr_state
@@ -44,9 +43,9 @@ jobs:
             });
 
             // TODO: Input name job for FIND
-            const { html_url, steps: stepsList } = jobsList.find(({ name }) => name === "Check Health")
+            const { html_url, steps: stepsList } = jobsList.find(({ name }) => name === "run")
 
-            const {name, conclusion} = stepsList.find(({ conclusion }) => conclusion === "failure" )
+            const { name, conclusion } = stepsList.find(({ conclusion }) => conclusion === "failure" )
 
             return { targetUrl: html_url, name, conclusion }
 
