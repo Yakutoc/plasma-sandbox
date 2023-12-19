@@ -19,7 +19,7 @@ jobs:
         with:
           script: |            
             const res = await github.rest.repos.listPullRequestsAssociatedWithCommit({
-              commit_sha: context.sha,
+              commit_sha: '0be4654a770b02531948d59e5c326a07101135f4',
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
