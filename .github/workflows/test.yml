@@ -33,12 +33,12 @@ jobs:
           USER: ${{ fromJSON(steps.pr_state.outputs.result).user }}
         run: |
           pr="**Pull request**: ${{ env.PR }}"
-          status="**Status**: ''"
-          step="**Failure step**: ''"
-          job="**Job**: ''"
+          status="**Status**: 'Failure'"
+          step="**Failure step**: 'Failure'"
+          job="**Job**: 'Failure'"
           message="@alex_czech Посмотри пожалуйста публикация RC упала"
 
-          echo "NOTIFICATION="$pr\n$status\n$step\n$job\n$message"" >> $GITHUB_ENV
+          echo "NOTIFICATION="$pr\\n$status\\n$step\\n$job\\n$message"" >> $GITHUB_ENV
 
       - name: Create the Mattermost Message
         run: |
