@@ -40,11 +40,10 @@ jobs:
           PR: ${{ fromJSON(steps.pr_state.outputs.result).pr }}
           USER: ${{ fromJSON(steps.pr_state.outputs.result).user }}
         run: |
-          pr="**Pull request**: ${{ env.PR }}"
-          status="**Status**: 'Failure'"
+          pr="**Publish RC**: ${{ env.PR }}"
           step="**Failure step**: 'Failure'"
           job="**Job**: 'Failure'"
-          message="@${{ env.USER }} Посмотри пожалуйста публикация RC упала"
+          message="@${{ env.USER }} Посмотри пожалуйста упала публикация"
 
           echo "NOTIFICATION="$pr\\n$status\\n$step\\n$job\\n$message"" >> $GITHUB_ENV
 
