@@ -26,6 +26,8 @@ jobs:
           SHA: ${{ fromJSON(github).event.head_sha }}
         with:
           script: |
+            const { SHA } = process.env || {};
+            
             console.log(context);
             
             const teammate = {
@@ -37,7 +39,7 @@ jobs:
             };
             
             const res = await github.rest.repos.listPullRequestsAssociatedWithCommit({
-              commit_sha: context.sha,
+              commit_sha: SHA,
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
