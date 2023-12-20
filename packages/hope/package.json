@@ -1,9 +1,9 @@
 {
   "name": "plasmax-hope",
-  "version": "0.48.1-dev.0",
+  "version": "0.48.2-dev.0",
   "author": "Alex Czech <yakutoc@gmail.com>",
   "license": "MIT",
-  "description": "description",
+  "description": "description ",
   "scripts": {
     "prepare": "npm run build",
     "build": "npm run build:clean && npm run build:cjs && npm run build:esm",
