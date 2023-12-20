@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  merge_group:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+
+      - name: "$GITHUB_CONTEXT"
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: |
+          echo "$GITHUB_CONTEXT"
+
+      - name: One
+        id: pr_state
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const teammate = {
+              Yakutoc: "alex_czech",
+              'neretin-trike': "aaneretin",
+              'Yeti-or': "yeti-or",
+              TitanKuzmich: "aakrivonos",
+              kayman233: "ivakudryavtsev",
+            };
+            
+            const res = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+              commit_sha: context.sha,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            
+            const { title, user: { login } } = res?.data[0] || {};
+            
+            return { pr: title, user: teammate[login] || 'alex_czech' };     
+
+      - name: Create the Mattermost Message
+        run: |
+          title=${{ fromJSON(steps.pr_state.outputs.result).pr }}
+          user=${{ fromJSON(steps.pr_state.outputs.result).user }}
+          echo "{\"text\":\"$title - In progress\\n@user\"}" > mattermost.json
+
+      - name: Send notification
+        uses: mattermost/action-mattermost-notify@master
+        env:
+          MATTERMOST_WEBHOOK_URL: ${{ secrets.WEBHOOKS_NOTIFICATIONS_MM }}
