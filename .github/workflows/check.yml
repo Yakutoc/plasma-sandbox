@@ -33,6 +33,8 @@ jobs:
 
       - name: Lint
         id: lint
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: |
           npm run lint
-          echo "${GITHUB_ACTOR}"
+          echo echo "$GITHUB_CONTEXT"
