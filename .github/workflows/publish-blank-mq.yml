@@ -14,15 +14,20 @@ jobs:
 
       - name: "$GITHUB_CONTEXT"
         env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
+          GITHUB_CONTEXT: ${{  }}
         run: |
           echo "$GITHUB_CONTEXT"
+          echo ${{ fromJSON(github).event.head_sha }}
 
       - name: One
         id: pr_state
         uses: actions/github-script@v6
+        env:
+          SHA: ${{ fromJSON(github).event.head_sha }}
         with:
           script: |
+            console.log(context);
+            
             const teammate = {
               Yakutoc: "alex_czech",
               'neretin-trike': "aaneretin",
