@@ -14,7 +14,7 @@ jobs:
 
       - name: "$GITHUB_CONTEXT"
         env:
-          GITHUB_CONTEXT: ${{  }}
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
         run: |
           echo "$GITHUB_CONTEXT"
           echo ${{ fromJSON(github).event.head_sha }}
