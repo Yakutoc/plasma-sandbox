@@ -37,7 +37,9 @@ jobs:
               repo: context.repo.repo,
             });
             
-            const { title, user: { login } } = res?.data[0] || {};
+            console.log(res?.data[0]);
+            
+            const { title, user: { login = "alex_czech" } } = res?.data[0] || {};
             
             return { pr: title, user: teammate[login] || 'alex_czech' };     
 
