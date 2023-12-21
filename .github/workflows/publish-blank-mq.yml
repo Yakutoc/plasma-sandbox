@@ -14,18 +14,18 @@ jobs:
 
       - name: Echo
         run: |
-          echo ${{ fromJSON(github).event.head_sha }}
+          echo ${{ fromJSON(github.event).head_sha }}
 
       - name: One
         id: pr_state
         uses: actions/github-script@v6
         env:
-          SHA: ${{ fromJSON(github).event.head_sha }}
+          SHA: ${{ fromJSON(github.event).head_sha }}
         with:
           script: |
             const { SHA } = process.env || {};
             
-            console.log(context.sha);
+            console.log(context);
             
             const teammate = {
               Yakutoc: "alex_czech",
