@@ -12,20 +12,14 @@ jobs:
         with:
           show-progress: false
 
-      - name: Echo
-        run: |
-          echo ${{ github.event.head_sha }}
-
       - name: One
         id: pr_state
         uses: actions/github-script@v6
         env:
           SHA: ${{ github.event.head_sha }}
         with:
-          script: |
-            const { SHA } = process.env || {};
-            
-            console.log(context);
+          script: |            
+            console.table(context);
             
             const teammate = {
               Yakutoc: "alex_czech",
@@ -36,12 +30,12 @@ jobs:
             };
             
             const res = await github.rest.repos.listPullRequestsAssociatedWithCommit({
-              commit_sha: SHA,
+              commit_sha: context.merge_group.head_sha,
               owner: context.repo.owner,
               repo: context.repo.repo,
             });
             
-            console.log(res?.data[0]);
+            console.table(res?.data[0]);
             
             const { title, user: { login = "alex_czech" } } = res?.data[0] || {};
             
