@@ -15,8 +15,6 @@ jobs:
       - name: One
         id: pr_state
         uses: actions/github-script@v6
-        env:
-          SHA: ${{ github.event.head_sha }}
         with:
           script: |            
             console.table(context);
