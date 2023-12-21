@@ -3,7 +3,7 @@
   "version": "0.85.2-dev.1",
   "author": "Alex Czech <yakutoc@gmail.com>",
   "license": "MIT",
-  "description": "description",
+  "description": "d",
   "scripts": {
     "prepare": "npm run build",
     "build": "npm run build:clean && npm run build:cjs && npm run build:esm",
