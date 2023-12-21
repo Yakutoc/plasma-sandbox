@@ -12,11 +12,8 @@ jobs:
         with:
           show-progress: false
 
-      - name: "$GITHUB_CONTEXT"
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
+      - name: Echo
         run: |
-          echo "$GITHUB_CONTEXT"
           echo ${{ fromJSON(github).event.head_sha }}
 
       - name: One
@@ -28,7 +25,7 @@ jobs:
           script: |
             const { SHA } = process.env || {};
             
-            console.log(context);
+            console.log(context.sha);
             
             const teammate = {
               Yakutoc: "alex_czech",
