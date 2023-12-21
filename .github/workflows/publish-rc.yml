@@ -99,7 +99,7 @@ jobs:
     needs: [publish, scope]
     if: ${{ always() && contains(needs.*.result, 'failure') }}
     env:
-      FAILED_JOB_NAME: ${{ contains(needs.scope.result, 'failure') && 'Save state' || 'Publish RC version' }}
+      FAILED_JOB_NAME: ${{ contains(needs.scope.result, 'failure') && 'Save state' || 'Publish RC version / Release' }}
     steps:
       - name: Get failed job information
         id: job
@@ -117,7 +117,7 @@ jobs:
               repo: context.repo.repo,
             });
             
-            const { data: { jobs: jobsList } } = res;
+            const { data: { jobs: jobsList = [] } } = res || {};
 
             const { html_url, steps: stepsList } = jobsList.find(({ name }) => name === FAILED_JOB_NAME) || {}; 
 

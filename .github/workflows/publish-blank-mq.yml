@@ -14,13 +14,13 @@ jobs:
 
       - name: Echo
         run: |
-          echo ${{ fromJSON(github.event.head_sha) }}
+          echo ${{ github.event.head_sha }}
 
       - name: One
         id: pr_state
         uses: actions/github-script@v6
         env:
-          SHA: ${{ fromJSON(github.event.head_sha) }}
+          SHA: ${{ github.event.head_sha }}
         with:
           script: |
             const { SHA } = process.env || {};
