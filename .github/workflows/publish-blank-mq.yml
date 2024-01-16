@@ -18,6 +18,8 @@ jobs:
         with:
           script: |            
             console.log(context);
+            console.log(context.repo.owner);
+            console.log(context.repo.repo);
             
             const teammate = {
               Yakutoc: "alex_czech",
@@ -33,13 +35,14 @@ jobs:
               repo: context.repo.repo,
             });
             
-            console.log(res?.data[0]);
+            console.log(res);
             
             const { title, user: { login = "alex_czech" } } = res?.data[0] || {};
             
             return { pr: title, user: teammate[login] || 'alex_czech' };     
 
       - name: Create the Mattermost Message
+        if: ${{ success() }}
         run: |
           title=${{ fromJSON(steps.pr_state.outputs.result).pr }}
           user=${{ fromJSON(steps.pr_state.outputs.result).user }}
