@@ -132,8 +132,8 @@ jobs:
           FAILURE_STEP: ${{ fromJSON(steps.job.outputs.result).name }}
           JOB: ${{ fromJSON(steps.job.outputs.result).targetUrl }}
         run: |
-          link="**Failure step**: [${{ env.FAILURE_STEP }}](${{ env.JOB }})"
-          message='@${{ env.USER }}\nПосмотри пожалуйста, упала публикация твоего pull request: ${{ env.PR }}'
+          step="**Failure step**: ${{ env.FAILURE_STEP }}"
+          message='@${{ env.USER }}\nПосмотри пожалуйста, упала публикация твоего pull request: [${{ env.PR }}](${{ env.JOB }})'
           
           echo "NOTIFICATION="$step\\n$message"" >> $GITHUB_ENV
 
