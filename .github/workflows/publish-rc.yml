@@ -133,15 +133,14 @@ jobs:
           TARGET_URL: ${{ fromJSON(steps.job.outputs.result).targetUrl }}
         run: |
           pr="**Publish RC**: ${{ env.PR }}"
-          step="**Failure step**: ${{ env.FAILURE_STEP }}"
-          job="**Job**: ${{ env.TARGET_URL }}"
+          link="**Failure step**: [${{ env.FAILURE_STEP }}](${{ env.TARGET_URL }})"
           message="@${{ env.USER }} Посмотри пожалуйста упала публикация"
 
-          echo "NOTIFICATION="$pr\\n$status\\n$step\\n$job\\n\\n$message"" >> $GITHUB_ENV
+          echo "NOTIFICATION="$pr\\n$link\\n\\n$message"" >> $GITHUB_ENV
 
       - name: Create the Mattermost Message
         run: |
-          echo "{\"text\":\"${{ env.NOTIFICATION }}\"}" > mattermost.json
+          echo "{\"text\":\"${{env.NOTIFICATION}}\"}" > mattermost.json
 
       - name: Send notification
         uses: mattermost/action-mattermost-notify@master
