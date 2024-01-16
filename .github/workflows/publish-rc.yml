@@ -130,13 +130,12 @@ jobs:
           PR: ${{ fromJSON(needs.scope.outputs.PR).pr }}
           USER: ${{ fromJSON(needs.scope.outputs.PR).user }}
           FAILURE_STEP: ${{ fromJSON(steps.job.outputs.result).name }}
-          TARGET_URL: ${{ fromJSON(steps.job.outputs.result).targetUrl }}
+          JOB: ${{ fromJSON(steps.job.outputs.result).targetUrl }}
         run: |
-          pr="**Publish RC**: ${{ env.PR }}"
-          link="**Failure step**: [${{ env.FAILURE_STEP }}](${{ env.TARGET_URL }})"
-          message="@${{ env.USER }} Посмотри пожалуйста упала публикация"
-
-          echo "NOTIFICATION="$pr\\n$link\\n\\n$message"" >> $GITHUB_ENV
+          link="**Failure step**: [${{ env.FAILURE_STEP }}](${{ env.JOB }})"
+          message='@${{ env.USER }}\nПосмотри пожалуйста, упала публикация твоего pull request: ${{ env.PR }}'
+          
+          echo "NOTIFICATION="$step\\n$message"" >> $GITHUB_ENV
 
       - name: Create the Mattermost Message
         run: |
