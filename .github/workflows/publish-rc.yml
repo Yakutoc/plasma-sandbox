@@ -98,7 +98,7 @@ jobs:
     needs: [publish, scope]
     if: ${{ always() && contains(needs.*.result, 'failure') }}
     env:
-      FAILED_JOB_NAME: ${{ contains(needs.scope.result, 'failure') && 'Save state' || 'Publish RC version / Release' }}
+      FAILED_JOB_NAME: ${{ contains(needs.scope.result, 'failure') && 'Save state' || 'Publish RC version' }}
     steps:
       - name: Get failed job information
         id: job
@@ -125,6 +125,7 @@ jobs:
             return { targetUrl: html_url, name }
 
       - name: Create message
+        if: ${{ success() }}
         env:
           PR: ${{ fromJSON(needs.scope.outputs.PR).pr }}
           USER: ${{ fromJSON(needs.scope.outputs.PR).user }}
