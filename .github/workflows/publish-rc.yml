@@ -83,15 +83,14 @@ jobs:
   publish:
     name: Publish RC version
     needs: [scope]
-    uses: ./.github/workflows/publish-common.yml
-    with:
-      with-update-package-lock: true
-      commit-message: "Update package-locks files"
-      auto-options: '--no-changelog'
-      upload_assets: ${{ needs.scope.outputs.HAS_ASSETS == 'true' }}
-    secrets:
-      gh_token: ${{ secrets.GH_TOKEN }}
-      npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'github-merge-queue[bot]' }}
+    steps:
+      - name: Failed when publish
+        uses: actions/github-script@v6
+        with:
+          script: |
+            core.setFailed('TEST')
 
   catch:
     name: Handle errors
