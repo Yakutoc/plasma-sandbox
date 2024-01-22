@@ -3,7 +3,7 @@ name: Fake
 on:
   workflow_call:
     outputs:
-      SCOPE:
+      STATE:
         description: "scope collection"
         value: ${{ jobs.build.outputs.STATE }}
 
