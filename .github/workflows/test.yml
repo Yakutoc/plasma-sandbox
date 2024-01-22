@@ -15,7 +15,7 @@ jobs:
         with:
           script: | 
             return {         
-              HAS_SCOPE: false,
+              HAS_SCOPE: true,
               HAS_DOCUMENTATION_CHANGED: false,
             }
 
