@@ -5,24 +5,8 @@ on:
 
 jobs:
   write_state:
-    runs-on: ubuntu-latest
-    outputs:
-      STATE: ${{ steps.output.outputs.STATE }}
-    steps:
-      - name: TEST
-        id: state
-        uses: actions/github-script@v6
-        with:
-          script: | 
-            return {         
-              HAS_SCOPE: true,
-              HAS_DOCUMENTATION_CHANGED: false,
-            }
-
-      - name: Set "GITHUB_OUTPUT"
-        id: output
-        run: |
-          echo "STATE=${{ steps.state.outputs.result }}" >> $GITHUB_OUTPUT
+    uses: ./.github/workflows/reuse.yml
+    secrets: inherit
 
   read_state:
     runs-on: ubuntu-latest
