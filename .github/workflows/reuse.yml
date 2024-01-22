@@ -1,0 +1,29 @@
+name: Fake
+
+on:
+  workflow_call:
+    outputs:
+      SCOPE:
+        description: "scope collection"
+        value: ${{ jobs.build.outputs.STATE }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      STATE: ${{ steps.output.outputs.STATE }}
+    steps:
+      - name: Write state
+        id: state
+        uses: actions/github-script@v6
+        with:
+          script: |
+            return {         
+              HAS_SCOPE: true,
+              HAS_DOCUMENTATION_CHANGED: false,
+            }
+
+      - name: Set "GITHUB_OUTPUT"
+        id: output
+        run: |
+          echo "STATE=${{ steps.state.outputs.result }}" >> $GITHUB_OUTPUT
