@@ -45,11 +45,11 @@ jobs:
 
       - name: ECHO E
         run: |
-          echo -E 's|(<img [^>]*[^/])>|\1/>|' < (echo `${{ steps.github_release.outputs.changelog }}`)
+          echo -E 's|(<img [^>]*[^/])>|\1/>|' < echo `${{ steps.github_release.outputs.changelog }}`
 
       - name: ECHO I
         run: |
-          echo -i 's|(<img [^>]*[^/])>|\1/>|' < (echo `${{ steps.github_release.outputs.changelog }}`)     
+          echo -i 's|(<img [^>]*[^/])>|\1/>|' < echo `${{ steps.github_release.outputs.changelog }}`
 
       - name: Cat
         run: |
