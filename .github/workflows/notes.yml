@@ -43,8 +43,15 @@ jobs:
           `${{ steps.github_release.outputs.changelog }}`
           EOL    
 
-      - name: Create release PR
+      - name: ECHO E
+        run: |
+          echo -E 's|(<img [^>]*[^/])>|\1/>|' < (echo `${{ steps.github_release.outputs.changelog }}`)
+
+      - name: ECHO I
+        run: |
+          echo -i 's|(<img [^>]*[^/])>|\1/>|' < (echo `${{ steps.github_release.outputs.changelog }}`)     
+
+      - name: Cat
         run: |
           sed -E 's|(<img [^>]*[^/])>|\1/>|' ${{ github.workspace }}/changelog_artifacts.md > ${{ github.workspace }}/changelog_artifacts.md
-          cat ${{ github.workspace }}/changelog_artifacts.md
-
+          
