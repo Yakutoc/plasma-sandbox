@@ -54,7 +54,7 @@ jobs:
 
       - name: Create release PR
         run: |
-          body="# Release Notes\n
+          body="# Release Notes
           $(cat ${{ github.workspace }}/changelog_artifacts.md)"
           gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body "$body"
           
