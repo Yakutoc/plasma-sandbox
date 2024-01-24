@@ -45,7 +45,7 @@ jobs:
 
       - name: Lint
         run: |
-          sed -i -E 's|\(<img [^>]*[^/]\)>|\1/>|' ${{ github.workspace }}/changelog_artifacts.md
+          sed -i -E 's|(<img [^>]*[^/])>|\1/>|' ${{ github.workspace }}/changelog_artifacts.md
 
       - name: Upload "changelog_artifacts.md"
         uses: actions/upload-artifact@master
