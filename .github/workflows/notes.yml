@@ -39,9 +39,7 @@ jobs:
 
       - name: Create "changelog_artifacts.md"
         run: |
-          cat > ${{ github.workspace }}/changelog_artifacts.md <<EOL
-          `${{ steps.github_release.outputs.changelog }}`
-          EOL    
+          echo -e `${{ steps.github_release.outputs.changelog }}` | tea ${{ github.workspace }}/changelog_artifacts.md
 
       - name: Lint
         run: |
