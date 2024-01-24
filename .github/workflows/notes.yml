@@ -39,13 +39,13 @@ jobs:
 
       - name: Create "changelog_artifacts.md"
         run: |
-          cat > ${{ github.workspace }}/changelog_artifacts.md << EOL
+          cat > ${{ github.workspace }}/changelog_artifacts.md <<EOL
           `${{ steps.github_release.outputs.changelog }}`
           EOL    
 
       - name: ECHO I
         run: |
-          sed -i -E 's|(<img [^>]*[^/])>|\1/>|' ${{ github.workspace }}/changelog_artifacts.md
+          sed -i -E 's|\(<img [^>]*[^/]\)>|\1/>|' ${{ github.workspace }}/changelog_artifacts.md
 
       - name: Cat
         run: |
