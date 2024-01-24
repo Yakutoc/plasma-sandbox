@@ -39,7 +39,7 @@ jobs:
 
       - name: Create release PR
         run: |
-          changelog=echo $('${{ steps.github_release.outputs.changelog }}' | sed 's|(<img [^>]*[^/])>|\1/>|')
+          changelog=$(echo '${{ steps.github_release.outputs.changelog }}' | sed -E 's|(<img [^>]*[^/])>|\1/>|')
           gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body '# Release Notes
            $changelog'
 
