@@ -60,4 +60,5 @@ jobs:
           body="# Release Notes
           $(cat ${{ env.FILE_PATH }})"
           gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body "$body"
+          git reset --hard
           
