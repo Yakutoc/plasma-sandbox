@@ -45,9 +45,9 @@ jobs:
 
       - name: ECHO I
         run: |
-          echo -i 's|(<img [^>]*[^/])>|\1/>|' < echo `${{ steps.github_release.outputs.changelog }}`
+          sed -i -E 's|(<img [^>]*[^/])>|\1/>|' ${{ github.workspace }}/changelog_artifacts.md
 
       - name: Cat
         run: |
-          sed -E 's|(<img [^>]*[^/])>|\1/>|' ${{ github.workspace }}/changelog_artifacts.md > ${{ github.workspace }}/changelog_artifacts.md
+          cat ${{ github.workspace }}/changelog_artifacts.md
           
