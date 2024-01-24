@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "DATE=$(date +'%d.%m.%Y')" >> $GITHUB_ENV
           echo "FROM_TAG=$(git merge-base --fork-point origin/main)" >> $GITHUB_ENV
-          echo "HEAD_REF - {{github.head_ref}}"
+          echo "HEAD_REF - ${{github.head_ref}}"
 
       - name: Build Changelog
         id: github_release
