@@ -39,9 +39,9 @@ jobs:
 
       - name: Create "changelog_artifacts.md"
         run: |
-          cat > sed -i -E 's|(<img [^>]*[^/])>|\1/>|' ${{ github.workspace }}/changelog_artifacts.md <<'EOF'
+          cat > ${{ github.workspace }}/changelog_artifacts.md <<'EOF'
           '${{ steps.github_release.outputs.changelog }}'
-          EOF    
+          EOF | sed -i -E 's|(<img [^>]*[^/])>|\1/>|' ${{ github.workspace }}/changelog_artifacts.md    
 
       - name: Upload "changelog_artifacts.md"
         uses: actions/upload-artifact@master
