@@ -40,12 +40,11 @@ jobs:
       - name: Create "changelog_artifacts.md"
         run: |
           cat > ${{ github.workspace }}/changelog_artifacts.md << EOL
-          '${{ steps.github_release.outputs.changelog }}'
+          `${{ steps.github_release.outputs.changelog }}`
           EOL    
 
       - name: Create release PR
         run: |
-          changelog=$(echo sed -E 's|(<img [^>]*[^/])>|\1/>|' ${{ github.workspace }}/changelog_artifacts.md)
-          gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body '# Release Notes
-           $changelog'
+          sed -E 's|(<img [^>]*[^/])>|\1/>|' ${{ github.workspace }}/changelog_artifacts.md > ${{ github.workspace }}/changelog_artifacts.md
+          cat ${{ github.workspace }}/changelog_artifacts.md
 
