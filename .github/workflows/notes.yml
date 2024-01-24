@@ -37,20 +37,8 @@ jobs:
           toTag: ${{ github.sha }}
           configuration: "./.github/workflows/changelog-builder-config.json"
 
-      - name: Create "changelog_artifacts.md"
-        run: |
-          cat > ${{ github.workspace }}/changelog_artifacts.md << EOL
-          '${{ steps.github_release.outputs.changelog }}'
-          EOL
-
-      - name: Upload "changelog_artifacts.md"
-        uses: actions/upload-artifact@master
-        with:
-          name: release-changelog-artifacts
-          path: ${{ github.workspace }}/changelog_artifacts.md
-
       - name: Create release PR
         run: |
           gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body '# Release Notes
-          ${{ steps.github_release.outputs.changelog }}'
+          sed -E 's|(<img [^>]*[^/])>|\1/>|' << ${{ steps.github_release.outputs.changelog }}'
 
