@@ -52,7 +52,8 @@ jobs:
           name: release-changelog-artifacts
           path: ${{ github.workspace }}/changelog_artifacts.md
 
-      - name: Cat
+      - name: Create release PR
         run: |
-          cat ${{ github.workspace }}/changelog_artifacts.md
+          gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body '# Release Notes
+          $(cat ${{ github.workspace }}/changelog_artifacts.md)'
           
