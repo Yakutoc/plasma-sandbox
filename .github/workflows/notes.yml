@@ -28,9 +28,6 @@ jobs:
           echo "DATE=$(date +'%d.%m.%Y')" >> $GITHUB_ENV
           echo "FROM_TAG=$(git merge-base --fork-point origin/main)" >> $GITHUB_ENV
           echo "FILE_PATH=${{ github.workspace }}/changelog_artifacts.md" >> $GITHUB_ENV
-          echo "REF_NAME - ${{github.ref_name}}"
-          echo "HEAD_REF - ${{ toJSON(github.event) }}"
-          
 
       - name: Build Changelog
         id: github_release
@@ -45,10 +42,6 @@ jobs:
           cat > ${{ env.FILE_PATH }} <<'EOF'
           ${{ steps.github_release.outputs.changelog }}
 
-      - name: Lint
-        run: |
-          sed -i -E 's|(<img [^>]*[^/])>|\1/>|' ${{ env.FILE_PATH }}
-
       - name: Upload "changelog_artifacts.md"
         uses: actions/upload-artifact@master
         with:
@@ -58,7 +51,5 @@ jobs:
       - name: Create release PR
         run: |
           body="# Release Notes
-          $(cat ${{ env.FILE_PATH }})"
+          ${{ steps.github_release.outputs.changelog }}"
           gh pr create --base main --head ${{ github.ref_name }} --title "Release by ${{ env.DATE }}" --body "$body"
-          git reset --hard
-          
