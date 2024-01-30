@@ -1,9 +1,10 @@
 module.exports = () => {
-	const { PACKAGES_STORYBOOK, PACKAGES } = process.env;
+	const { STATE } = process.env;
 	
-	const packages = JSON.parse(JSON.parse(PACKAGES));
-	const packages_storybook = JSON.parse(PACKAGES_STORYBOOK);
+	const packages = JSON.parse(JSON.parse(STATE.PACKAGES));
+	const packages_storybook = JSON.parse(STATE.PACKAGES_STORYBOOK);
 	
+	console.log('STATE ==> ', STATE);
 	console.log('packages ==> ', packages);
 	console.log('PACKAGES_STORYBOOK ==> ', packages_storybook);
 	
