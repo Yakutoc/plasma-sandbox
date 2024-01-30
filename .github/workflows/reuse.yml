@@ -15,10 +15,10 @@ jobs:
     steps:
       - name: Write state
         id: state
-        uses: actions/github-script@v7
+        uses: actions/github-script@v6
         with:
           script: |
-            const processing = require('./.github/processing-data.js');
+            const processing = require("${{github.action_path}}/.github/processing-data.js");
             
             return processing();
 

@@ -13,7 +13,7 @@ const PACKAGES_STORYBOOK = [
 	'@salutejs/caldera-online'
 ];
 
-module.exports = () => {
+module.exports = function processingData() {
 	return {
 		HAS_SCOPE: true,
 		HAS_DOCUMENTATION_CHANGED: false,
