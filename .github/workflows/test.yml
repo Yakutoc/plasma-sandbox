@@ -20,17 +20,12 @@ jobs:
         run: |
           echo "Echo run bla-bla-bla"
 
-      - name: ECHO 2
-        run: |
-          echo "PACKAGES_STORYBOOK=${{ fromJSON(needs.write_state.outputs.STATE).PACKAGES_STORYBOOK }}" >> $GITHUB_ENV
-          echo "PACKAGES=${{ fromJSON(needs.write_state.outputs.STATE).PACKAGES }}" >> $GITHUB_ENV
-
       - name: Use state
         id: state
         uses: actions/github-script@v6
         env:
-          PACKAGES_STORYBOOK: ${{ toJSON(env.PACKAGES_STORYBOOK) }}
-          PACKAGES: ${{ toJSON(env.PACKAGES) }}
+          PACKAGES_STORYBOOK: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES_STORYBOOK) }}
+          PACKAGES: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES) }}
         with:
           script: |
             const read = require('./.github/read.js');
