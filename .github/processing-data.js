@@ -14,7 +14,7 @@ const PACKAGES_STORYBOOK = [
 ];
 
 module.exports = function processingData() {
-	return {
+	const obj = {
 		HAS_SCOPE: true,
 		HAS_DOCUMENTATION_CHANGED: false,
 		PACKAGES_STORYBOOK: JSON.stringify(PACKAGES_STORYBOOK),
@@ -23,5 +23,7 @@ module.exports = function processingData() {
 			'@salutejs/plasma-ASDK',
 			'@salutejs/caldera'
 		])
-	}
+	};
+	
+	return JSON.stringify(obj)
 }
