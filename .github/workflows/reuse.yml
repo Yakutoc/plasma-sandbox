@@ -13,12 +13,13 @@ jobs:
     outputs:
       STATE: ${{ steps.output.outputs.STATE }}
     steps:
+      - uses: actions/checkout@v4
       - name: Write state
         id: state
         uses: actions/github-script@v6
         with:
           script: |
-            const processing = require("${{github.workspace}}/.github/processing-data.js");
+            const processing = require("./.github/processing-data.js");
             
             return processing();
 

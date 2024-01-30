@@ -14,6 +14,7 @@ jobs:
       - write_state
 
     steps:
+      - uses: actions/checkout@v4
       - name: ECHO
         if: ${{ fromJSON(needs.write_state.outputs.STATE).HAS_SCOPE == true }}
         run: |
