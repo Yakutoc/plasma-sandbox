@@ -14,16 +14,10 @@ const PACKAGES_STORYBOOK = [
 ];
 
 module.exports = function processingData() {
-	const obj = {
-		HAS_SCOPE: true,
-		HAS_DOCUMENTATION_CHANGED: false,
-		PACKAGES_STORYBOOK: JSON.stringify(PACKAGES_STORYBOOK),
-		PACKAGES: JSON.stringify([
-			'@salutejs/plasma-new-hope',
-			'@salutejs/plasma-ASDK',
-			'@salutejs/caldera'
-		])
-	};
-	
-	return JSON.stringify(obj)
+	return {
+		"HAS_SCOPE": true,
+		"HAS_DOCUMENTATION_CHANGED": false,
+		"PACKAGES_STORYBOOK": JSON.stringify(PACKAGES_STORYBOOK),
+		"PACKAGES": JSON.stringify(PACKAGES)
+	}
 }
