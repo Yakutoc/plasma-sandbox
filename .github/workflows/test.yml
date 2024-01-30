@@ -24,7 +24,8 @@ jobs:
         id: state
         uses: actions/github-script@v6
         env:
-          STATE: ${{ toJSON(needs.write_state.outputs.STATE) }}
+          PACKAGES_STORYBOOK: ${{ toJSON(fromJson(needs.write_state.outputs.STATE).PACKAGES_STORYBOOK) }}
+          PACKAGES: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES) }}
         with:
           script: |
             const read = require('./.github/read.js');
