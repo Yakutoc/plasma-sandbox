@@ -18,7 +18,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const processing = require("${{github.action_path}}/.github/processing-data.js");
+            const processing = require("${{github.workspace}}/.github/processing-data.js");
             
             return processing();
 
