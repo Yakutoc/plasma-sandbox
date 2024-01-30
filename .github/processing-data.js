@@ -18,6 +18,10 @@ module.exports = function processingData() {
 		"HAS_SCOPE": true,
 		"HAS_DOCUMENTATION_CHANGED": false,
 		"PACKAGES_STORYBOOK": JSON.stringify(PACKAGES_STORYBOOK),
-		"PACKAGES": JSON.stringify(PACKAGES)
+		"PACKAGES": JSON.stringify([
+			'@salutejs/plasma-new-hope',
+			'@salutejs/plasma-ASDK',
+			'@salutejs/caldera'
+		])
 	}
 }
