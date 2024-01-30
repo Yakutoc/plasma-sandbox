@@ -19,13 +19,19 @@ jobs:
         if: ${{ fromJSON(needs.write_state.outputs.STATE).HAS_SCOPE == true }}
         run: |
           echo "Echo run bla-bla-bla"
+          
+
+      - name: ECHO
+        run: |
+          echo "PACKAGES_STORYBOOK=${{ fromJSON(needs.write_state.outputs.STATE).PACKAGES_STORYBOOK }}" >> $GITHUB_ENV
+          echo "PACKAGES=${{ fromJSON(needs.write_state.outputs.STATE).PACKAGES }}" >> $GITHUB_ENV
 
       - name: Use state
         id: state
         uses: actions/github-script@v6
         env:
-          PACKAGES_STORYBOOK: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES_STORYBOOK) }}
-          PACKAGES: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES) }}
+          PACKAGES_STORYBOOK: ${{ env.PACKAGES_STORYBOOK }}
+          PACKAGES: ${{ env.PACKAGES }}
         with:
           script: |
             const read = require('./.github/read.js');
