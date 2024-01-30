@@ -18,3 +18,15 @@ jobs:
         if: ${{ fromJSON(needs.write_state.outputs.STATE).HAS_SCOPE == true }}
         run: |
           echo "Echo run bla-bla-bla"
+
+      - name: Use state
+        id: state
+        uses: actions/github-script@v6
+        env:
+          PACKAGES_STORYBOOK: ${{ fromJSON(needs.write_state.outputs.STATE).PACKAGES_STORYBOOK }}
+          PACKAGES: ${{ fromJSON(needs.write_state.outputs.STATE).PACKAGES }}
+        with:
+          script: |
+            const read = require('./.github/read.js');
+            
+            return read();    

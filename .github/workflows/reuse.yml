@@ -18,10 +18,9 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            return {         
-              HAS_SCOPE: true,
-              HAS_DOCUMENTATION_CHANGED: false,
-            }
+            const processing = require('./.github/processing.js');
+            
+            return processing();
 
       - name: Set "GITHUB_OUTPUT"
         id: output
