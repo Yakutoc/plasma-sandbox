@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "DATE=$(date +'%d.%m.%Y')" >> $GITHUB_ENV
           echo "FROM_TAG=$(git merge-base --fork-point origin/main)" >> $GITHUB_ENV
-          echo "SHA - ${{ github.sha }}"
+          echo "FILE_PATH=${{ github.workspace }}/changelog_artifacts.md" >> $GITHUB_ENV
 
       - name: Build Changelog
         id: github_release
@@ -39,18 +39,17 @@ jobs:
 
       - name: Create "changelog_artifacts.md"
         run: |
-          cat > ${{ github.workspace }}/changelog_artifacts.md << EOL
+          cat > ${{ env.FILE_PATH }} <<'EOF'
           ${{ steps.github_release.outputs.changelog }}
-          EOL
 
       - name: Upload "changelog_artifacts.md"
         uses: actions/upload-artifact@master
         with:
           name: release-changelog-artifacts
-          path: ${{ github.workspace }}/changelog_artifacts.md
+          path: ${{ env.FILE_PATH }}
 
       - name: Create release PR
         run: |
-          gh pr create --base main --head dev --title "Release by ${{ env.DATE }}" --body '# Release Notes
+          body='# Release Notes
           ${{ steps.github_release.outputs.changelog }}'
-
+          gh pr create --base main --head ${{ github.ref_name }} --title "Release by ${{ env.DATE }}" --body "$body"
