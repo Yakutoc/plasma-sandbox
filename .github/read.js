@@ -1,13 +1,29 @@
+const getPackagesShortName = (list, dict) => {
+	return list
+		.filter((item) => dict.includes(item))
+		.map((item) => {
+			return item.replace('@salutejs/', '').replace('plasma-', '');
+		})
+}
+
 module.exports = () => {
-	const { PACKAGES_STORYBOOK, PACKAGES } = process.env;
+	const { PACKAGES_STORYBOOK, OUTPUT, PR_NAME = "pr-1021" } = process.env;
 	
-	const packages = JSON.parse(JSON.parse(PACKAGES));
-	const packages_storybook = JSON.parse(JSON.parse(PACKAGES_STORYBOOK));
+	const packagesStorybook= JSON.parse(PACKAGES_STORYBOOK).packages;
+	const output= JSON.parse(OUTPUT);
 	
-	console.log('packages ==> ', packages);
-	console.log('PACKAGES_STORYBOOK ==> ', packages_storybook);
+	const links = [
+		`website: http://plasma.sberdevices.ru/pr/pr-${PR_NAME}/`,
+	];
 	
-	return {
-		'some': true
-	}
+	getPackagesShortName(output, packagesStorybook).forEach((packageName) => {
+			links.push(`${packageName} storybook: http://plasma.sberdevices.ru/pr/pr-${PR_NAME}/${packageName}-storybook/`);
+		});
+	
+	const message = `Documentation preview deployed!
+            
+   ${links.join('\n')}
+  `;
+	
+	return message;
 }

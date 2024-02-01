@@ -24,10 +24,20 @@ jobs:
         id: state
         uses: actions/github-script@v6
         env:
-          PACKAGES_STORYBOOK: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES_STORYBOOK) }}
-          PACKAGES: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES) }}
+          PACKAGES_STORYBOOK: ${{ vars.PACKAGES_STORYBOOK }}
+          OUTPUT: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES) }}
         with:
+          debug: true
           script: |
             const read = require('./.github/read.js');
+            
+            const {
+              issue: { number },
+              repo: { owner, repo }
+            } = context;
+            
+            console.log(number);
+            
+            console.log(context);
             
             return read();    
