@@ -3,7 +3,7 @@ name: Pull request release
 on:
   pull_request:
     branches:
-      - 'release/'
+      - 'release'
 
 jobs:
   run:
