@@ -1,3 +1,22 @@
+# v0.40.0 (Thu Feb 01 2024)
+
+#### 🚀 Enhancement
+
+- Release 2024 02 [#349](https://github.com/PoligonSa/plasma-sandbox/pull/349) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: add 1 [#298](https://github.com/PoligonSa/plasma-sandbox/pull/298) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Merge remote-tracking branch 'origin/dev' into release_2024-02 ([@Yakutoc](https://github.com/Yakutoc))
+- Update package-locks files ([@Yakutoc](https://github.com/Yakutoc))
+- Update versions ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.39.0 (Thu Dec 14 2023)
 
 ### Release Notes

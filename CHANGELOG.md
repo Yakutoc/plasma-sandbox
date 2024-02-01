@@ -1,3 +1,50 @@
+# (Thu Feb 01 2024)
+
+#### 🚀 Enhancement
+
+- `plasmax-core@0.40.0`, `plasmax-hope@0.49.0`, `plasmax-web@0.86.0`
+  - Release 2024 02 [#349](https://github.com/PoligonSa/plasma-sandbox/pull/349) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-web@0.86.0`
+  - feat: Add web desc [#319](https://github.com/PoligonSa/plasma-sandbox/pull/319) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: Add web desc [#318](https://github.com/PoligonSa/plasma-sandbox/pull/318) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: Add web desc [#317](https://github.com/PoligonSa/plasma-sandbox/pull/317) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: Add web desc [#316](https://github.com/PoligonSa/plasma-sandbox/pull/316) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: Add new hope desc [#314](https://github.com/PoligonSa/plasma-sandbox/pull/314) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: Add new hope desc [#309](https://github.com/PoligonSa/plasma-sandbox/pull/309) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-hope@0.49.0`
+  - feat: Add new hope desc [#308](https://github.com/PoligonSa/plasma-sandbox/pull/308) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: Add new hope desc [#305](https://github.com/PoligonSa/plasma-sandbox/pull/305) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: Add new hope desc [#304](https://github.com/PoligonSa/plasma-sandbox/pull/304) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: Add new hope desc [#303](https://github.com/PoligonSa/plasma-sandbox/pull/303) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add 1 [#302](https://github.com/PoligonSa/plasma-sandbox/pull/302) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add 1 [#301](https://github.com/PoligonSa/plasma-sandbox/pull/301) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add 3 [#300](https://github.com/PoligonSa/plasma-sandbox/pull/300) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: add 2 [#299](https://github.com/PoligonSa/plasma-sandbox/pull/299) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.40.0`
+  - feat: add 1 [#298](https://github.com/PoligonSa/plasma-sandbox/pull/298) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- `plasmax-web@0.86.0`
+  - fix: Add new hope desc [#313](https://github.com/PoligonSa/plasma-sandbox/pull/313) ([@Yakutoc](https://github.com/Yakutoc))
+  - fix: Add new hope desc [#312](https://github.com/PoligonSa/plasma-sandbox/pull/312) ([@Yakutoc](https://github.com/Yakutoc))
+  - fix: Add new hope desc [#311](https://github.com/PoligonSa/plasma-sandbox/pull/311) ([@Yakutoc](https://github.com/Yakutoc))
+  - fix: Add new hope desc [#310](https://github.com/PoligonSa/plasma-sandbox/pull/310) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-hope@0.49.0`
+  - fix: Add new hope desc [#307](https://github.com/PoligonSa/plasma-sandbox/pull/307) ([@Yakutoc](https://github.com/Yakutoc))
+  - fix: Add new hope desc [#306](https://github.com/PoligonSa/plasma-sandbox/pull/306) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### ⚠️ Pushed to `main`
+
+- ci: 1 [no ci] ([@Yakutoc](https://github.com/Yakutoc))
+- ci: status [no ci] ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Thu Dec 14 2023)
 
 ### Release Notes

@@ -1,3 +1,33 @@
+# v0.49.0 (Thu Feb 01 2024)
+
+#### 🚀 Enhancement
+
+- Release 2024 02 [#349](https://github.com/PoligonSa/plasma-sandbox/pull/349) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: Add new hope desc [#308](https://github.com/PoligonSa/plasma-sandbox/pull/308) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: Add new hope desc [#305](https://github.com/PoligonSa/plasma-sandbox/pull/305) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: Add new hope desc [#304](https://github.com/PoligonSa/plasma-sandbox/pull/304) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: Add new hope desc [#303](https://github.com/PoligonSa/plasma-sandbox/pull/303) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: add 1 [#302](https://github.com/PoligonSa/plasma-sandbox/pull/302) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: add 1 [#301](https://github.com/PoligonSa/plasma-sandbox/pull/301) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: add 3 [#300](https://github.com/PoligonSa/plasma-sandbox/pull/300) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: add 2 [#299](https://github.com/PoligonSa/plasma-sandbox/pull/299) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Merge remote-tracking branch 'origin/dev' into release_2024-02 ([@Yakutoc](https://github.com/Yakutoc))
+- Update package-locks files ([@Yakutoc](https://github.com/Yakutoc))
+- Update versions ([@Yakutoc](https://github.com/Yakutoc))
+- Merge remote-tracking branch 'origin/dev' into dev ([@Yakutoc](https://github.com/Yakutoc))
+- fix: Add new hope desc [#307](https://github.com/PoligonSa/plasma-sandbox/pull/307) ([@Yakutoc](https://github.com/Yakutoc))
+- fix: Add new hope desc [#306](https://github.com/PoligonSa/plasma-sandbox/pull/306) ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update package-locks \[skip ci\] ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.42.0 (Thu Dec 14 2023)
 
 ### Release Notes
