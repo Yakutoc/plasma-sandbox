@@ -11,6 +11,8 @@ on:
 jobs:
   authorize:
     name: Authorize external pull request
+    if: ${{ !startsWith(github.head_ref, 'release') }}
+
     uses: ./.github/workflows/auth.yml
 
   publish:

@@ -1,0 +1,29 @@
+name: Fake
+
+on:
+  workflow_call:
+    outputs:
+      STATE:
+        description: "scope collection"
+        value: ${{ jobs.build.outputs.STATE }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      STATE: ${{ steps.output.outputs.STATE }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Write state
+        id: state
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const processing = require("./.github/processing-data.js");
+            
+            return processing();
+
+      - name: Set "GITHUB_OUTPUT"
+        id: output
+        run: |
+          echo "STATE=${{ steps.state.outputs.result }}" >> $GITHUB_OUTPUT
