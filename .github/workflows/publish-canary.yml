@@ -4,15 +4,15 @@ on:
   pull_request:
     branches:
       - main
-      - '!release_**'
   pull_request_target:
     branches:
       - dev
-      - '!release_**'
 
 jobs:
   authorize:
     name: Authorize external pull request
+    if: ${{ !startsWith(github.head_ref, 'release') }}
+
     uses: ./.github/workflows/auth.yml
 
   publish:
