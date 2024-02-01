@@ -6,11 +6,12 @@ on:
     branches:
       - dev
       - main
-      - '!release-**'
 
 jobs:
   run:
     name: Check Health
+    if: ${{ !startsWith(github.head_ref, 'release') }}
+
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

@@ -1,12 +1,14 @@
-name: Pull request release
+name: Pull request release into master
 
 on:
   pull_request:
     branches:
-      - 'release'
+      - master
 
 jobs:
   run:
+    if: ${{ startsWith(github.head_ref, 'release') }}
+
     name: Pull request release
     runs-on: ubuntu-latest
     steps:
