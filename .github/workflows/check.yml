@@ -6,6 +6,7 @@ on:
     branches:
       - dev
       - main
+      - '!release_**'
 
 jobs:
   run:
