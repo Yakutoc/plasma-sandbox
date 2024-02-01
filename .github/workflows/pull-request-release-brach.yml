@@ -1,13 +1,13 @@
-name: Check
+name: Pull request release
 
 on:
   pull_request:
     branches:
-      - 'release_**'
+      - 'release/'
 
 jobs:
   run:
-    name: Check Health
+    name: Pull request release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

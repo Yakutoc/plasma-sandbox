@@ -6,7 +6,8 @@ on:
     branches:
       - dev
       - main
-      - '!release_**'
+    branches-ignore:
+      - 'release/'
 
 jobs:
   run:
