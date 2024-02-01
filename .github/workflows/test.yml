@@ -31,4 +31,13 @@ jobs:
           script: |
             const read = require('./.github/read.js');
             
+            const {
+              issue: { number },
+              repo: { owner, repo }
+            } = context;
+            
+            console.log(number);
+            
+            console.log(context);
+            
             return read();    

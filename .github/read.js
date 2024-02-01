@@ -22,12 +22,8 @@ module.exports = () => {
 	
 	const message = `Documentation preview deployed!
             
-            ${links.join('\n')}
-           `
+   ${links.join('\n')}
+  `;
 	
-	console.log(message);
-	
-	return {
-		'some': true
-	}
+	return message;
 }
