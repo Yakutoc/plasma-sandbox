@@ -31,10 +31,3 @@ jobs:
             console.log(number);
             
             console.log(context);
-            
-            github.rest.issues.createComment({
-              issue_number: number,
-              owner,
-              repo,
-              body: 'test comment',
-            });
