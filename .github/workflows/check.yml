@@ -32,7 +32,7 @@ jobs:
             
             console.log(context);
             
-            const data = await github.rest.issues.createComment({
+            github.rest.issues.createComment({
               issue_number: number,
               owner,
               repo,
