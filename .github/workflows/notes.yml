@@ -50,6 +50,6 @@ jobs:
 
       - name: Create release PR
         run: |
-          body='# Release Notes
-          ${{ steps.github_release.outputs.changelog }}'
-          gh pr create --base main --head ${{ github.ref_name }} --title "Release by ${{ env.DATE }}" --body "$body"
+          changelog='${{ steps.github_release.outputs.changelog }}'
+          gh pr create --base main --head ${{ github.ref_name }} --title "Release by ${{ env.DATE }}" --body "# Release Notes
+          $changelog"
