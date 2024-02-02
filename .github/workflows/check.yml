@@ -38,5 +38,3 @@ jobs:
               repo,
               body: 'test comment',
             });
-            
-            console.log(data);
