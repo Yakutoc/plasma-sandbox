@@ -10,22 +10,22 @@ jobs:
 
   read_state:
     runs-on: ubuntu-latest
-    needs:
-      - write_state
-
+    needs: [write_state]
+    env:
+      PACKAGES: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES) }}
     steps:
       - uses: actions/checkout@v4
       - name: ECHO
-        if: ${{ fromJSON(needs.write_state.outputs.STATE).HAS_SCOPE == true }}
+        if: ${{ contains(env.PACKAGES, 'plasma-web') }}
         run: |
           echo "Echo run bla-bla-bla"
 
       - name: Use state
         id: state
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         env:
-          PACKAGES_STORYBOOK: ${{ vars.PACKAGES_STORYBOOK }}
-          OUTPUT: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES) }}
+          PACKAGES_STORYBOOK: ${{ toJSON(vars.PACKAGES_STORYBOOK) }}
+          OUTPUT: ${{ env.PACKAGES }}
         with:
           debug: true
           script: |
@@ -35,9 +35,13 @@ jobs:
               issue: { number },
               repo: { owner, repo }
             } = context;
-            
-            console.log(number);
-            
+          
             console.log(context);
             
-            return read();    
+            return read();
+
+
+
+  run_reuse:
+    needs: [read_state]
+    uses: ./.github/workflows/reuse.yml

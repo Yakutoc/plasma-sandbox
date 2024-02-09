@@ -1,4 +1,4 @@
-const getPackagesShortName = (list, dict) => {
+const getPackagesShortName = (list = [], dict) => {
 	return list
 		.filter((item) => dict.includes(item))
 		.map((item) => {
@@ -9,7 +9,7 @@ const getPackagesShortName = (list, dict) => {
 module.exports = () => {
 	const { PACKAGES_STORYBOOK, OUTPUT, PR_NAME = "pr-1021" } = process.env;
 	
-	const packagesStorybook= JSON.parse(PACKAGES_STORYBOOK).packages;
+	const packagesStorybook= JSON.parse(PACKAGES_STORYBOOK);
 	const output= JSON.parse(OUTPUT);
 	
 	const links = [
@@ -24,6 +24,8 @@ module.exports = () => {
             
    ${links.join('\n')}
   `;
+	
+	console.log(message);
 	
 	return message;
 }
