@@ -1,4 +1,4 @@
-name: POC reuse workflow
+name: POC workflow run
 
 on:
   workflow_run:
