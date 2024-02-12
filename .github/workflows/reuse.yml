@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Context
-        if: ${{ env.IS_PR }}
+        if: ${{ fromJSON(env.IS_PR) }}
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
