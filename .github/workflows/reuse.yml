@@ -3,6 +3,11 @@ name: POC reuse workflow
 on:
   workflow_dispatch:
   workflow_call:
+    inputs:
+      s3-bucket:
+        type: string
+        required: true
+        default: ${{ secrets.AWS_S3_BUCKET_2 }}
     outputs:
       STATE:
         description: "scope collection"
@@ -13,7 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IS_PR: ${{ github.event_name == 'pull_request' }}
-      IS_PR_TARGET: ${{ github.event_name == 'pull_request_target' }}
     outputs:
       STATE: ${{ steps.output.outputs.STATE }}
     steps:
@@ -24,27 +28,22 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo '${{ env.GITHUB_CONTEXT }}'
-          echo '${{ fromJSON(env.IS_PR_TARGET) }}'
 
       - name: Path
-        if: ${{ fromJSON(env.IS_PR_TARGET) }}
         env:
           PR_NAME: pr-${{ github.event.number }}
-        ## PR context -> plasma-theme-builder-pr-1022
-        ## !PR context -> plasma-theme-builder-next
         run: |
           echo "BUILD_PATH=plasma-theme-builder-${{ fromJSON(env.IS_PR) && env.PR_NAME || 'next' }}" >> "$GITHUB_ENV"
 
       - name: Echo "BUILD_PATH"
         run: |
           echo "${{ env.BUILD_PATH }}"
-          
 
       - name: S3 path
         env:
           PR_S3_PATH: pr/${{ env.BUILD_PATH }}/
         run: |
-          echo "S3_PATH=${{ secrets.AWS_S3_BUCKET_STAGE_DEV }}/${{ fromJSON(env.IS_PR) && env.PR_S3_PATH  || 'plasma-theme-builder/' }}" >> "$GITHUB_ENV"
+          echo "S3_PATH=${{ inputs.s3-bucket }}/${{ fromJSON(env.IS_PR) && env.PR_S3_PATH  || 'plasma-theme-builder/' }}" >> "$GITHUB_ENV"
 
       - name: Write state
         id: state
