@@ -31,3 +31,8 @@ jobs:
             console.log(number);
             
             console.log(context);
+
+
+  context:
+    uses: ./.github/workflows/reuse.yml
+    secrets: inherit
