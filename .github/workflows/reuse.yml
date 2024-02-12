@@ -6,7 +6,6 @@ on:
     inputs:
       s3-bucket:
         type: string
-        required: true
         default: ''
     outputs:
       STATE:
