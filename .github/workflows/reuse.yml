@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IS_PR: ${{ github.event_name == 'pull_request' }}
+      IS_PR_TARGET: ${{ github.event_name == 'pull_request_target' }}
     outputs:
       STATE: ${{ steps.output.outputs.STATE }}
     steps:
@@ -23,8 +24,10 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo '${{ env.GITHUB_CONTEXT }}'
+          echo '${{ fromJSON(env.IS_PR_TARGET) }}'
 
       - name: Path
+        if: ${{ fromJSON(env.IS_PR_TARGET) }}
         env:
           PR_NAME: pr-${{ github.event.number }}
         ## PR context -> plasma-theme-builder-pr-1022
