@@ -6,20 +6,5 @@ on:
     types: [completed]
 jobs:
   poc-workflow-run:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-      - name: Write state
-        id: state
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const processing = require("./.github/processing-data.js");
-            
-            return processing();
-
-      - name: Set "GITHUB_OUTPUT"
-        id: output
-        run: |
-          echo "STATE=${{ steps.state.outputs.result }}" >> $GITHUB_OUTPUT
+    uses: ./.github/workflows/reuse.yml
+    secrets: inherit
