@@ -43,3 +43,4 @@ jobs:
   run_reuse:
     needs: [read_state]
     uses: ./.github/workflows/reuse.yml
+    secrets: inherit
