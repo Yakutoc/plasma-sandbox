@@ -9,11 +9,19 @@ on:
       - dev
 
 jobs:
+  authorize:
+    name: Authorize external pull request
+    if: ${{ !startsWith(github.head_ref, 'release') }}
+
+    uses: ./.github/workflows/auth.yml
+    
   publish:
     name: Canary version
     uses: ./.github/workflows/publish-common.yml
     with:
       ref: refs/pull/${{github.event.pull_request.number}}/merge
+      auto-options: '--no-changelog'
+      upload_assets: false
     secrets:
       gh_token: ${{ secrets.GH_TOKEN }}
       npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}

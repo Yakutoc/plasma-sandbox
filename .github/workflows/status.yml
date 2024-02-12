@@ -1,0 +1,23 @@
+name: Status
+
+on:
+  status:
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: |
+          echo "${{ github.event.state }}"
+          echo "${{ github.event.context }}"
+          echo "NOTIFICATION="##### Status: ${{ github.event.state }}/\n/\n ###### Link: ${{ github.event.target_url }}" " >> "$GITHUB_ENV"
+
+      - name: Create the Mattermost Message
+        run: |
+          echo "{\"text\":\" ##### Status: ${{ github.event.state }}\\n\\n##### Description: ${{ github.event.description }}\\n\\n###### Link: ${{ github.event.target_url }}\"}" > mattermost.json
+
+      - name: Send notification
+        uses: mattermost/action-mattermost-notify@master
+        env:
+          MATTERMOST_WEBHOOK_URL: ${{ secrets.WEBHOOKS_NOTIFICATIONS_MM }}

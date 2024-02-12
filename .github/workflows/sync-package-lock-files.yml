@@ -1,0 +1,63 @@
+name: Sync package-lock files
+
+on:
+  workflow_dispatch:
+    branches:
+      - dev
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    name: Sync
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci --no-audit
+
+      - name: Sync package lock files
+        uses: nick-fields/retry@v2
+        env:
+          options: "--no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps"
+        with:
+          timeout_minutes: 5
+          shell: bash
+          max_attempts: 3
+          retry_on: error
+          command: |
+            # (1) Sync package-lock's root  level
+            npm i ${{ env.options }}
+            # (2) Remove the node_modules directory from all packages
+            lerna clean -y
+            # (3) Sync package-lock files state
+            lerna exec --no-private -- npm i ${{ env.options }} --ignore-scripts
+            # (4) root deps don't update correctly on first regeneration
+            npm i ${{ env.options }}
+
+      - name: Extract branch name
+        id: branch_name
+        shell: bash
+        run: echo "BRANCH=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
+
+      - name: Commit & Push package-lock's
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          message: 'chore: Update package-lock.json files'
+          branch: ${{ steps.branch_name.outputs.BRANCH }}
+          author_name: Alexander Lobyntsev
+          author_email: yakutoc@gmail.com
+

@@ -1,0 +1,58 @@
+name: POC reuse workflow
+
+on:
+  workflow_dispatch:
+  workflow_call:
+    outputs:
+      STATE:
+        description: "scope collection"
+        value: ${{ jobs.poc-reuse.outputs.STATE }}
+
+jobs:
+  poc-reuse:
+    runs-on: ubuntu-latest
+    env:
+      IS_PR: ${{ github.event_name == 'pull_request' }}
+    outputs:
+      STATE: ${{ steps.output.outputs.STATE }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: |
+          echo '${{ env.GITHUB_CONTEXT }}'
+
+      - name: Path
+        env:
+          PR_NAME: pr-${{ github.event.number }}
+        ## PR context -> plasma-theme-builder-pr-1022
+        ## !PR context -> plasma-theme-builder-next
+        run: |
+          echo "BUILD_PATH=plasma-theme-builder-${{ fromJSON(env.IS_PR) && env.PR_NAME || 'next' }}" >> "$GITHUB_ENV"
+
+      - name: Echo "BUILD_PATH"
+        run: |
+          echo "${{ env.BUILD_PATH }}"
+          
+
+      - name: S3 path
+        env:
+          PR_S3_PATH: pr/${{ env.BUILD_PATH }}/
+        run: |
+          echo "S3_PATH=${{ secrets.AWS_S3_BUCKET_STAGE_DEV }}/${{ fromJSON(env.IS_PR) && env.PR_S3_PATH  || 'plasma-theme-builder/' }}" >> "$GITHUB_ENV"
+
+      - name: Write state
+        id: state
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const processing = require("./.github/processing-data.js");
+            
+            return processing();
+
+      - name: Set "GITHUB_OUTPUT"
+        id: output
+        run: |
+          echo "STATE=${{ steps.state.outputs.result }}" >> $GITHUB_OUTPUT

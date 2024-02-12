@@ -1,11 +1,9 @@
 {
   "name": "plasmax",
-  "author": "Salute Frontend Team <salute.developers@gmail.com>",
+  "author": "Salute Frontend Team <yakutoc@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "diff": "git diff",
-    "release": "auto shipit",
-    "next": "auto next",
+    "release": "git diff && auto shipit -v",
     "prepare": "test ! -n \"$CI\" && husky install || echo skip husky",
     "lint": "lerna run lint --parallel --since=$(git merge-base --fork-point origin/dev)",
     "postinstall": "patch-package"
