@@ -6,7 +6,13 @@ on:
     workflows: [Sharing data]
     types: [completed]
 
+env:
+  IS_WORKFLOW_RUN: ${{ github.event.event_name == 'workflow_run' }}
+  IS_WORKFLOW_RUN_SUCCESS: ${{ github.event.workflow_run.conclusion == 'success' }}
+  IS_WORKFLOW_DISPATCH: ${{ github.event.event_name == 'workflow_dispatch' }}
+
 jobs:
   poc-workflow-run:
+    if: ${{ fromJSON(IS_WORKFLOW_RUN_SUCCESS) && fromJSON(env.IS_WORKFLOW_RUN_SUCCESS) || fromJSON(env.IS_WORKFLOW_DISPATCH) }}
     uses: ./.github/workflows/reuse.yml
     secrets: inherit
