@@ -129,8 +129,6 @@ export default class UploadAssetsExtendPlugin extends UploadAssetsPlugin impleme
             
             // @ts-ignore
             await this.cleanupCanaryAssets(auto);
-            // @ts-ignore
-            await this.cleanupCanaryAssets(auto);
         });
     }
 
