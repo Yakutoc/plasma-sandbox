@@ -20,6 +20,8 @@ module.exports = function rc() {
     const { upload_assets: uploadAssets = 'false', packages_targets } = process.env || {};
     const plugins = [['released', releasedOptions], ['npm', npmOptions], 'conventional-commits'];
     
+    console.log(packages_targets);
+    
     if (uploadAssets === 'true') {
         plugins.unshift(['./auto-plugins/dist/upload-assets-extend.js',
             {
