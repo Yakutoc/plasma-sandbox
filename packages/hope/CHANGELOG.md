@@ -1,3 +1,15 @@
+# v0.54.0 (Thu Feb 15 2024)
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks \[skip ci\] ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.53.0 (Thu Feb 15 2024)
 
 #### 🐛 Bug Fix
