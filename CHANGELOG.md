@@ -2,6 +2,25 @@
 
 #### 🚀 Enhancement
 
+- `plasmax-core@0.44.0`
+  - feat: bump ([@Yakutoc](https://github.com/Yakutoc))
+
+#### ⚠️ Pushed to `main`
+
+- ci: upload assets [no ci] ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.44.0`, `plasmax-hope@0.53.0`, `plasmax-web@0.90.0`
+  - Merge remote-tracking branch 'origin/main' ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Thu Feb 15 2024)
+
+#### 🚀 Enhancement
+
 - `plasmax-core@0.43.0`
   - feat: bump ([@Yakutoc](https://github.com/Yakutoc))
 

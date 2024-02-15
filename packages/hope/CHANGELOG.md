@@ -1,3 +1,19 @@
+# v0.53.0 (Thu Feb 15 2024)
+
+#### 🐛 Bug Fix
+
+- chore: update package-locks \[skip ci\] ([@Yakutoc](https://github.com/Yakutoc))
+
+#### ⚠️ Pushed to `main`
+
+- Merge remote-tracking branch 'origin/main' ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.52.0 (Thu Feb 15 2024)
 
 #### 🐛 Bug Fix
