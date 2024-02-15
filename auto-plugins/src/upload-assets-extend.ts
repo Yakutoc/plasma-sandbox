@@ -26,7 +26,7 @@ const optionalPluginOptions = t.partial({
     /** Compact view for PRs comment */
     compact: t.boolean,
     /** Compact view for PRs comment */
-    packagesTargets: t.array(t.string),
+    packagesTargetsAssets: t.array(t.string),
 });
 
 const pluginOptions = t.intersection([requiredPluginOptions, optionalPluginOptions]);
@@ -36,11 +36,6 @@ export type IUploadAssetsPluginOptions = t.TypeOf<typeof pluginOptions>;
 /** Convert shorthand options to noraml shape */
 const normalizeOptions = (options: IUploadAssetsPluginOptions | string[]) =>
     Array.isArray(options) ? { assets: options } : options;
-
-const filterPackages = (list: string[]) =>
-    getLernaPackages().then((packages) => {
-        return packages.map(({ name }) => name).filter((name) => list.includes(name));
-    });
 
 export default class UploadAssetsExtendPlugin extends UploadAssetsPlugin implements IPlugin {
     name = 'upload-assets-extend';
@@ -61,7 +56,7 @@ export default class UploadAssetsExtendPlugin extends UploadAssetsPlugin impleme
             includeBotPrs: normalizedOptions.includeBotPrs === undefined ? true : normalizedOptions.includeBotPrs,
             group: normalizedOptions.group || '',
             compact: normalizedOptions.compact || false,
-            packagesTargets: normalizedOptions.packagesTargets || ['plasmax-hope'],
+            packagesTargetsAssets: normalizedOptions.packagesTargetsAssets || ['plasmax-hope'],
         }
     }
 
@@ -118,10 +113,22 @@ export default class UploadAssetsExtendPlugin extends UploadAssetsPlugin impleme
                 return;
             }
             
-            console.log(response);
-
+            if (!!this.options.packagesTargetsAssets.length && Array.isArray(response)) {
+                const listPackagesForUploadAssets = response.filter((releaseData: any) =>
+                    this.options.packagesTargetsAssets.some((targetPackage) =>
+                        releaseData.data.name.includes(targetPackage),
+                    ),
+                );
+                
+                // @ts-ignore
+                await this.uploadAssets(auto, listPackagesForUploadAssets);
+            } else {
+                // @ts-ignore
+                await this.uploadAssets(auto, response);
+            }
+            
             // @ts-ignore
-            await this.uploadAssets(auto, response.filter((r) => this.options.packagesTargets.some((targetPackage) => r.data.name.includes(targetPackage))));
+            await this.cleanupCanaryAssets(auto);
             // @ts-ignore
             await this.cleanupCanaryAssets(auto);
         });
