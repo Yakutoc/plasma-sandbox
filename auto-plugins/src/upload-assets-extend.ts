@@ -121,7 +121,7 @@ export default class UploadAssetsExtendPlugin extends UploadAssetsPlugin impleme
             console.log(response);
 
             // @ts-ignore
-            await this.uploadAssets(auto, response.filter((r) => this.options.packagesTargets.some((package) => r.data.name.includes(package))));
+            await this.uploadAssets(auto, response.filter((r) => this.options.packagesTargets.some((targetPackage) => r.data.name.includes(targetPackage))));
             // @ts-ignore
             await this.cleanupCanaryAssets(auto);
         });
