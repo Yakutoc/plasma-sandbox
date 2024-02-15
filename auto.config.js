@@ -13,6 +13,7 @@ const uploadAssetsPluginOptions = {
     message: '🐤 Download canary assets:',
     group: '(color|shadow|typo|borderRadius|spacing).*\\.(kt|xml|swift|ts)',
     compact: true,
+    packagesTargets: ['plasmax-web']
 };
 
 /** Auto configuration */
