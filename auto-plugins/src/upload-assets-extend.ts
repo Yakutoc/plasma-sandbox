@@ -26,7 +26,7 @@ const optionalPluginOptions = t.partial({
     /** Compact view for PRs comment */
     compact: t.boolean,
     /** Compact view for PRs comment */
-    packagesTargetsAssets: t.array(t.string),
+    uploadAssetsTargets: t.array(t.string),
 });
 
 const pluginOptions = t.intersection([requiredPluginOptions, optionalPluginOptions]);
@@ -56,7 +56,7 @@ export default class UploadAssetsExtendPlugin extends UploadAssetsPlugin impleme
             includeBotPrs: normalizedOptions.includeBotPrs === undefined ? true : normalizedOptions.includeBotPrs,
             group: normalizedOptions.group || '',
             compact: normalizedOptions.compact || false,
-            packagesTargetsAssets: normalizedOptions.packagesTargetsAssets || ['plasmax-hope'],
+            uploadAssetsTargets: normalizedOptions.uploadAssetsTargets || ['plasmax-hope'],
         }
     }
 
@@ -113,19 +113,18 @@ export default class UploadAssetsExtendPlugin extends UploadAssetsPlugin impleme
                 return;
             }
             
-            if (!!this.options.packagesTargetsAssets.length && Array.isArray(response)) {
-                const listPackagesForUploadAssets = response.filter((releaseData: any) =>
-                    this.options.packagesTargetsAssets.some((targetPackage) =>
-                        releaseData.data.name.includes(targetPackage),
+            let releases = response;
+            
+            if (!!this.options.uploadAssetsTargets.length && Array.isArray(response)) {
+                releases = response.filter((releaseData: any) =>
+                    this.options.uploadAssetsTargets.some((uploadAssetsTarget) =>
+                        releaseData.data.name.includes(uploadAssetsTarget),
                     ),
                 );
-                
-                // @ts-ignore
-                await this.uploadAssets(auto, listPackagesForUploadAssets);
-            } else {
-                // @ts-ignore
-                await this.uploadAssets(auto, response);
             }
+            
+            // @ts-ignore
+            await this.uploadAssets(auto, releases);
             
             // @ts-ignore
             await this.cleanupCanaryAssets(auto);

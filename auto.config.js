@@ -26,7 +26,7 @@ module.exports = function rc() {
         plugins.unshift(['./auto-plugins/dist/upload-assets-extend.js',
             {
                 ...uploadAssetsPluginOptions,
-                packagesTargetsAssets: JSON.parse(packages_targets)
+                uploadAssetsTargets: JSON.parse(packages_targets)
             }
         ]);
     }
