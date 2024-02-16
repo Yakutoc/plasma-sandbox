@@ -1,3 +1,15 @@
+# v0.48.0 (Fri Feb 16 2024)
+
+#### 🚀 Enhancement
+
+- feat: bump ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.47.0 (Fri Feb 16 2024)
 
 #### 🚀 Enhancement
