@@ -1,3 +1,20 @@
+# (Fri Feb 16 2024)
+
+#### 🚀 Enhancement
+
+- `plasmax-core@0.46.0`
+  - feat: bump ([@Yakutoc](https://github.com/Yakutoc))
+
+#### ⚠️ Pushed to `main`
+
+- ci: upload assets [no ci] ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Thu Feb 15 2024)
 
 #### 🚀 Enhancement
