@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [write_state]
     env:
-      PACKAGES: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES) }}
+      PACKAGES: ${{ fromJSON(needs.write_state.outputs.STATE).PACKAGES }}
     steps:
       - uses: actions/checkout@v4
       - name: ECHO
