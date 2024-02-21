@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: ECHO
-        if: ${{ contains(env.PACKAGES, 'plasma-web') }}
+        if: contains(env.PACKAGES, 'plasma-web')
         run: |
           echo "Echo run bla-bla-bla"
 
