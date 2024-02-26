@@ -18,8 +18,8 @@ jobs:
 
       - name: Set ENVs
         run: |
-          echo "HAS_PACKAGE_DOCS=$([ -d "./utils/pack" ])" >> $GITHUB_ENV   
-          echo "NOT_PACKAGE_DOCS=$([ -d "./utils/sssss" ])" >> $GITHUB_ENV   
+          echo "HAS_PACKAGE_DOCS=$([ -d "./utils/pack" ] && echo true || echo false)" >> $GITHUB_ENV   
+          echo "NOT_PACKAGE_DOCS=$([ -d "./utils/sssss" ] && echo true || echo false)" >> $GITHUB_ENV   
 
       - name: ECHO
         if: ${{ env.HAS_PACKAGE_DOCS }}
