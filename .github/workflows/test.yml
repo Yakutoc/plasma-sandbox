@@ -15,10 +15,22 @@ jobs:
       PACKAGES: ${{ toJSON(fromJSON(needs.write_state.outputs.STATE).PACKAGES) }}
     steps:
       - uses: actions/checkout@v4
-      - name: ECHO
-        if: contains(env.PACKAGES, 'plasma-web')
+
+      - name: Set ENVs
         run: |
-          echo "Echo run bla-bla-bla"
+          echo "HAS_PACKAGE_DOCS=$([ -d "./utils/pack" ])" >> $GITHUB_ENV   
+          echo "NOT_PACKAGE_DOCS=$([ -d "./utils/sssss" ])" >> $GITHUB_ENV   
+
+      - name: ECHO
+        if: ${{ env.HAS_PACKAGE_DOCS }}
+        run: |
+          echo "Echo HAS"
+
+      - name: ECHO 2
+        if: ${{ env.NOT_PACKAGE_DOCS }}
+        run: |
+          echo "Echo NOT"        
+          echo ${{ env.HAS_PACKAGE_DOCS }}       
 
       - name: Use state
         id: state
