@@ -146,3 +146,13 @@ jobs:
         uses: mattermost/action-mattermost-notify@master
         env:
           MATTERMOST_WEBHOOK_URL: ${{ secrets.WEBHOOKS_NOTIFICATIONS_MM }}
+
+  unblock:
+    needs: [publish]
+    runs-on: ubuntu-latest
+    environment: 'After publish rc'
+
+    steps:
+      - name: Echo
+        run: |
+          echo "Publish rc done"
