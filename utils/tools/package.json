@@ -1,6 +1,6 @@
 {
   "name": "plasmax-tools",
-  "version": "0.34.0",
+  "version": "0.42.1-dev.0",
   "author": "Alex <yakutoc@gmail.com>",
   "license": "MIT",
   "private": true,
@@ -8,7 +8,7 @@
     "access": "restricted"
   },
   "dependencies": {
-    "plasmax-core": "0.40.0"
+    "plasmax-core": "0.48.1-dev.0"
   },
   "devDependencies": {
     "typescript": "5.2.2"
