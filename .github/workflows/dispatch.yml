@@ -31,7 +31,7 @@ jobs:
         run: |
           cd plasma/packages/plasma-icons
           nvm use
-          npm i
+          npm ci
           npm run generate:android
 
       - name: Mv to dir
