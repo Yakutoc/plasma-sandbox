@@ -1,3 +1,26 @@
+# v0.59.0 (Tue Mar 19 2024)
+
+#### 🚀 Enhancement
+
+- Release 1 [#362](https://github.com/PoligonSa/plasma-sandbox/pull/362) ([@Yakutoc](https://github.com/Yakutoc) [@Salute-Eva](https://github.com/Salute-Eva))
+- feat: change another file 1 [#360](https://github.com/PoligonSa/plasma-sandbox/pull/360) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: change another file 1 [#358](https://github.com/PoligonSa/plasma-sandbox/pull/358) ([@Yakutoc](https://github.com/Yakutoc))
+- feat: change another file 3 [#357](https://github.com/PoligonSa/plasma-sandbox/pull/357) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Merge remote-tracking branch 'origin/dev' into release_1 ([@Yakutoc](https://github.com/Yakutoc))
+- Update package-locks files ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update package-locks \[skip ci\] ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.57.0 (Fri Feb 16 2024)
 
 #### 🐛 Bug Fix

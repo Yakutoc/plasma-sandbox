@@ -1,3 +1,25 @@
+# (Tue Mar 19 2024)
+
+#### 🚀 Enhancement
+
+- `plasmax-core@0.49.0`, `plasmax-hope@0.59.0`, `plasmax-web@0.96.0`
+  - Release 1 [#362](https://github.com/PoligonSa/plasma-sandbox/pull/362) ([@Yakutoc](https://github.com/Yakutoc) [@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-hope@0.59.0`
+  - feat: change another file 1 [#360](https://github.com/PoligonSa/plasma-sandbox/pull/360) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: change another file 1 [#358](https://github.com/PoligonSa/plasma-sandbox/pull/358) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: change another file 3 [#357](https://github.com/PoligonSa/plasma-sandbox/pull/357) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-web@0.96.0`
+  - feat: change another file 2 [#359](https://github.com/PoligonSa/plasma-sandbox/pull/359) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: change another file 2 [#356](https://github.com/PoligonSa/plasma-sandbox/pull/356) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: change another file [#355](https://github.com/PoligonSa/plasma-sandbox/pull/355) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Fri Feb 16 2024)
 
 #### 🚀 Enhancement
