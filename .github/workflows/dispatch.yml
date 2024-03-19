@@ -35,7 +35,7 @@ jobs:
       - name: Generate android icons
         run: |
           cd plasma
-          npx lerna bootstrap --scope="@salutejs/plasma-icons"
+          npx lerna bootstrap --scope="@salutejs/plasma-icons" --ignore-scripts
           npm run generate:android --prefix="packages/plasma-icons"
 
       - name: Mv to dir
