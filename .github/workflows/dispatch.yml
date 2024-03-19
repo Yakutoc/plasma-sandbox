@@ -27,10 +27,14 @@ jobs:
         with:
           node-version-file: 'plasma/.nvmrc'
 
+      - name: Bootstrap web
+        run: |
+          cd plasma
+          npm ci
+
       - name: Generate android icons
         run: |
           cd plasma/packages/plasma-icons
-          node -v
           npm ci
           npm run generate:android
 
