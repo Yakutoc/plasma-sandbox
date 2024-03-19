@@ -40,7 +40,7 @@ jobs:
 
       - name: Mv to dir
         run: |
-          cp plasma/packages/plasma-icons/android-icons current/android-icons
+          cp -r plasma/packages/plasma-icons/android-icons/. current/android-icons/
           ls current/android-icons
           
           
