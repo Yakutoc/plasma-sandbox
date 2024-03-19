@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: Checkout code
         env:
-          DATA: toJSON(github.event.client_payload)
+          DATA: ${{ toJSON(github.event.client_payload) }}
         run: |
           echo "$DATA"
