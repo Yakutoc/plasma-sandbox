@@ -83,14 +83,15 @@ jobs:
   publish:
     name: Publish RC version
     needs: [scope]
-    runs-on: ubuntu-latest
-    if: ${{ github.actor == 'github-merge-queue[bot]' }}
-    steps:
-      - name: Failed when publish
-        uses: actions/github-script@v6
-        with:
-          script: |
-            core.setFailed('TEST')
+    uses: ./.github/workflows/publish-common.yml
+    with:
+      with-update-package-lock: true
+      commit-message: "Update package-locks files"
+      auto-options: '--no-changelog'
+      upload_assets: ${{ needs.scope.outputs.HAS_ASSETS == 'true' }}
+    secrets:
+      gh_token: ${{ secrets.GH_TOKEN }}
+      npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
 
   catch:
     name: Handle errors
@@ -145,3 +146,13 @@ jobs:
         uses: mattermost/action-mattermost-notify@master
         env:
           MATTERMOST_WEBHOOK_URL: ${{ secrets.WEBHOOKS_NOTIFICATIONS_MM }}
+
+  unblock:
+    needs: [publish]
+    runs-on: ubuntu-latest
+    environment: 'After publish rc'
+
+    steps:
+      - name: Echo
+        run: |
+          echo "Publish rc done"
