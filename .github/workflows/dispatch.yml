@@ -22,16 +22,17 @@ jobs:
           show-progress: false
           path: web
 
-      -   name: Setup Node.js
-          uses: actions/setup-node@v4
-          with:
-            node-version-file: 'web/.nvmrc'
-            cache: 'npm'
-            cache-dependency-path: 'web/package-lock.json'
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: 'web/.nvmrc'
+          cache: 'npm'
 
       - name: Generate android icons
         run: |
           cd web/packages/plasma-icons
           ls
-
+          npm ci
+          npm run generate:android
+          ls android-icons
           
