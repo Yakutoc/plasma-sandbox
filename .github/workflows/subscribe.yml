@@ -1,8 +1,8 @@
-name: Subscribe workflow to custom event
+name: Subscribe to custom event
 
 on:
   repository_dispatch:
-    types: [plasma-trigger]
+    types: [plasma-released]
 
 jobs:
   build:
