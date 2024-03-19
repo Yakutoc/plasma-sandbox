@@ -32,13 +32,6 @@ jobs:
       - name: Bootstrap web
         run: |
           cd web
-          npm ci 
-
-      - name: Generate android icons
-        run: |
-          cd web/packages/plasma-icons
-          ls
           npm ci
-          npm run generate:android
-          ls android-icons
-          
+          npm ci --prefix="web/packages/plasma-icons"
+          npm run generate:android --prefix="web/packages/plasma-icons"
