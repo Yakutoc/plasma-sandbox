@@ -20,18 +20,20 @@ jobs:
           repository: salute-developers/plasma
           ref: dev
           show-progress: false
-          path: web
+          path: plasma
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version-file: 'web/.nvmrc'
-          cache: 'npm'
-          cache-dependency-path: 'web/package-lock.json'
+          node-version-file: 'plasma/.nvmrc'
 
       - name: Bootstrap web
         run: |
-          cd web
+          cd plasma
           npm ci
-          npm ci --prefix="web/packages/plasma-icons"
-          npm run generate:android --prefix="web/packages/plasma-icons"
+
+      - name: Gen
+        run: |
+          cd plasma/packages/plasma-icons
+          npm i
+          npm run generate:android 
