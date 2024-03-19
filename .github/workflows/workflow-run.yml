@@ -1,0 +1,13 @@
+name: POC workflow run
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: [Sharing data]
+    types: [completed]
+
+jobs:
+  poc-workflow-run:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    uses: ./.github/workflows/reuse.yml
+    secrets: inherit
