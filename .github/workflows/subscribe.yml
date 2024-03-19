@@ -1,0 +1,14 @@
+name: Subscribe workflow to custom event
+
+on:
+  repository_dispatch:
+    types: [plasma-trigger]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        run: |
+          echo ${{ github.event.client_payload }}
