@@ -30,7 +30,7 @@ jobs:
       - name: Generate android icons
         run: |
           cd plasma/packages/plasma-icons
-          nvm use
+          node -v
           npm ci
           npm run generate:android
 
