@@ -35,7 +35,6 @@ jobs:
       - name: Generate android icons
         run: |
           cd plasma/packages/plasma-icons
-          ls -a
-          cat package-lock.json
+          npm ci legacy-peer-deps=true
           
           
