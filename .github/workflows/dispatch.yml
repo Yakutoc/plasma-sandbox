@@ -34,7 +34,6 @@ jobs:
 
       - name: Generate android icons
         run: |
-          cd plasma/packages/plasma-icons
-          npm ci
+          npx lerna bootstrap --scope="@salutejs/plasma-icons"
           
           
