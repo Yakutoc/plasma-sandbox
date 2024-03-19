@@ -32,8 +32,15 @@ jobs:
           cd plasma
           npm ci
 
-      - name: Gen
+      - name: Generate android icons
         run: |
           cd plasma/packages/plasma-icons
           npm i
-          npm run generate:android 
+          npm run generate:android
+
+      - name: Mv to dir
+        run: |
+          cp plasma/packages/plasma-icons/android-icons current/android-icons
+          ls current/android-icons
+          
+          
