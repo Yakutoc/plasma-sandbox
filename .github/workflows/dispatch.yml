@@ -26,7 +26,7 @@ jobs:
 
       - name: Generate android icons
         run: |
-          npx lerna bootstrap --scope="@salutejs/plasma-icons"
+          npx lerna bootstrap --ignore-scripts --scope="@salutejs/plasma-icons" 
           npm run generate:android --prefix="packages/plasma-icons"
 
       - name: Save android icons
@@ -53,6 +53,7 @@ jobs:
 
       - name: LS
         run: |
+          7z x android-icons.zip.zip
           ls
 
 
