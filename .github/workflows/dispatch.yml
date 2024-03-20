@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version-file: 'plasma/.nvmrc'
+          node-version-file: '.nvmrc'
 
       - name: Bootstrap web
         run: npm ci
@@ -35,8 +35,6 @@ jobs:
         with:
           name: android-icons.zip
           path: packages/plasma-icons/archives/android-icons.zip
-          
-
 
   download:
     needs: [generate]
