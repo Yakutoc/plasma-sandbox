@@ -4,23 +4,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  trigger:
+  generate:
     runs-on: ubuntu-latest
-
+    outputs:
+      url: ${{ steps.android-icons.outputs.artifact-url }}
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          show-progress: false
-          path: current
-
       - name: Checkout to Plasma Web
         uses: actions/checkout@v4
         with:
           repository: salute-developers/plasma
           ref: dev
           show-progress: false
-          path: plasma
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -28,19 +22,39 @@ jobs:
           node-version-file: 'plasma/.nvmrc'
 
       - name: Bootstrap web
-        run: |
-          cd plasma
-          npm ci
+        run: npm ci
 
       - name: Generate android icons
         run: |
-          cd plasma
-          npx lerna bootstrap --scope="@salutejs/plasma-icons" --ignore-scripts
+          npm ci --prefix="packages/plasma-icons"
           npm run generate:android --prefix="packages/plasma-icons"
 
-      - name: Mv to dir
+      - name: Save android icons
+        id: android-icons
+        uses: actions/upload-artifact@v4.1.0
+        with:
+          name: android-icons.zip
+          path: packages/plasma-icons/archives/android-icons.zip
+          
+
+
+  download:
+    needs: [generate]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+
+      - name: Download android icons
+        uses: actions/download-artifact@v4.1.0
+        with:
+          name: android-icons.zip
+
+      - name: LS
         run: |
-          cp -r plasma/packages/plasma-icons/android-icons/. current/android-icons/
-          ls current/android-icons
-          
-          
+          ls
+
+
