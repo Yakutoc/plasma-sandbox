@@ -29,6 +29,7 @@ jobs:
 
   generate:
     runs-on: ubuntu-latest
+    if: ${{ fromJSON(false) }}
     outputs:
       url: ${{ steps.android-icons.outputs.artifact-url }}
     steps:
