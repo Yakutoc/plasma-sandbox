@@ -1,11 +1,33 @@
-name: POC Trigger Target Workflow
+name: POC Trigger workflow
 
 on:
   workflow_dispatch:
-  repository_dispatch:
-    types: [plasma-released]
+  workflow_run:
+    workflows: [ "Check" ]
+    branches: [ dev ]
+    types:
+      - completed
 
 jobs:
+  get:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to Plasma Web
+        uses: actions/checkout@v4
+        with:
+          repository: salute-developers/plasma
+          show-progress: false
+
+      - name: Dumb
+        env:
+          DATA: ${{ toJSON(github.event) }}
+        run: |
+          echo "$DATA"     
+
+      - name: Get release info
+        run: |
+          echo ""
+
   generate:
     runs-on: ubuntu-latest
     outputs:
