@@ -27,7 +27,7 @@ jobs:
         run: |
           message=${{ github.event.workflow_run.head_commit.message }}
           echo $message
-          if [[ $message = *'plasma-icons@'* ]]; then
+          if [[ $message = *'plasmax-core@'* ]]; then
             echo 'Found!'
           fi
 
