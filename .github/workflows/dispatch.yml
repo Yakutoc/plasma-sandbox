@@ -36,7 +36,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: salute-developers/plasma
-          ref: ${{ fromJSON(github.event.client_payload).ref || dev }}
+          ref: ${{ fromJSON(github.event.client_payload).ref || 'dev' }}
           show-progress: false
 
       - name: Setup Node.js
@@ -56,7 +56,7 @@ jobs:
         id: android-icons
         uses: actions/upload-artifact@v4.1.0
         with:
-          name: android-icons-${{ fromJSON(github.event.client_payload).ref || dev }}.zip
+          name: android-icons-${{ fromJSON(github.event.client_payload).ref || 'dev' }}.zip
           path: packages/plasma-icons/archives/android-icons.zip
 
   download:
