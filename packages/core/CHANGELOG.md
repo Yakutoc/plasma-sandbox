@@ -1,3 +1,21 @@
+# v0.50.0 (Thu Mar 21 2024)
+
+#### 🚀 Enhancement
+
+- feat: bumb ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Update package-locks files ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.49.0 (Tue Mar 19 2024)
 
 #### 🚀 Enhancement

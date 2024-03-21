@@ -1,3 +1,20 @@
+# (Thu Mar 21 2024)
+
+#### 🚀 Enhancement
+
+- feat: bumb [#364](https://github.com/PoligonSa/plasma-sandbox/pull/364) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- ci: run 1 [no ci] [#363](https://github.com/PoligonSa/plasma-sandbox/pull/363) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Tue Mar 19 2024)
 
 #### 🚀 Enhancement
