@@ -1,0 +1,16 @@
+name: Subscribe to custom event
+
+on:
+  repository_dispatch:
+    types: [plasma-released]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        env:
+          DATA: ${{ toJSON(github.event.client_payload) }}
+        run: |
+          echo "$DATA"

@@ -1,12 +1,67 @@
-name: POC Trigger Target Workflow
+name: POC Trigger workflow
 
 on:
   workflow_dispatch:
-  release:
-    types: [ published ]
+  workflow_run:
+    workflows: [ "Sharing data" ]
+    branches: [ dev ]
+    types:
+      - completed
 
 jobs:
-  trigger:
+  get:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout to Plasma Web
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+
+      - name: Dumb
+        env:
+          DATA: ${{ toJSON(github.event) }}
+        run: |
+          echo "$DATA"     
+
+      - name: Get release info
+        run: |
+          echo "${{ github.event.workflow_run.head_commit.message }}"
+
+  generate:
+    runs-on: ubuntu-latest
+    if: ${{ fromJSON(false) }}
+    outputs:
+      url: ${{ steps.android-icons.outputs.artifact-url }}
+    steps:
+      - name: Checkout to Plasma Web
+        uses: actions/checkout@v4
+        with:
+          repository: salute-developers/plasma
+          ref: ${{ fromJSON(github.event.client_payload).ref || 'dev' }}
+          show-progress: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Bootstrap web
+        run: npm ci
+
+      - name: Generate android icons
+        run: |
+          npx lerna bootstrap --ignore-scripts --scope="@salutejs/plasma-icons" 
+          npm run generate:android --prefix="packages/plasma-icons"
+
+      - name: Save android icons
+        id: android-icons
+        uses: actions/upload-artifact@v4.1.0
+        with:
+          name: android-icons-${{ fromJSON(github.event.client_payload).ref || 'dev' }}.zip
+          path: packages/plasma-icons/archives/android-icons.zip
+
+  download:
+    needs: [generate]
     runs-on: ubuntu-latest
 
     steps:
@@ -15,8 +70,9 @@ jobs:
         with:
           show-progress: false
 
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: |
-          echo "$GITHUB_CONTEXT"
+      - name: Download android icons
+        uses: actions/download-artifact@v4.1.0
+        with:
+          name: android-icons.zip
+
+
