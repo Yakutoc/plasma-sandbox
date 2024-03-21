@@ -2,7 +2,7 @@ name: Subscribe to custom event
 
 on:
   repository_dispatch:
-    types: [plasma-released]
+    types: [build-icons]
 
 jobs:
   build:
