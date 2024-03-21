@@ -25,7 +25,11 @@ jobs:
 
       - name: Get release info
         run: |
-          echo "${{ github.event.workflow_run.head_commit.message }}"
+          message='${{ github.event.workflow_run.head_commit.message }}'
+          echo $message
+          if [[ $message = *'plasmax-core@'* ]]; then
+            echo 'Found!'
+          fi
 
   generate:
     runs-on: ubuntu-latest
