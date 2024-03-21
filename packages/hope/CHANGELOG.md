@@ -1,3 +1,22 @@
+# v0.61.0 (Thu Mar 21 2024)
+
+#### 🚀 Enhancement
+
+- feat: bumb [#366](https://github.com/PoligonSa/plasma-sandbox/pull/366) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### 🐛 Bug Fix
+
+- Update package-locks files ([@Salute-Eva](https://github.com/Salute-Eva))
+- Update versions ([@Yakutoc](https://github.com/Yakutoc))
+- chore: update package-locks \[skip ci\] ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.60.0 (Thu Mar 21 2024)
 
 #### 🚀 Enhancement

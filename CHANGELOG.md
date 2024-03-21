@@ -2,6 +2,20 @@
 
 #### 🚀 Enhancement
 
+- `plasmax-hope@0.61.0`
+  - feat: bumb [#366](https://github.com/PoligonSa/plasma-sandbox/pull/366) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Thu Mar 21 2024)
+
+#### 🚀 Enhancement
+
 - feat: bumb [#364](https://github.com/PoligonSa/plasma-sandbox/pull/364) ([@Yakutoc](https://github.com/Yakutoc))
 
 #### 🐛 Bug Fix
