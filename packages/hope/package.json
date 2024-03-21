@@ -3,7 +3,7 @@
   "version": "0.60.0",
   "author": "Alex Czech <yakutoc@gmail.com>",
   "license": "MIT",
-  "description": "asgasdf",
+  "description": "asdasd",
   "scripts": {
     "prepare": "npm run build",
     "build": "npm run build:clean && npm run build:cjs && npm run build:esm",
