@@ -3,7 +3,7 @@ name: POC Trigger workflow
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: [ "Check" ]
+    workflows: [ "Sharing data" ]
     branches: [ dev ]
     types:
       - completed
