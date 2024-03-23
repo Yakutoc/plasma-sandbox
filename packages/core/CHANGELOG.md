@@ -1,3 +1,15 @@
+# v0.51.0 (Sat Mar 23 2024)
+
+#### 🚀 Enhancement
+
+- feat: published ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # v0.50.0 (Thu Mar 21 2024)
 
 #### 🚀 Enhancement
