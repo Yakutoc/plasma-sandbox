@@ -7,7 +7,7 @@ on:
 
 jobs:
   subscribe-published:
-    if: ${{ contain(github.event.release.name, 'plasmax-hope@') }}
+    if: ${{ contains(github.event.release.name, 'plasmax-hope@') }}
     runs-on: ubuntu-latest
     steps:
       - name: Dumb
