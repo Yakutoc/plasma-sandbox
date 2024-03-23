@@ -14,6 +14,12 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: '.nvmrc'
+        cache: 'npm'
+
     - name: Sync package-lock's root  level
       shell: bash
       run: npm i --silent --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps
@@ -29,9 +35,10 @@ runs:
         timeout_minutes: 5
         max_attempts: 3
         on_retry_command: |
+          echo "Reset"
           git reset --hard
         command: |
-          npm i plasma-tokens-utils222
+          node -e "const s = require('net').Socket();s.destroy(new Error('ECONNRESET'))"
           npx lerna exec --silent --no-private -- npm i --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps --ignore-scripts
 
     - name: Root deps don't update correctly on first regeneration
