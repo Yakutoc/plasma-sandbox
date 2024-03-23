@@ -20,6 +20,13 @@ jobs:
     outputs:
       url: ${{ steps.android-icons.outputs.artifact-url }}
     steps:
+      - name: ECho
+        run: |
+          echo "${{ github.event.client_payload.ref }}"
+
+      - name: ECho
+        run: |
+          echo "${{ fromJSON(github.event.client_payload).ref }}"
       - name: Checkout to Plasma Web
         uses: actions/checkout@v4
         with:
