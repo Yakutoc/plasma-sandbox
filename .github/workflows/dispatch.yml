@@ -18,8 +18,8 @@ jobs:
 
       - name: ENV
         run: |
-          echo "VERSION=$(${{ github.event.release.tag_name }} | cut -d '@' -f 2)" >> "$GITHUB_ENV"
-          echo "BUILD_PATH=$(${{ github.event.release.tag_name }} | cut -d '@' -f 1)" >> "$GITHUB_ENV"
+          echo "VERSION=$(echo "${{ github.event.release.tag_name }}" | cut -d '@' -f 2)" >> "$GITHUB_ENV"
+          echo "BUILD_PATH=$(echo "${{ github.event.release.tag_name }}" | cut -d '@' -f 1)" >> "$GITHUB_ENV"
 
       - name: Dispatch custom event
         run: |
