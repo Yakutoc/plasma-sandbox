@@ -34,7 +34,7 @@ runs:
 
     - name: Root deps don't update correctly on first regeneration
       shell: bash
-      run: npm i --silent --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps
+      run: npm i --quiet --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps
 
     - name: Extract branch name
       id: branch
