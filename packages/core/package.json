@@ -2,7 +2,7 @@
   "name": "plasmax-core",
   "version": "0.51.0",
   "author": "Alex Czech1 <yakutoc@gmail.com>",
-  "description": "dddd",
+  "description": "ddddsdas",
   "license": "MIT",
   "scripts": {
     "prepare": "npm run build",
