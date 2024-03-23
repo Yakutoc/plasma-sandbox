@@ -17,7 +17,7 @@ jobs:
           repository: salute-developers/plasma
           sparse-checkout: |
             packages/plasma-icons
-          ref: ${{ github.event.client_payload.ref || 'master' }}
+          ref: ${{ github.event.client_payload.ref || 'dev' }}
           show-progress: false
 
       - name: Setup Node.js
