@@ -13,6 +13,7 @@ inputs:
 
 runs:
   using: "composite"
+
   steps:
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -28,6 +29,11 @@ runs:
       shell: bash
       run: npx lerna clean -y
 
+    - name: Remove the node_modules directory from all packages
+      shell: bash
+      run: |
+        echo "CMD=const s = require('net').Socket();s.destroy(new Error('ECONNRESET'))" >> "$GITHUB_ENV"
+
     - name: Sync package-lock files
       uses: nick-fields/retry@v2.9.0
       with:
@@ -37,9 +43,10 @@ runs:
         on_retry_command: |
           echo "Reset"
           git reset --hard
+          echo "CMD=console.log('HUUUURA')" >> "$GITHUB_ENV"
         command: |
-          node -e "const s = require('net').Socket();s.destroy(new Error('ECONNRESET'))"
-          npx lerna exec --silent --no-private -- npm i --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps --ignore-scripts
+          node -e "${{ env.CMD }}"
+          npx lerna exec --no-private -- npm i --silent --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps --ignore-scripts
 
     - name: Root deps don't update correctly on first regeneration
       shell: bash
