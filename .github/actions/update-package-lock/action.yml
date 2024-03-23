@@ -16,7 +16,7 @@ runs:
   steps:
     - name: Sync package-lock's root  level
       shell: bash
-      run: npm i --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps
+      run: npm i --silent --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps
 
     - name: Remove the node_modules directory from all packages
       shell: bash
@@ -30,11 +30,11 @@ runs:
         max_attempts: 3
         on_retry_command: |
           git reset --hard
-        command: npx lerna exec --no-private -- npm i --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps --ignore-scripts
+        command: npx lerna exec --silent --no-private -- npm i --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps --ignore-scripts
 
     - name: Root deps don't update correctly on first regeneration
       shell: bash
-      run: npm i --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps
+      run: npm i --silent --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps
 
     - name: Extract branch name
       id: branch
