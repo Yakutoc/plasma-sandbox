@@ -15,8 +15,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: salute-developers/plasma
-          sparse-checkout: |
-            packages/plasma-icons
           ref: ${{ github.event.client_payload.ref || 'dev' }}
           show-progress: false
 
@@ -25,9 +23,12 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
+      - name: Bootstrap web project
+        run: npm ci
+
       - name: Generate android icons
         run: |
-          npm ci
+          npx lerna bootstrap --ignore-scripts --scope="@salutejs/plasma-icons" 
           npm run generate:android --prefix="packages/plasma-icons"
 
       - name: Save android icons
