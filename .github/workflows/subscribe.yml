@@ -9,7 +9,7 @@ jobs:
   plasma-icons:
     runs-on: ubuntu-latest
     outputs:
-      url: ${{ steps.android-icons.outputs.artifact-url }}
+      FILE_NAME: ${{ steps.file.outputs.FILE_NAME }}
     steps:
       - name: Checkout to Plasma Web
         uses: actions/checkout@v4
@@ -26,13 +26,21 @@ jobs:
       - name: Bootstrap web project
         run: npm ci
 
+      - name: Create file name
+        run: |
+          echo "FILE_NAME=android-icons-${{ github.event.client_payload.version }}.zip" >> "$GITHUB_ENV"
+
+      - name: Create file name
+        id: file
+        run: |
+          echo "FILE_NAME=${{ env.FILE_NAME }}" >> "$GITHUB_OUTPUT"     
+
       - name: Generate android icons
         run: |
           npx lerna bootstrap --ignore-scripts --scope="@salutejs/plasma-icons" 
           npm run generate:android --prefix="packages/plasma-icons"
 
       - name: Save android icons
-        id: android-icons
         uses: actions/upload-artifact@v4.1.0
         with:
           name: android-icons-${{ github.event.client_payload.version }}.zip
@@ -50,14 +58,7 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: android-icons-.zip
-
-
-      - name: Download android icons
-        run: |
-          curl \
-          -H "Accept: application/vnd.github+json" \
-          -H "Authorization: token ${{ secrets.GH_TOKEN }}" -L -o android-iconsss.zip ${{ needs.plasma-icons.outputs.url }}/zip
+          name: ${{ needs.plasma-icons.outputs.FILE_NAME }}
 
       - name: LS echo
         run: |
