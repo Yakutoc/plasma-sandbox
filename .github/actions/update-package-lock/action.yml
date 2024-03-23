@@ -40,6 +40,7 @@ runs:
         shell: bash
         timeout_minutes: 5
         max_attempts: 3
+        retry_on: error
         on_retry_command: |
           echo "Reset"
           git reset --hard
