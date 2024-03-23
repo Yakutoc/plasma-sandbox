@@ -14,3 +14,57 @@ jobs:
           DATA: ${{ toJSON(github.event.client_payload) }}
         run: |
           echo "$DATA"
+
+  plasma-icons:
+    runs-on: ubuntu-latest
+    outputs:
+      url: ${{ steps.android-icons.outputs.artifact-url }}
+    steps:
+      - name: Checkout to Plasma Web
+        uses: actions/checkout@v4
+        with:
+          repository: salute-developers/plasma
+          ref: ${{ fromJSON(github.event.client_payload).ref || 'master' }}
+          show-progress: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Bootstrap web
+        run: npm ci
+
+      - name: Generate android icons
+        run: |
+          npx lerna bootstrap --ignore-scripts --scope="@salutejs/plasma-icons" 
+          npm run generate:android --prefix="packages/plasma-icons"
+
+      - name: Create file name
+        run: |
+          echo "FILE=android-icons-${{ fromJSON(github.event.client_payload).version }}.zip" >> "$GITHUB_ENV"
+
+      - name: Save android icons
+        id: android-icons
+        uses: actions/upload-artifact@v4.1.0
+        with:
+          name: $FILE
+          path: packages/plasma-icons/archives/android-icons.zip
+
+  download:
+    needs: [plasma-icons]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          show-progress: false
+
+      - name: Download android icons
+        run: |
+          curl -o plasma-icons ${{ needs.plasma-icons.outputs.url }}
+
+      - name: LS echo
+        run: |
+          ls   
