@@ -23,12 +23,13 @@ runs:
       run: npx lerna clean -y
 
     - name: Sync package-lock files
-      uses: nick-fields/retry@master
+      uses: nick-fields/retry@v2.9.0
       with:
         shell: bash
         timeout_minutes: 5
         max_attempts: 3
-        retry_on: error
+        on_retry_command: |
+          git reset --hard
         command: npx lerna exec --no-private -- npm i --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps --ignore-scripts
 
     - name: Root deps don't update correctly on first regeneration
