@@ -16,6 +16,10 @@ jobs:
         with:
           node-version-file: '.nvmrc'
           cache: 'npm'
+
+      - name: Install
+        shell: bash
+        run: npm ci
         
       - name: Update package-lock files
         uses: ./.github/actions/update-package-lock
