@@ -52,6 +52,13 @@ jobs:
         with:
           name: android-icons-.zip
 
+
+      - name: Download android icons
+        run: |
+          curl \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: token ${{ secrets.GH_TOKEN }}" -L -o android-iconsss.zip ${{ needs.plasma-icons.outputs.url }}/zip
+
       - name: LS echo
         run: |
           ls -lh
