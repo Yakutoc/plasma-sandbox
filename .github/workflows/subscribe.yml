@@ -1,37 +1,23 @@
 name: Subscribe to custom event
 
 on:
+  workflow_dispatch:
   repository_dispatch:
     types: [build-icons]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        env:
-          DATA: ${{ toJSON(github.event.client_payload) }}
-        run: |
-          echo "$DATA"
-
   plasma-icons:
     runs-on: ubuntu-latest
     outputs:
       url: ${{ steps.android-icons.outputs.artifact-url }}
     steps:
-      - name: ECho
-        run: |
-          echo "${{ github.event.client_payload.ref }}"
-
-      - name: ECho
-        run: |
-          echo "${{ fromJSON(github.event.client_payload).ref }}"
       - name: Checkout to Plasma Web
         uses: actions/checkout@v4
         with:
           repository: salute-developers/plasma
-          ref: ${{ fromJSON(github.event.client_payload).ref || 'master' }}
+          sparse-checkout: |
+            packages/plasma-icons
+          ref: ${{ github.event.client_payload.ref || 'master' }}
           show-progress: false
 
       - name: Setup Node.js
@@ -39,23 +25,16 @@ jobs:
         with:
           node-version-file: '.nvmrc'
 
-      - name: Bootstrap web
-        run: npm ci
-
       - name: Generate android icons
         run: |
-          npx lerna bootstrap --ignore-scripts --scope="@salutejs/plasma-icons" 
+          npm ci
           npm run generate:android --prefix="packages/plasma-icons"
-
-      - name: Create file name
-        run: |
-          echo "FILE=android-icons-${{ fromJSON(github.event.client_payload).version }}.zip" >> "$GITHUB_ENV"
 
       - name: Save android icons
         id: android-icons
         uses: actions/upload-artifact@v4.1.0
         with:
-          name: $FILE
+          name: android-icons-${{ github.event.client_payload.version }}.zip
           path: packages/plasma-icons/archives/android-icons.zip
 
   download:
