@@ -2,6 +2,23 @@
 
 #### 🚀 Enhancement
 
+- `plasmax-core@0.53.0`
+  - feat: published ([@Yakutoc](https://github.com/Yakutoc))
+
+#### ⚠️ Pushed to `main`
+
+- ci: published [no ci] ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 1
+
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
+# (Sat Mar 23 2024)
+
+#### 🚀 Enhancement
+
 - `plasmax-core@0.52.0`
   - feat: published ([@Yakutoc](https://github.com/Yakutoc))
 
