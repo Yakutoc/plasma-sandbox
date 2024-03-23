@@ -18,7 +18,7 @@ jobs:
 
       - name: ENV
         run: |
-          tag=${{ github.event.release.tag_name }}
+          tag="${{ github.event.release.tag_name }}"
           echo "VERSION=$(tag | cut -d '@' -f 2)" >> "$GITHUB_ENV"
           echo "BUILD_PATH=$(tag | cut -d '@' -f 1)" >> "$GITHUB_ENV"
 
