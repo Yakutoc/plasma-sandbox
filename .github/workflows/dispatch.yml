@@ -14,16 +14,10 @@ on:
     types: [published]
 
 jobs:
-  manual-dispatch:
+  dispatch-manual:
     if: ${{ github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Dumb
-        env:
-          DATA: ${{ toJSON(github) }}
-        run: |
-          echo "$DATA"
-
       - name: Dispatch custom event
         run: |
           curl -L \
@@ -34,7 +28,7 @@ jobs:
             https://api.github.com/repos/PoligonSa/plasma-sandbox/dispatches \
             -d "{\"event_type\":\"build-icons\",\"client_payload\":{\"version\":\"${{github.event.inputs.version}}\", \"ref\": \"${{github.event.inputs.ref}}\"}}"
 
-  subscribe-published:
+  dispatch-published:
     if: ${{ contains(github.event.release.name, 'plasmax-hope@') }}
     runs-on: ubuntu-latest
     steps:
