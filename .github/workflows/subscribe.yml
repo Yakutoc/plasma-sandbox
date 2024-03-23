@@ -54,4 +54,5 @@ jobs:
 
       - name: LS echo
         run: |
-          ls plasma-icons
+          ls plasma-icons/
+          ls plasma-icons/plasma-icons
