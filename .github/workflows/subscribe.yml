@@ -50,7 +50,7 @@ jobs:
 
       - name: Download android icons
         run: |
-          curl -O ${{ needs.plasma-icons.outputs.url }}
+          curl -O android-icons.zip ${{ needs.plasma-icons.outputs.url }}
 
       - name: LS echo
         run: |
