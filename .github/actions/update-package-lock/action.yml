@@ -42,9 +42,9 @@ runs:
         max_attempts: 3
         retry_on: error
         on_retry_command: |
-          echo "Reset"
           git reset --hard
           echo "CMD=console.log('HUUUURA')" >> "$GITHUB_ENV"
+          npm i --silent --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps
         command: |
           node -e "${{ env.CMD }}"
           npx lerna exec --no-private -- npm i --silent --no-audit --no-progress --package-lock-only --lockfile-version 2 --legacy-peer-deps --ignore-scripts
