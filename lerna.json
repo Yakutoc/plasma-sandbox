@@ -25,10 +25,6 @@
     },
     "init": {
       "exact": true
-    },
-    "version": {
-      "conventionalCommits": true,
-      "conventionalPrerelease": true
     }
   },
   "$schema": "node_modules/lerna/schemas/lerna-schema.json"
