@@ -31,6 +31,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.gh_token }}
       NPM_REGISTRY_TOKEN: ${{ secrets.npm_registry_token }}
+      UPLOAD_ASSETS: ${{ inputs.upload_assets }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -62,7 +63,7 @@ jobs:
         run: npm whoami && npx lerna info && npx auto info || echo 'auto info returned 1'
 
       - name: Release
-        run: upload_assets="${{ inputs.upload_assets }}" packages_targets=${{ toJSON(vars.UPLOAD_ASSETS_TARGET_PACKAGES) }} npm run release
+        run: npm run release
 
       - name: Update package-lock files
         if: ${{ inputs.with-update-package-lock }}
