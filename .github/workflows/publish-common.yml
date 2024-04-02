@@ -38,6 +38,7 @@ jobs:
         with:
           show-progress: false
           fetch-depth: 0
+          clean: true
           ref: ${{ inputs.ref }}
 
       - name: Unset header
