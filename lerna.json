@@ -25,6 +25,11 @@
     },
     "init": {
       "exact": true
+    },
+    "version": {
+      "conventionalCommits": true,
+      "conventionalBumpPrerelease": true,
+      "preid": "dev"
     }
   },
   "$schema": "node_modules/lerna/schemas/lerna-schema.json"
