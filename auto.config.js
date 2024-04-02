@@ -1,6 +1,7 @@
 const npmOptions = {
     setRcToken: false,
     commitNextVersion: true,
+    subPackageChangelogs: false
 };
 
 const releasedOptions = {
