@@ -1,0 +1,17 @@
+name: Publish RC
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Publish RC version
+    uses: ./.github/workflows/publish-common.yml
+    with:
+      with-update-package-lock: true
+      commit-message: "Update package-locks files"
+      auto-options: '--no-changelog'
+      upload_assets: false
+    secrets:
+      gh_token: ${{ secrets.GH_TOKEN }}
+      npm_registry_token: ${{ secrets.NPM_REGISTRY_TOKEN }}
