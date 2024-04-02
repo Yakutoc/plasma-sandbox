@@ -31,6 +31,9 @@ module.exports = function rc() {
     }
 
     return {
+        "labels": [
+            { "releaseType": "prerelease", "name": "Prerelease" }
+        ],
         noVersionPrefix: true,
         prereleaseBranches: ['dev'],
         plugins,
