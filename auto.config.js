@@ -31,6 +31,7 @@ module.exports = function rc() {
     }
 
     return {
+        noVersionPrefix: true,
         prereleaseBranches: ['dev'],
         plugins,
     };
