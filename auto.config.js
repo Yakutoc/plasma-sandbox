@@ -18,7 +18,11 @@ const uploadAssetsPluginOptions = {
 
 /** Auto configuration */
 module.exports = function rc() {
-    const { UPLOAD_ASSETS: uploadAssets = 'false', packages_targets } = process.env || {};
+    const {
+        UPLOAD_ASSETS: uploadAssets = 'false',
+        PACKAGES_TARGETS:packages_targets
+    } = process.env || {};
+    
     const plugins = [['released', releasedOptions], ['npm', npmOptions], 'conventional-commits'];
     
     if (uploadAssets === 'true') {

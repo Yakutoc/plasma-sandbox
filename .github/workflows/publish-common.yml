@@ -32,13 +32,13 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.gh_token }}
       NPM_REGISTRY_TOKEN: ${{ secrets.npm_registry_token }}
       UPLOAD_ASSETS: ${{ inputs.upload_assets }}
+      PACKAGES_TARGETS: ${{ toJSON(vars.UPLOAD_ASSETS_TARGET_PACKAGES) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           show-progress: false
           fetch-depth: 0
-          clean: true
           ref: ${{ inputs.ref }}
 
       - name: Unset header
