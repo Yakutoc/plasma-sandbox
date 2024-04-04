@@ -1,3 +1,37 @@
+# (Thu Apr 04 2024)
+
+#### 🚀 Enhancement
+
+- `plasmax-core@0.61.0`
+  - feat: bump ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: bump 1 [#370](https://github.com/PoligonSa/plasma-sandbox/pull/370) ([@Yakutoc](https://github.com/Yakutoc))
+  - feat: bump [#370](https://github.com/PoligonSa/plasma-sandbox/pull/370) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.61.0`, `plasmax-hope@0.74.0`, `plasmax-web@0.111.0`
+  - Update package-locks files [#370](https://github.com/PoligonSa/plasma-sandbox/pull/370) ([@Salute-Eva](https://github.com/Salute-Eva))
+
+#### 🐛 Bug Fix
+
+- ci: update settings [no ci] [#370](https://github.com/PoligonSa/plasma-sandbox/pull/370) ([@Yakutoc](https://github.com/Yakutoc))
+- ci: use tag-version-prefix [no ci] [#370](https://github.com/PoligonSa/plasma-sandbox/pull/370) ([@Yakutoc](https://github.com/Yakutoc))
+- `plasmax-core@0.61.0`, `plasmax-hope@0.74.0`, `plasmax-web@0.111.0`
+  - Update versions [#370](https://github.com/PoligonSa/plasma-sandbox/pull/370) ([@Yakutoc](https://github.com/Yakutoc))
+  - Update package-locks files [#370](https://github.com/PoligonSa/plasma-sandbox/pull/370) ([@Salute-Eva](https://github.com/Salute-Eva))
+- `plasmax-core@0.61.0`
+  - fix: bump 3 [#370](https://github.com/PoligonSa/plasma-sandbox/pull/370) ([@Yakutoc](https://github.com/Yakutoc))
+  - fix: bump 2 [#370](https://github.com/PoligonSa/plasma-sandbox/pull/370) ([@Yakutoc](https://github.com/Yakutoc))
+
+#### ⚠️ Pushed to `main`
+
+- ci: restore [no ci] ([@Yakutoc](https://github.com/Yakutoc))
+- ci: published [no ci] ([@Yakutoc](https://github.com/Yakutoc))
+
+#### Authors: 2
+
+- [@Salute-Eva](https://github.com/Salute-Eva)
+- Alex Czech ([@Yakutoc](https://github.com/Yakutoc))
+
+---
+
 # (Sat Mar 23 2024)
 
 #### 🚀 Enhancement
