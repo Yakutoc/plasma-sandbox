@@ -57,4 +57,4 @@ jobs:
         working-directory: ./plasma
         run: |
           cd packages/plasma-icons
-          ls icons-ios
+          ls icons-ios/ZoomPlusFill.imageset
