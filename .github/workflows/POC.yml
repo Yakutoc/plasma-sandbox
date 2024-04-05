@@ -44,9 +44,11 @@ jobs:
 
       - name: Generate iOS icons
         working-directory: ./plasma
+        env:
+          scope: '--scope="@salutejs/plasma-icons"'
         run: |
-          npx lerna bootstrap --scope="@salutejs/plasma-icons" 
-          npm run generate:ios --prefix="packages/plasma-icons"
+          npx lerna bootstrap ${{ env.scope }}
+          npx lerna ${{ env.scope }} run generate:ios
 
       - name: ls
         working-directory: ./plasma
