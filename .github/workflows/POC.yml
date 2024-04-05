@@ -16,7 +16,8 @@ jobs:
   icons:
     runs-on: macos-latest
     environment: sdds
-
+    env:
+      lerna-scope: '--scope="@salutejs/plasma-icons"'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -42,13 +43,15 @@ jobs:
         working-directory: ./plasma
         run: npm ci
 
+      - name: Install plasma-icons
+        working-directory: ./plasma
+        run: |
+          npx lerna bootstrap ${{ env.lerna-scope }}
+
       - name: Generate iOS icons
         working-directory: ./plasma
-        env:
-          scope: '--scope="@salutejs/plasma-icons"'
         run: |
-          npx lerna bootstrap ${{ env.scope }}
-          npx lerna ${{ env.scope }} run generate:ios
+          npx lerna ${{ env.lerna-scope }} run generate:ios    
 
       - name: ls
         working-directory: ./plasma
