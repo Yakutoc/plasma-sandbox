@@ -45,7 +45,7 @@ jobs:
       - name: Generate iOS icons
         working-directory: ./plasma
         run: |
-          npx lerna exec --scope="@salutejs/plasma-icons" -- npm install --platform=darwin --arch=x64 sharp
+          npx lerna bootstrap --scope="@salutejs/plasma-icons" 
           npm run generate:ios --prefix="packages/plasma-icons"
 
       - name: ls
